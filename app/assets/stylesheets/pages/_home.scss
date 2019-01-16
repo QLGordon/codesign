@@ -1,1 +1,36 @@
 // Specific CSS for your home-page
+#bg-graphic {
+    line-height: .5em;
+    position: absolute;
+    // transform: scale(1);
+    z-index: -10;
+    text-align: center;
+  #graphic {
+    mix-blend-mode: multiply;
+  }
+}
+
+#logo-c {
+  display: table;
+  transform: scale(.8);
+  position: fixed;
+  mix-blend-mode: exclusion;
+  #logo_codesign {
+    td {
+      color: red;
+      border: 2px solid;
+      border-radius: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      text-align: center;
+      font-weight: bold;
+    }
+    tr:last-child td:last-child {
+      border: 2px;
+      color: black;
+    }
+  }
+
+}
+
+

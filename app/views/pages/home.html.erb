@@ -1,2 +1,23 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div id="logo-c">
+  <table id="logo_codesign">
+    <tr><td>c</td><td>o</td><td>d</td></tr>
+    <tr><td>e</td><td>s</td><td>i</td></tr>
+    <tr><td>g</td><td>n</td><td>∓</td></tr>
+  </table>
+</div>
+<% graphics_a = "▗▖▘▚▛▟▜▙▝▞▀▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐■□▢▣▤▥▦▧▨▩▪▫▬▭▮▯▰▱▲△▴▵▶▷▸▹►▻▼▽▾▿◀◁◂◃◄◅◆◇◈◊◉○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◢◣◤◥◦◧◨◩◪◫◬◭◮◯◰◱◲◳◴◵◶◷◸◹◺◻◼◽◾◿" %>
+<% graphics_r = "▗▖▘▚▛▟▜▙▝▞▀" %>
+<% graphics_l = "▁▂▃▄▅▆▇█▉▊▋▌▍▎▏▐" %>
+<% graphics_s = "■□▢▣▤▥▦▧▨▩◧◨◩◪◫◰◱◲◳◻◼◽◾" %>
+<% graphics_sl = "▪▫▬▭▮▯▰▱" %>
+<% graphics_t = "▲△▴▵▶▷▸▹►▻▼▽▾▿◀◁◂◃◄◅◢◣◤◥◬◭◮◸◹◺◿" %>
+<% graphics_ti = "▲▶▼◀" %>
+<% graphics_lo = "◆◇◈◊" %>
+<% graphics_c = "◉○◌◍◎●◐◑◒◓◔◕◖◗◘◙◚◛◜◝◞◟◠◡◦◯◴◵◶◷" %>
+<% graphics_c2 = "◉◌◍◐◑◒◓◔◕◖◗◜◝◞◟◠◡◯◴◵◶◷" %>
+<% color = ["rgba(255,237,000)", "rgba(249,38,63)", "rgba(0,138,201)", "rgba(0,40,206)", "rgba(55,237,183)"] %>
+<section id="bg-graphic">
+<% 100.times do %>
+<span id="graphic" style="color: <%= (color.shuffle)[3] %>; font-size: <%= (10..50).to_a.sample %>vw;"><%= print_random_char(graphics_a) %></span>
+<% end %>
+</section>
