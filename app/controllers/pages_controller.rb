@@ -12,5 +12,4 @@ class PagesController < ApplicationController
     new_array = array.shuffle
     new_array[1...2].join
   end
-
 end
