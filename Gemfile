@@ -17,6 +17,11 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 
+# mes gems
+gem "unicode-blocks"
+
+# pas mes gems
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
