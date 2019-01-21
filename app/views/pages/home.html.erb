@@ -7,18 +7,17 @@
   </table>
 </div>
 
-<% color = ["grey"] %>
-
-<% graphics_1 = "🥰😍😘😻💋🌹" %>
 
 <section id="bg-graphic">
-
-<% 126.times do %>
-  <p id="graphic" class="<%= @font_size.sample %>"
-  style="color: <%= (color.shuffle)[0] %>;
-  font-size: <%= @font_size.sample %>pt;
-  transform: rotate(<%= @rotate.sample %>deg)
-  translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
-  <%= graphics_1.split("").sample %>
-  </p>
-<% end %>
+  <% color = ["grey"] %>
+  <% graphics_1 = "⌘⎋⏏︎⌦↩︎" %>
+  <% 126.times do %>
+    <p id="graphic" class="<%= @font_size.sample %>"
+    style="color: <%= (color.shuffle)[0] %>;
+    font-size: <%= @font_size.sample %>pt;
+    transform: rotate(<%= @rotate.sample %>deg)
+    translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
+    <%= graphics_1.split("").sample %>
+    </p>
+  <% end %>
+</section>

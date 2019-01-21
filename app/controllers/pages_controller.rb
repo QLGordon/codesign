@@ -24,12 +24,14 @@ class PagesController < ApplicationController
       @font_size << 51
     end
   end
+
   def translate
     @translate = []
     @translate << 1
     @translate << 2
     @translate << 3
   end
+
   def rotate
     @rotate = (-11..11).to_a
   end

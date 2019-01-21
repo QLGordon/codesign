@@ -1,43 +1,4 @@
 // Specific CSS for your home-page
-#bg-graphic {
-    width: 50vw;
-    line-height: 0em;
-    z-index: -10;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 144pt;
-    margin: auto;
-    // transform: scale(3);
-  #graphic {
-    padding: 0px;
-    // text-shadow: 10px 10px 50px rgba(0,0,0,.25);
-    // text-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
-    margin: 15pt 15pt 24pt 12pt;
-    mix-blend-mode: multiply;
-  }
-}
-
-#logo-c {
-  display: table;
-  transform: scale(.8);
-  position: fixed;
-  mix-blend-mode: exclusion;
-  #logo_codesign {
-    td {
-      color: red;
-      border: 2px solid;
-      border-radius: 50%;
-      width: 1.5em;
-      height: 1.5em;
-      text-align: center;
-      font-weight: bold;
-    }
-    tr:last-child td:last-child {
-      border: 2px;
-      color: black;
-    }
-  }
-
-}
-
+@import "components/background";
+@import "components/logo";
 
