@@ -38,15 +38,23 @@
   <section class="row">
 
     <article class="col-02">
-      <div class="content"><h2>①</h2></div>
+      <div class="content"><h2>1</h2></div>
     </article>
 
     <article class="col-05">
-      <div class="content"><h2>titre</h2></div>
+      <div class="content"><h2>titre</h2>
+        <hr>
+        <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptas, rerum illum ut? Dolore tempora perferendis mollitia, facilis minus, laboriosam eos natus nemo, architecto deserunt exercitationem temporibus nulla. Repudiandae, animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, sunt, rerum. Dicta ea amet facere praesentium quos tempore autem, velit soluta expedita fugiat esse dolores, id eos accusantium, ex numquam. ipsum dolor sit amet, consectetur adipisicing elit. Atque quis molestias nobis sequi beatae ullam illo eum! Sint, iure, dicta. Natus quos rem, molestiae deleniti mollitia, sunt doloremque consequuntur aperiam?
+        </p>
+      </div>
     </article>
 
     <article class="col-10">
-      <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptas, rerum illum ut? Dolore tempora perferendis mollitia, facilis minus, laboriosam eos natus nemo, architecto deserunt exercitationem temporibus nulla. Repudiandae, animi.</div>
+      <div class="content">
+        <img src="https://picsum.photos/1000/1000" alt="">
+        <img src="https://picsum.photos/1000/1000" alt="">
+      </div>
     </article>
 
     <article class="col-03">
@@ -57,15 +65,24 @@
 
 </section>
 
-<% 5.times do %>
+<% 10.times do %>
   <section id="bg-graphic">
     <% color = [
-      "rgba(255,000,000,.20)"
+      # "rgba(255,255,000,.25)",
+      # "rgba(255,255,000,.25)",
+      # "rgba(255,255,000,.25)",
+      # "rgba(255,255,000,.25)",
+
+      # "rgba(000,000,255,.2)",
+
+      "rgba(000,000,255,.05)"
       ] %>
     <%# graphics_1 = "╒╤╕╘╧╛" %>
     <%# graphics_1 = "⎾⏋⎿⏌⏊" %>
-    <% graphics_1 = "▢△◯" %>
-    <% 100.times do %>
+    <%# graphics_1 = "▙▛▜▟" %>
+    <%# graphics_1 = "◢◣◤◥" %>
+    <% graphics_1 = "◴◵◶◷" %>
+    <% 90.times do %>
       <p id="graphic" class="<%= @font_size.sample %>"
       style="color: <%= (color.shuffle)[0] %>;
       font-size: <%= @font_size.sample %>pt;
