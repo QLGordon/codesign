@@ -1,18 +1,17 @@
 #bg-graphic {
-    width: 90vw;
-    line-height: 0em;
-    z-index: -10;
-    display: flex;
-    flex-wrap: wrap;
-    padding-top: 48pt;
-    text-align: justify;
-    margin: auto;
-    // transform: scale(3);
+  /* width: 90vw; */
+  // line-height: 0em;
+  z-index: -10;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0pt 0vw 72pt 33vw;
+  /* margin: auto; */
+  position: fixed;
+  top: 0px;
   #graphic {
-    padding: 0px;
-    // text-shadow: 10px 10px 50px rgba(0,0,0,.25);
+    // text-shadow: 0px 0px 10px  rgba(0,0,0,.5);
     // text-shadow: 10px 10px 50px rgba(0, 0, 0, 0.25);
-    margin: 15pt 9pt 48pt 9pt;
-    mix-blend-mode: multiply;
+    margin: 0pt 0pt -22pt 0pt;
+    // mix-blend-mode: darken;
   }
 }

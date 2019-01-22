@@ -1,23 +1,78 @@
 
-<div id="logo-c">
-  <table id="logo_codesign">
-    <tr><td>c</td><td>o</td><td>d</td></tr>
-    <tr><td>e</td><td>s</td><td>i</td></tr>
-    <tr><td>g</td><td>n</td><td>∓</td></tr>
-  </table>
-</div>
+<header class="container">
+  <section class="row">
+    <article class="col-05">
+      <div class="content">
+        <div id="logo-d">
+          <span>c</span>
+          <span>o</span>
+          <span>d</span>
+          <span>e</span>
+          <span>s</span>
+          <span>i</span>
+          <span>g</span>
+          <span>n</span>
+          <span>∓</span>
+        </div>
+      </div>
+    </article>
+    <article class="col-10">
+      <div class="content">
+        <h1>Code ∓ Design</h1>
+      </div>
+    </article>
+    <article class="col-05">
+      <nav class="content" >
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-behance-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-linkedin"></i>
+      </nav>
+    </article>
+  </section>
+</header>
 
+<section class="container">
 
-<section id="bg-graphic">
-  <% color = ["grey"] %>
-  <% graphics_1 = "⌘⎋⏏︎⌦↩︎" %>
-  <% 126.times do %>
-    <p id="graphic" class="<%= @font_size.sample %>"
-    style="color: <%= (color.shuffle)[0] %>;
-    font-size: <%= @font_size.sample %>pt;
-    transform: rotate(<%= @rotate.sample %>deg)
-    translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
-    <%= graphics_1.split("").sample %>
-    </p>
-  <% end %>
+  <section class="row">
+
+    <article class="col-02">
+      <div class="content"><h2>①</h2></div>
+    </article>
+
+    <article class="col-05">
+      <div class="content"><h2>titre</h2></div>
+    </article>
+
+    <article class="col-10">
+      <div class="content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptas, rerum illum ut? Dolore tempora perferendis mollitia, facilis minus, laboriosam eos natus nemo, architecto deserunt exercitationem temporibus nulla. Repudiandae, animi.</div>
+    </article>
+
+    <article class="col-03">
+      <div class="content">catégorie</div>
+    </article>
+
+  </section>
+
 </section>
+
+<% 5.times do %>
+  <section id="bg-graphic">
+    <% color = [
+      "rgba(255,000,000,.20)"
+      ] %>
+    <%# graphics_1 = "╒╤╕╘╧╛" %>
+    <%# graphics_1 = "⎾⏋⎿⏌⏊" %>
+    <% graphics_1 = "▢△◯" %>
+    <% 100.times do %>
+      <p id="graphic" class="<%= @font_size.sample %>"
+      style="color: <%= (color.shuffle)[0] %>;
+      font-size: <%= @font_size.sample %>pt;
+      transform: rotate(<%= @rotate.sample %>deg)
+      translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
+      <%= graphics_1.split("").sample %>
+      </p>
+    <% end %>
+  </section>
+<% end %>
