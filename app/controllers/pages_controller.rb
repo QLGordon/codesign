@@ -7,6 +7,12 @@ class PagesController < ApplicationController
     rotate
     color(1,10,10,10)
   end
+  def logos
+    font_size(1, 2, 4, 288)
+    translate
+    rotate
+    color(1,10,10,10)
+  end
 
   private
 

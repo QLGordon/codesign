@@ -15,6 +15,7 @@ body {
     display: flex;
     [class*="col-"] {
       float: left;
+      flex-grow: 1;
       [class*="content-"] {
         // border: 1px solid;
       }
