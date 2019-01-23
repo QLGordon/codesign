@@ -6,10 +6,10 @@
         <div id="logo-d">
           <span>c</span>
           <span>o</span>
-          <span>d</span>
+          <span>d</span><br>
           <span>e</span>
           <span>s</span>
-          <span>i</span>
+          <span>i</span><br>
           <span>g</span>
           <span>n</span>
           <span>∓</span>
@@ -18,73 +18,39 @@
     </article>
     <article class="col-10">
       <div class="content">
-        <h1>Code ∓ Design</h1>
+        <h1>Graphisme ∓ Web</h1>
+        <h6>by QLGordon</h6>
       </div>
     </article>
     <article class="col-05">
       <nav class="content" >
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-behance-square"></i>
-        <i class="fab fa-twitter-square"></i>
-        <i class="fab fa-linkedin"></i>
+        <i class="fab fa-facebook-square" style="color: <%= (@color.shuffle)[0] %>;"></i>
+        <i class="fab fa-instagram" style="color: <%= (@color.shuffle)[0] %>;"></i>
+        <i class="fab fa-behance-square" style="color: <%= (@color.shuffle)[0] %>;"></i>
+        <i class="fab fa-twitter-square" style="color: <%= (@color.shuffle)[0] %>;"></i>
+        <i class="fab fa-linkedin" style="color: <%= (@color.shuffle)[0] %>;"></i>
       </nav>
     </article>
   </section>
 </header>
 
-<section class="container">
+<main>
+  <section class="container">
 
-  <section class="row">
-
-    <article class="col-02">
-      <div class="content"><h2>1</h2></div>
-    </article>
-
-    <article class="col-05">
-      <div class="content"><h2>titre</h2>
-        <hr>
-        <p>
-      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptates voluptas, rerum illum ut? Dolore tempora perferendis mollitia, facilis minus, laboriosam eos natus nemo, architecto deserunt exercitationem temporibus nulla. Repudiandae, animi. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, sunt, rerum. Dicta ea amet facere praesentium quos tempore autem, velit soluta expedita fugiat esse dolores, id eos accusantium, ex numquam. ipsum dolor sit amet, consectetur adipisicing elit. Atque quis molestias nobis sequi beatae ullam illo eum! Sint, iure, dicta. Natus quos rem, molestiae deleniti mollitia, sunt doloremque consequuntur aperiam?
-        </p>
-      </div>
-    </article>
-
-    <article class="col-10">
-      <div class="content">
-        <img src="https://picsum.photos/1000/1000" alt="">
-        <img src="https://picsum.photos/1000/1000" alt="">
-      </div>
-    </article>
-
-    <article class="col-03">
-      <div class="content">catégorie</div>
-    </article>
+    <%= render 'hainet' %>
+    <%= render 'diplomatie_solidaire' %>
+    <%= render 'sibylline' %>
+    <%= render 'mpp' %>
 
   </section>
 
-</section>
-
-<% 10.times do %>
+</main>
+<% 3.times do %>
   <section id="bg-graphic">
-    <% color = [
-      # "rgba(255,255,000,.25)",
-      # "rgba(255,255,000,.25)",
-      # "rgba(255,255,000,.25)",
-      # "rgba(255,255,000,.25)",
-
-      # "rgba(000,000,255,.2)",
-
-      "rgba(000,000,255,.05)"
-      ] %>
-    <%# graphics_1 = "╒╤╕╘╧╛" %>
-    <%# graphics_1 = "⎾⏋⎿⏌⏊" %>
-    <%# graphics_1 = "▙▛▜▟" %>
-    <%# graphics_1 = "◢◣◤◥" %>
-    <% graphics_1 = "◴◵◶◷" %>
-    <% 90.times do %>
+    <% graphics_1 = "⏌⎿⏋⎾" %>
+    <% 18.times do %>
       <p id="graphic" class="<%= @font_size.sample %>"
-      style="color: <%= (color.shuffle)[0] %>;
+      style="color: <%= (@color.shuffle)[0] %>;
       font-size: <%= @font_size.sample %>pt;
       transform: rotate(<%= @rotate.sample %>deg)
       translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">

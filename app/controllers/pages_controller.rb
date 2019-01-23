@@ -5,6 +5,7 @@ class PagesController < ApplicationController
     font_size(1, 2, 4, 288)
     translate
     rotate
+    color(1,10,10,10)
   end
 
   private
@@ -24,6 +25,23 @@ class PagesController < ApplicationController
       @font_size << 144
     end
   end
+  def color(a,b,c,d)
+    @color = []
+    d.times do
+      @color << "rgba(255,000,000,.05)"
+    end
+    c.times do
+      @color << "rgba(255,000,000,.1)"
+    end
+    b.times do
+      @color << "rgba(255,000,000,.15)"
+    end
+    a.times do
+      @color << "rgba(255,000,000,.2)"
+    end
+
+
+  end
 
   def translate
     # @translate = []
@@ -34,11 +52,11 @@ class PagesController < ApplicationController
   end
 
   def rotate
-    # @rotate = []
-    # @rotate << 60
-    # @rotate << 120
-    # @rotate << 180
-    @rotate = (-0..0).to_a
+    @rotate = []
+    @rotate << 0
+    @rotate << -0
+    @rotate << 0
+    # @rotate = (-45..45).to_a
   end
 
 end
