@@ -1,5 +1,6 @@
 
-<header class="container">
+<header>
+  <section class="container">
   <section class="row">
     <article class="col-05">
       <div class="content">
@@ -32,11 +33,13 @@
       </nav>
     </article>
   </section>
+  </section>
 </header>
 
 <main>
   <section class="container">
 
+    <%= render 'kosmika' %>
     <%= render 'hainet' %>
     <%= render 'diplomatie_solidaire' %>
     <%= render 'sibylline' %>
@@ -45,7 +48,7 @@
   </section>
 
 </main>
-<% 3.times do %>
+<% 0.times do %>
   <section id="bg-graphic">
     <% graphics_1 = "⏌⎿⏋⎾" %>
     <% 18.times do %>

@@ -10,7 +10,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 main {
   margin-top: 66pt;
-    padding-bottom: 100vh;
+  padding-bottom: 100vh;
   [class*="content-"] {
     // background: white;
     padding: 12pt;
@@ -24,6 +24,7 @@ main {
       box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
       text-align: right;
       border: 1px solid rgba(0,0,0,.05);
+      // z-index: 20;
       p {
         font-size: .85em;
 
