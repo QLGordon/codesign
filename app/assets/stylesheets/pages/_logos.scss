@@ -15,27 +15,28 @@ a {
 
   }
 }
-main {
+#logos {
   margin-top: 66pt;
   padding-bottom: 100vh;
   [class*="content-"] {
-    // background: white;
-    padding: 12pt;
-    position: sticky;
-    top: 72pt;
-    // background: white;
-    // box-shadow: -10px 0px 10px -10px rgba(0,0,0,.15);
-     }
-  .content-text {
-    background: rgba(255, 255, 255, 0.95);
-    box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
-    text-align: right;
-    border: 1px solid rgba(0,0,0,.05);
-    // z-index: 20;
-    p {
-      font-size: .85em;
-    }
-  }
+      // background: white;
+      padding: 12pt;
+      position: sticky;
+      top: 72pt;
+      // background: white;
+      // box-shadow: -10px 0px 10px -10px rgba(0,0,0,.15);
+      img {
+        border: 6pt solid rgba(255,0,0,.4);
+       }
+      }
+      .content-text {
+        background: rgba(255, 255, 255, 0.95);
+        box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
+        text-align: right;
+        border: 1px solid rgba(0,0,0,.05);
+        padding: 24pt 24pt 48pt 48pt;
+        // z-index: 20;
+      }
 }
 .container {
   svg {

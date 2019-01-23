@@ -19,11 +19,13 @@
 body {
   font-family: helvetica;
   margin: 0;
+  overflow-x: hidden;
 }
 
 /* width */
 ::-webkit-scrollbar {
   width: 0pt;
+  height: 0pt;
 }
 
 /* Track */

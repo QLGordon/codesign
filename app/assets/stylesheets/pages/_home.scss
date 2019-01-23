@@ -1,10 +1,6 @@
 // Specific CSS for your home-page
 @import "components/background";
 
-h1, h2, h3, h4, h5, h6, p {
-  margin: 0pt;
-}
-
 a {
   color: rgba(0,0,0,1);
   text-decoration: none;
@@ -14,4 +10,43 @@ a {
 
   }
 }
-
+#home {
+  margin-top: 66pt;
+  padding-bottom: 100vh;
+  [class*="content-"] {
+    // background: white;
+    padding: 0pt 12pt;
+    position: sticky;
+    top: 72pt;
+    // background: white;
+    // box-shadow: -10px 0px 10px -10px rgba(0,0,0,.15);
+    }
+    .content-photo {
+      img {
+        // border-radius: 50px;
+        // outline: 6pt solid red;
+        // outline-offset: -24pt;
+        // box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
+        border: 1px solid rgba(0,0,0,.05);
+        background: white;
+        margin-bottom: 144pt;
+       }
+    }
+    .content-text {
+      background: rgba(255, 255, 255, 0.95);
+      // box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
+      text-align: right;
+      border: 1px solid rgba(0,0,0,.05);
+      padding: 24pt;
+      height: 500px;
+      margin-bottom: 72pt;
+      text-align: left;
+      overflow: scroll;
+      // z-index: 20;
+      p {
+        column-count: 2;
+        column-fill: auto;
+        height: calc(500px - 72pt);
+      }
+    }
+}
