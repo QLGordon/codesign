@@ -15,7 +15,6 @@ header {
     text-align: center;
   }
   .row {
-    padding: 0pt 12pt 0pt 12pt;
     align-items : center;
   }
   .content-sm {
@@ -26,34 +25,34 @@ header {
       }
     }
   }
+  .col-03 {
+    margin-left: -60pt;
+    margin-bottom: 6pt;
+  }
 }
 
 nav {
-  z-index: 10;
-  position: fixed;
-  right: 48pt;
-  top: 48pt;
+  border-left: 1px solid;
+  padding-left: 6pt;
   ul {
     margin: 0pt;
     padding: 0pt;
-    transform: rotate(180deg);
     li {
-      writing-mode: vertical-lr;
+      text-align: left;
       font-size : 12pt;
       font-weight: bold;
-      display: inline ;
-      transform: rotate(180deg);
+      display: block; ;
+    }
       a {
-        padding-bottom: 1em;
+        box-shadow: 0pt 0pt 0pt 0pt red inset;
+        padding: 0 1em 0 .5em;
         text-decoration: none;
-        color: rgba(255,255,255,1);
-        background: rgba(255,0,0,.25);
-        transition: all 250ms;
+        color: rgba(0,0,0,1);
+        transition: all 250ms ease-in-out;
         &:hover {
-          color: rgba(255,200,200,1);
-          background: rgba(255,0,0,1);
-
-        }
+          box-shadow: 6pt 0pt 0pt 0pt red inset;
+          padding: 0 1em 0 1em;
+          // color: red;
       }
     }
   }

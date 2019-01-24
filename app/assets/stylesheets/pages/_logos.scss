@@ -5,22 +5,12 @@
 h1, h2, h3, h4, h5, h6, p {
   margin: 0pt;
 }
-
-a {
-  color: rgba(0,0,0,1);
-  text-decoration: none;
-  transition: all 250ms;
-  &:hover {
-    color: rgba(255,0,0,1);
-
-  }
-}
 #logos {
   margin-top: 66pt;
-  padding-bottom: 100vh;
+  padding-bottom: 72pt;
   [class*="content-"] {
       // background: white;
-      padding: 12pt;
+      padding: 0pt;
       position: sticky;
       top: 72pt;
       // background: white;
@@ -30,12 +20,18 @@ a {
        }
       }
       .content-text {
-        background: rgba(255, 255, 255, 0.95);
-        box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
+        background: white;
+        // box-shadow: 0pt 0pt 72pt 0pt rgba(0, 0, 0, 0.1);
+        border-right: 1px solid rgba(0,0,0,.5);
+        border-bottom: 1px solid rgba(0,0,0,.5);
         text-align: right;
-        border: 1px solid rgba(0,0,0,.05);
+        // border: 1px solid rgba(255, 255, 255, 1);
         padding: 24pt 24pt 48pt 48pt;
-        // z-index: 20;
+        margin-bottom: 48pt;
+      }
+      .content-img {
+        z-index: -10;
+
       }
 }
 .container {

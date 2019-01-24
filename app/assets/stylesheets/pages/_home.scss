@@ -1,52 +1,35 @@
 // Specific CSS for your home-page
 @import "components/background";
-
-a {
-  color: rgba(0,0,0,1);
-  text-decoration: none;
-  transition: all 250ms;
-  &:hover {
-    color: rgba(255,0,0,1);
-
-  }
-}
 #home {
   margin-top: 66pt;
-  padding-bottom: 100vh;
+  padding-bottom: 72pt;
   [class*="content-"] {
-    // background: white;
     padding: 0pt 12pt;
     position: sticky;
     top: 72pt;
-    // background: white;
-    // box-shadow: -10px 0px 10px -10px rgba(0,0,0,.15);
     }
     .content-photo {
       img {
-        // border-radius: 50px;
-        // outline: 6pt solid red;
-        // outline-offset: -24pt;
-        // box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
-        border: 1px solid rgba(0,0,0,.05);
         background: white;
-        margin-bottom: 144pt;
+        margin-bottom: 100pt;
+        height: calc(500px + 66pt);
        }
     }
     .content-text {
       background: rgba(255, 255, 255, 0.95);
-      // box-shadow: 6px 6px 0px rgba(255, 0, 0, 0.2);
       text-align: right;
-      border: 1px solid rgba(0,0,0,.05);
+      border-left: 1px solid rgba(0,0,0,.5);
+      border-top: 1px solid rgba(0,0,0,.5);
       padding: 24pt;
       height: 500px;
-      margin-bottom: 72pt;
+      margin-bottom: 140pt;
       text-align: left;
       overflow: scroll;
-      // z-index: 20;
-      p {
-        column-count: 2;
-        column-fill: auto;
-        height: calc(500px - 72pt);
+      column-count: 2;
+      column-fill: auto;
+      column-rule: 1px solid rgba(0,0,0,.5);
+      p, h2, h3 {
+        margin-bottom: 12pt;
       }
     }
 }
