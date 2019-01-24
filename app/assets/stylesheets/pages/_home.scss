@@ -1,8 +1,17 @@
 // Specific CSS for your home-page
 @import "components/background";
+#banner {
+  height: 576pt;
+}
+#title {
+  writing-mode: vertical ;
+}
 #home {
   margin-top: 66pt;
   padding-bottom: 72pt;
+      p, h2, h3 {
+        margin-bottom: 12pt;
+      }
   [class*="content-"] {
     padding: 0pt 12pt;
     position: sticky;
@@ -28,8 +37,11 @@
       column-count: 2;
       column-fill: auto;
       column-rule: 1px solid rgba(0,0,0,.5);
-      p, h2, h3 {
-        margin-bottom: 12pt;
+    }
+    .content-call {
+      h1 {
+        color: white;
+        text-shadow: 5px 5px 10px rgba(0,0,0,.25);
       }
     }
 }
