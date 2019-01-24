@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :logos]
+  skip_before_action :authenticate_user!, only: [:home, :logos, :affiches]
 
   def home
     font_size(1, 2, 4, 288)
@@ -8,6 +8,12 @@ class PagesController < ApplicationController
     color(1,10,10,10)
   end
   def logos
+    font_size(1, 2, 4, 288)
+    translate
+    rotate
+    color(1,10,10,10)
+  end
+  def affiches
     font_size(1, 2, 4, 288)
     translate
     rotate

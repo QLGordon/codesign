@@ -1,0 +1,41 @@
+.content-text-affiche {
+  height: 500px;
+}
+#affiches {
+  margin-top: 66pt;
+  padding-bottom: 72pt;
+  [class*="content-"] {
+    // background: white;
+    padding: 0pt;
+    position: sticky;
+    top: 72pt;
+    background: white;
+    // box-shadow: -10px 0px 10px -10px rgba(0,0,0,.15);
+  }
+  .content-affiche {
+    height: 500px;
+    position: sticky;
+    top: 72pt;
+  }
+  .content-img {
+    position: sticky;
+    top: 72pt;
+    }
+  .content-preview {
+    img {
+          outline: 5pt solid white;
+          outline-offset: -5pt;
+          box-shadow: 10pt 10pt 20pt rgba(0,0,0,.2);
+      }
+  }
+  .content-text {
+    background: white;
+    // box-shadow: 0pt 0pt 72pt 0pt rgba(0, 0, 0, 0.1);
+    border-right: 1px solid rgba(0,0,0,.5);
+    border-bottom: 1px solid rgba(0,0,0,.5);
+    text-align: right;
+    // border: 1px solid rgba(255, 255, 255, 1);
+    padding: 24pt 24pt 48pt 48pt;
+    margin-bottom: 48pt;
+  }
+}

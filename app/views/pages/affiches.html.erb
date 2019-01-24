@@ -1,0 +1,27 @@
+
+<%= render 'shared/header' %>
+
+<main id="affiches">
+  <section class="container">
+
+    <%= render 'a_hpp' %>
+    <%= render 'a_hpp' %>
+    <%= render 'a_hpp' %>
+
+  </section>
+
+</main>
+<% 0.times do %>
+  <section id="bg-graphic">
+    <% graphics_1 = "⌘" %>
+    <% 18.times do %>
+      <p id="graphic" class="<%= @font_size.sample %>"
+      style="color: <%= (@color.shuffle)[0] %>;
+      font-size: <%= @font_size.sample %>pt;
+      transform: rotate(<%= @rotate.sample %>deg)
+      translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
+      <%= graphics_1.split("").sample %>
+      </p>
+    <% end %>
+  </section>
+<% end %>
