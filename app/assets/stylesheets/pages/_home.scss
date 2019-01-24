@@ -3,6 +3,10 @@
 #banner {
   height: 576pt;
 }
+  .content-call {
+  background: rgba(255, 0, 0, 1);
+  padding: 48pt 48pt 72pt 72pt;
+  }
 #title {
   writing-mode: vertical ;
 }
@@ -13,7 +17,7 @@
         margin-bottom: 12pt;
       }
   [class*="content-"] {
-    padding: 0pt 12pt;
+    // padding: 0pt 12pt;
     position: sticky;
     top: 72pt;
     }
