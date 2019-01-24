@@ -31,8 +31,8 @@
     .content-text {
       background: rgba(255, 255, 255, 0.95);
       text-align: right;
-      border-left: 1px solid rgba(0,0,0,.5);
-      border-top: 1px solid rgba(0,0,0,.5);
+      // border-left: 1px solid rgba(0,0,0,.5);
+      // border-top: 1px solid rgba(0,0,0,.5);
       padding: 24pt;
       height: 500px;
       margin-bottom: 140pt;
@@ -47,5 +47,8 @@
         color: white;
         text-shadow: 5px 5px 10px rgba(0,0,0,.25);
       }
+    }
+    .content-formation{
+    padding-right: 24pt;
     }
 }
