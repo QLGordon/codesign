@@ -2,11 +2,11 @@
 @import "config/fonts";
 @import "config/colors";
 @import "config/bootstrap_variables";
-@import "config/grid";
+// @import "config/grid";
 
 // External libraries
-// @import "bootstrap-sprockets";
-// @import "bootstrap";
+@import "bootstrap-sprockets";
+@import "bootstrap";
 // @import "font-awesome-sprockets";
 // @import "font-awesome";
 
@@ -15,12 +15,15 @@
 @import "components/index";
 @import "pages/index";
 
-
 body {
   font-family: helvetica;
-  margin: 0;
   overflow-x: hidden;
   background: rgba(255,255,255,.05);
+}
+@media (min-width: 576px) {
+  .row {
+    display: flex;
+  }
 }
 
 /* width */
