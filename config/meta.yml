@@ -1,0 +1,5 @@
+meta_product_name: "codesign"
+meta_title: "codesign - code et design"
+meta_description: "Besoin d'un designer qui sait coder ?"
+meta_image: "lhttps://res.cloudinary.com/dhp5qp6ol/image/upload/v1548263285/qlgordon.png" # should exist in `app/assets/images/`
+twitter_account: "@qlgordon"   # required for Twitter Cards
