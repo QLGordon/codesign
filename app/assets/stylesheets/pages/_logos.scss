@@ -28,10 +28,19 @@ h1, h2, h3, h4, h5, h6, p {
         // border: 1px solid rgba(255, 255, 255, 1);
         padding: 24pt 24pt 48pt 48pt;
         margin-bottom: 48pt;
+        h6:first-child {
+          color: red;
+          padding: 1pt 3pt;
+          border: 1px solid;
+          display: inline;
+        }
       }
       .content-img {
         z-index: -10;
 
+      }
+      .content-logo {
+        padding-bottom: 72pt;
       }
   .container {
     svg {

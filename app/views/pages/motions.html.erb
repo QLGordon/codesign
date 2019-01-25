@@ -1,0 +1,35 @@
+<div id="fb-root"></div>
+<script>
+  (function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.6";
+  fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>
+
+<main id="motions">
+  <section class="container">
+    <%= render 'm_festival_film_francophone' %>
+    <%= render 'm_institut_francais' %>
+    <%= render 'm_hainet' %>
+    <%= render 'm_semaine_europe' %>
+    <%#= render 'm_antipod' %>
+  </section>
+
+</main>
+<% 0.times do %>
+  <section id="bg-graphic">
+    <% graphics_1 = "⌘" %>
+    <% 18.times do %>
+      <p id="graphic" class="<%= @font_size.sample %>"
+      style="color: <%= (@color.shuffle)[0] %>;
+      font-size: <%= @font_size.sample %>pt;
+      transform: rotate(<%= @rotate.sample %>deg)
+      translate(<%= @translate.sample %>pt, <%= @translate.sample %>pt);">
+      <%= graphics_1.split("").sample %>
+      </p>
+    <% end %>
+  </section>
+<% end %>
