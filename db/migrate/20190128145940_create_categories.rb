@@ -4,9 +4,8 @@ class CreateCategories < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :description
       t.boolean :print
-      t.boolean :vector
       t.boolean :motion
-      t.references :project, foreign_key: true
+      t.boolean :vector
 
       t.timestamps
     end

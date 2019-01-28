@@ -4,6 +4,8 @@
 @import "config/bootstrap_variables";
 // @import "config/grid";
 
+@import "projects/projects";
+
 // External libraries
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -14,6 +16,7 @@
 @import "layouts/index";
 @import "components/index";
 @import "pages/index";
+@import "components/form";
 
 body {
   font-family: helvetica;

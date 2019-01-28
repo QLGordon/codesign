@@ -1,14 +1,6 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:motions, :ptpx, :vecteurs]
-  def motions
-    @projects = Project.all
-  end
-
-  def ptpx
-    @projects = Project.all
-  end
-
-  def vecteurs
+  skip_before_action :authenticate_user!, only: [:index]
+  def index
     @projects = Project.all
   end
 end
