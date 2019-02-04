@@ -1,0 +1,21 @@
+<main id="projects">
+  <section class="container">
+    <%= simple_form_for(@project) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+
+      <%= f.label :description %>
+      <%= f.text_field :description %>
+
+
+
+      <%= f.label :category_id %>
+      <%= f.select(:category_id) do %>
+        <% @categories.each do |c| %>
+            <%= content_tag(:option, c.name, value: c.id) %>
+        <% end %>
+    <%= f.submit %>
+      <% end %>
+    </section>
+  <% end %>
+</main>

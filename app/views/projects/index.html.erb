@@ -1,0 +1,46 @@
+<main id="projects">
+  <section class="container">
+    <section class="row">
+    <% @projects.each do |project| %>
+      <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <%= link_to project_path(project) do %>
+        <% if project.photos? %>
+            <div class="content-card" style=" background: url(
+              <%= project.photos[0] %>);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+              ">
+              <% if project.category %>
+        <h6><%= project.category.name %></h6>
+              <% else %>
+              <% end %>
+        <% else %>
+          <div class="content-card">
+            <% if project.category %>
+            <h6><%= project.category.name %></h6>
+            <% else %>
+            <% end %>
+            <%= svg project.svgs.first.svg %>
+        <% end %>
+            <div class="infos">
+              <h4><%= project.title %></h4>
+              <p><%= project.description %></p>
+              <div class="colors" >
+              <% project.colors.each do |color| %>
+                <div style="
+                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+                font-size: 24pt;
+                "></div>
+              <% end %>
+              </div>
+              <h6>Port-au-Prince • Haïti <br>
+              2016</h6>
+            </div>
+          </div>
+        <% end %>
+      </article>
+    <% end %>
+  </section>
+</main>
+

@@ -1,6 +1,7 @@
 header {
   position: fixed;
   width: 100vw;
+  min-height: 72pt;
   top: -3pt;
   background: rgba(255,255,255,.99);
   z-index: 10;
@@ -11,7 +12,7 @@ header {
     transition: all 250ms ease-in-out;
       &:hover {
         box-shadow: 6pt 0pt 0pt 0pt red inset;
-        padding: 0 1em 0 .5em; }
+        padding: 0 6pt 0 12pt; }
     span {
       color: red;
       border-radius: 50%;
@@ -41,6 +42,7 @@ header {
   }
   .row {
     align-items : center;
+    min-height: 72pt;
   }
   .content-sm {
       text-align: right;
