@@ -23,6 +23,11 @@ body {
   overflow-x: hidden;
   background: rgba(255,255,255,.05);
 }
+a {
+  text-decoration: none !important;
+  color: inherit;
+  &:hover { color: inherit; }
+}
 @media (min-width: 768px) {
   .row {
     display: flex;

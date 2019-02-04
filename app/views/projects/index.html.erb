@@ -1,43 +1,40 @@
 <main id="projects">
   <section class="container">
-<% @projects.each do |project| %>
     <section class="row">
-      <article class="col-sm-12 col-md-4">
-        <div class="content-text">
+    <% @projects.each do |project| %>
+      <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <%= link_to project_path(project) do %>
+        <% if project.photos? %>
+            <div class="content-card" style=" background: url(
+              <%= project.photos[0] %>);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+              ">
           <h6><%= project.category.name %></h6>
-          <hr>
-          <h3><%= project.title %></h3>
-          <hr>
-          <p><%= project.description %></p>
-          <hr>
-          <% project.colors.each do |color| %>
-          <span style="color: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>)">█</span>
-          <% end %>
-          <hr>
-          <i class="fab fa-facebook-square" style="color: black;"></i>
-          <i class="fab fa-instagram" style="color: black;"></i>
-          <i class="fab fa-behance-square" style="color: black;"></i>
-          <i class="fab fa-twitter-square" style="color: black;"></i>
-          <i class="fab fa-linkedin" style="color: black;"></i>
-          <hr>
-          <h6>Port-au-Prince • Haïti</h6>
-          <h6>2016</h6>
-          <hr>
-          <a href="/">∓</a>
-        </div>
+        <% else %>
+          <div class="content-card">
+            <h6><%= project.category.name %></h6>
+           <%= svg project.svg[0] %>
+        <% end %>
+            <div class="infos">
+              <h4><%= project.title %></h4>
+              <p><%= project.description %></p>
+              <div class="colors" >
+              <% project.colors.each do |color| %>
+                <div style="
+                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+                font-size: 24pt;
+                "></div>
+              <% end %>
+              </div>
+              <h6>Port-au-Prince • Haïti <br>
+              2016</h6>
+            </div>
+          </div>
+        <% end %>
       </article>
-      <article class="col-sm-12 col-md-7">
-        <div class="content-img">
-          <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548392027/institut_francais/29101317_1680760195314131_4019378000737861632_n.png" alt="">
-        </div>
-      </article>
-      <article class="hidden-xs col-sm-12 col-md-1">
-        <div class="content-preview">
-          <i class="fab fa-facebook-square"></i>
-        </div>
-      </article>
-    </section>
     <% end %>
   </section>
-
 </main>
+
