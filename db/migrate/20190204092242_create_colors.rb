@@ -6,6 +6,8 @@ class CreateColors < ActiveRecord::Migration[5.2]
       t.integer :green
       t.integer :blue
       t.integer :alpha
+      t.references :client, foreign_key: true
+      t.references :project, foreign_key: true
 
       t.timestamps
     end

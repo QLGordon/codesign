@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_04_085841) do
+ActiveRecord::Schema.define(version: 2019_02_04_092911) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,14 +25,10 @@ ActiveRecord::Schema.define(version: 2019_02_04_085841) do
   create_table "clients", force: :cascade do |t|
     t.string "name"
     t.text "description"
-    t.bigint "color_id"
-    t.bigint "font_id"
-    t.bigint "svg_id"
+    t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["color_id"], name: "index_clients_on_color_id"
-    t.index ["font_id"], name: "index_clients_on_font_id"
-    t.index ["svg_id"], name: "index_clients_on_svg_id"
+    t.index ["category_id"], name: "index_clients_on_category_id"
   end
 
   create_table "colors", force: :cascade do |t|
@@ -41,40 +37,47 @@ ActiveRecord::Schema.define(version: 2019_02_04_085841) do
     t.integer "green"
     t.integer "blue"
     t.integer "alpha"
+    t.bigint "client_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_colors_on_client_id"
+    t.index ["project_id"], name: "index_colors_on_project_id"
   end
 
   create_table "fonts", force: :cascade do |t|
     t.string "name"
     t.string "string"
     t.string "font"
+    t.bigint "client_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_fonts_on_client_id"
+    t.index ["project_id"], name: "index_fonts_on_project_id"
   end
 
   create_table "projects", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.bigint "client_id"
     t.bigint "category_id"
-    t.bigint "color_id"
-    t.bigint "font_id"
-    t.bigint "svg_id"
+    t.bigint "client_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "photos", default: [], array: true
     t.index ["category_id"], name: "index_projects_on_category_id"
     t.index ["client_id"], name: "index_projects_on_client_id"
-    t.index ["color_id"], name: "index_projects_on_color_id"
-    t.index ["font_id"], name: "index_projects_on_font_id"
-    t.index ["svg_id"], name: "index_projects_on_svg_id"
   end
 
   create_table "svgs", force: :cascade do |t|
     t.string "name"
     t.text "svg"
+    t.bigint "client_id"
+    t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["client_id"], name: "index_svgs_on_client_id"
+    t.index ["project_id"], name: "index_svgs_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -89,12 +92,13 @@ ActiveRecord::Schema.define(version: 2019_02_04_085841) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "clients", "colors"
-  add_foreign_key "clients", "fonts"
-  add_foreign_key "clients", "svgs"
+  add_foreign_key "clients", "categories"
+  add_foreign_key "colors", "clients"
+  add_foreign_key "colors", "projects"
+  add_foreign_key "fonts", "clients"
+  add_foreign_key "fonts", "projects"
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "clients"
-  add_foreign_key "projects", "colors"
-  add_foreign_key "projects", "fonts"
-  add_foreign_key "projects", "svgs"
+  add_foreign_key "svgs", "clients"
+  add_foreign_key "svgs", "projects"
 end

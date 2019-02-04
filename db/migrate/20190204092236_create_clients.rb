@@ -3,9 +3,7 @@ class CreateClients < ActiveRecord::Migration[5.2]
     create_table :clients do |t|
       t.string :name
       t.text :description
-      t.references :color, foreign_key: true
-      t.references :font, foreign_key: true
-      t.references :svg, foreign_key: true
+      t.references :category, foreign_key: true
 
       t.timestamps
     end

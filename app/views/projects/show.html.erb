@@ -3,8 +3,11 @@
   <section class="row">
     <article class="col-sm-12 col-md-4">
       <div class="content-text">
+        <% if @project.category %>
         <h6><%= @project.category.name %></h6>
         <hr>
+        <% else %>
+        <% end %>
         <h3><%= @project.title %></h3>
         <hr>
         <p>
@@ -38,12 +41,12 @@
         <% @project.photos.each do |photo|  %>
       <img src="<%= photo %>" alt="">
         <% end %>
+
         <% else %>
         <div class="content-svg">
-          <% @project.svg.each do |logo| %>
-        <%= svg logo %>
+          <% @project.svgs.each do |svg| %>
+        <%= svg svg.svg %>
           <% end %>
-          <article><%= svg @project.svg[0] %></article>
         <% end %>
       </div>
     </article>

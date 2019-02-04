@@ -1,5 +1,8 @@
 class Client < ApplicationRecord
-  belongs_to :color
-  belongs_to :font
-  belongs_to :svg
+  has_many :colors
+  has_many :fonts
+  has_many :svgs
+  has_many :projects
+
+  belongs_to :category
 end

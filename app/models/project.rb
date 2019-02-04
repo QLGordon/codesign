@@ -1,7 +1,8 @@
 class Project < ApplicationRecord
-  belongs_to :client
-  belongs_to :category
-  belongs_to :color
-  belongs_to :font
-  belongs_to :svg
+  has_many :colors
+  has_many :fonts
+  has_many :svgs
+
+  belongs_to :category, optional: true
+  belongs_to :client, optional: true
 end
