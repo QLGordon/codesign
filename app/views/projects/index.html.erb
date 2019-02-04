@@ -27,12 +27,21 @@
               <h4><%= project.title %></h4>
               <p><%= project.description %></p>
               <div class="colors" >
+                <% if project.colors.first %>
               <% project.colors.each do |color| %>
                 <div style="
                 background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
                 font-size: 24pt;
                 "></div>
               <% end %>
+                  <% else %>
+                  <% project.client.colors.each do |color| %>
+                    <div style="
+                    background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+                    font-size: 24pt;
+                    "></div>
+                  <% end %>
+                <% end %>
               </div>
               <h6>Port-au-Prince • Haïti <br>
               2016</h6>

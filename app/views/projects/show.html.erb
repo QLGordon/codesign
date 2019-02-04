@@ -37,17 +37,22 @@
     </article>
     <article class="col-sm-12 col-md-7">
       <% if @project.photos? %>
+        <div class="content-svg">
+          <% @project.svgs.each do |svg| %>
+        <%= svg svg.svg %>
+        </div>
+        <% end %>
       <div class="content-img">
         <% @project.photos.each do |photo|  %>
       <img src="<%= photo %>" alt="">
         <% end %>
-
         <% else %>
         <div class="content-svg">
           <% @project.svgs.each do |svg| %>
         <%= svg svg.svg %>
-          <% end %>
+        </div>
         <% end %>
+      <% end %>
       </div>
     </article>
     <article class="hidden-xs col-sm-12 col-md-1">
