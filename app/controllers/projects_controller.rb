@@ -1,7 +1,10 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:index, :new, :create, :show, :update]
+  skip_before_action :authenticate_user!, only: [:about, :index, :new, :create, :show, :update]
+  def about
+    @clients = Client.all
+  end
   def index
-    @projects = Project.all
+    @projects = Project.all.shuffle
   end
 
   def show

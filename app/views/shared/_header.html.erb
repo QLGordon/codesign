@@ -1,38 +1,14 @@
+<% if @project %>
 <header>
   <section class="container">
   <section class="row">
-    <article class="col-xs-6 col-sm-4 col-md-1">
-      <a href="/">
+    <article class="hidden-xs col-sm-hidden col-md-8">
       <div class="content">
-        <div id="logo-d">
-          <span>c</span>
-          <span>o</span>
-          <span>d</span><br>
-          <span>e</span>
-          <span>s</span>
-          <span>i</span><br>
-          <span>g</span>
-          <span>n</span>
-          <span>∓</span>
-        </div>
-      </div>
-      </a>
-    </article>
-    <article class="col-xs-6 col-sm-4 col-md-3">
-    <nav class="row">
-          <ul style="color: red;">
-            <li>➝ <a href="/projects"> graphisme</a></li>
-            <!-- <li>➝ <a href="/"> formations</a></li> -->
-          </ul>
-    </nav>
-    </article>
-    <article class="hidden-xs col-sm-hidden col-md-5">
-      <div class="content">
-        <h1>Graphisme ∓ Web</h1>
-        <h6>by QLGordon</h6>
+        <a href="/projects"><h1>QLGordon</h1>
+        <h6>retour aux projets</h6></a>
       </div>
     </article>
-    <article class="hidden-xs col-md-3">
+    <article class="hidden-xs col-md-4">
       <div class="content-sm" >
         <i class="fab fa-facebook-square"></i>
         <i class="fab fa-instagram"></i>
@@ -44,4 +20,50 @@
   </section>
   </section>
 </header>
+<% elsif @projects %>
+<header>
+  <section class="container">
+  <section class="row">
+    <article class="hidden-xs col-sm-hidden col-md-8">
+      <div class="content">
+        <a href="/about"><h1>QLGordon</h1>
+        <h6>graphisme & web</h6></a>
+      </div>
+    </article>
+    <article class="hidden-xs col-md-4">
+      <div class="content-sm" >
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-behance-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </article>
+  </section>
+  </section>
+</header>
+
+<% else %>
+<header>
+  <section class="container">
+  <section class="row">
+    <article class="hidden-xs col-sm-hidden col-md-8">
+      <div class="content">
+        <a href="/projects"><h1>QLGordon</h1>
+        <h6>retours aux projets</h6></a>
+      </div>
+    </article>
+    <article class="hidden-xs col-md-4">
+      <div class="content-sm" >
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-behance-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </article>
+  </section>
+  </section>
+</header>
+<% end %>
 

@@ -23,8 +23,11 @@ sm = Category.create!(name: "social media")
 logo = Category.create!(name: "logo")
 culture = Category.create!(name: "culture")
 entreprise = Category.create!(name: "entreprise")
-fake = Category.create!(name: "fake")
+fake = Category.create!(name: "plus")
+perso = Category.create!(name: "plus")
 association = Category.create!(name: "association")
+start_up = Category.create!(name: "Start-Up")
+iv = Category.create!(name: "Identité visuelle")
 #________C_L_I_E_N_T_S__________________________________________________________
 
 p "Creating Clients"
@@ -37,10 +40,30 @@ Color.create!(red: 249, green: 37, blue: 64, alpha: 1, client: ifh)
 Color.create!(red: 58, green: 237, blue: 183, alpha: 1, client: ifh)
 
 hpp = Client.create!( name: "Haïti Piano Project", description: "", category: culture)
-hainet = Client.create!( name: "Haïti Piano Project", description: "", category: entreprise)
-personal = Client.create!( name: "Personal Project", description: "", category: fake)
+
+se = Client.create!( name: "Sibylline escapade", description: "", category: start_up)
+Svg.create!( svg: "sibylline/sibylline_c", client: se)
+
+hainet = Client.create!( name: "Hainet", description: "", category: entreprise)
+Svg.create!( svg: "hainet/hainet_c", client: hainet)
+Color.create!(red: 30, green: 147, blue: 236, alpha: 1, client: hainet)
+Color.create!(red: 248, green: 124, blue: 39, alpha: 1, client: hainet)
+Color.create!(red: 55, green: 51, blue: 46, alpha: 1, client: hainet)
+
+personal = Client.create!( name: "Personal Project", description: "", category: perso)
+
+spark = Client.create!( name: "Spark", description: "", category: start_up)
+Svg.create!( svg: "spark/spark_c", client: spark)
+Color.create!(red: 90, green: 225, blue: 183, alpha: 1, client: spark)
+Color.create!(red: 9, green: 115, blue: 255, alpha: 1, client: spark)
+
 mpp = Client.create!( name: "Mouvman Payzan Papay", description: "", category: association)
+Svg.create!( svg: "mpp/mpp_c", client: mpp)
+Color.create!(red: 251, green: 186, blue: 0, alpha: 1, client: mpp)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, client: mpp)
+
 ds = Client.create!( name: "Diplomatie Solidaire", description: "", category: association)
+Svg.create!( svg: "diplomatie_solidaire/diplomatie_solidaire_c", client: ds)
 
 Color.create!(red: 250, green: 27, blue: 17, alpha: 1, client: ds)
 Color.create!(red: 0, green: 28, blue: 131, alpha: 1, client: ds)
@@ -70,14 +93,23 @@ at = Project.create!(
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
 
-hainet = Project.create!(
-  title: "Hainet", description: "Communication interne et externe",
+hainet_logo = Project.create!(
+  title: "Hainet logo", description: "Communication interne et externe",
+  category: logo, client: hainet,
+  photos: [])
+
+Svg.create!( svg: 'hainet/hainet', project: hainet_logo)
+
+hainet_sm = Project.create!(
+  title: "Hainet sm", description: "Communication interne et externe",
   category: sm, client: hainet,
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png"])
+spark = Project.create!(
+  title: "Spark", description: "Communication interne et externe",
+  category: logo, client: spark,
+  photos: [])
 
-Color.create!(red: 30, green: 147, blue: 236, alpha: 1, project: hainet)
-Color.create!(red: 248, green: 124, blue: 39, alpha: 1, project: hainet)
-Color.create!(red: 55, green: 51, blue: 46, alpha: 1, project: hainet)
+Svg.create!( svg: 'spark/spark', project: spark)
 
 Project.create!(
   title: "Kill your gender", description: "Communication pour un évènement organisé dans la ville de Nantes",
@@ -86,28 +118,26 @@ Project.create!(
 
 fff = Project.create!(
   title: "Institut Français", description: "festival du film francophone",
-  category: sm, client: ifh,
+  category: perso, client: ifh,
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548352754/institut_francais/noel_ifhpap.jpg"])
 
 Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
 
-mpp = Project.create!(
+mpp_1 = Project.create!(
   title: "Mouvman Peyzan Papay", description: "création d'un logo pour le mouvement paysan Haïtien",
   category: logo, client: mpp,
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548398804/mpp/MPP.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548352859/mpp/Testetiquette2.png"])
+  photos: [])
+Svg.create!( svg: 'mpp/mpp', project: mpp_1)
 
-Color.create!(red: 251, green: 186, blue: 0, alpha: 1, project: mpp)
-Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: mpp)
-
-Svg.create!( svg: "mpp/mpp_c", project: mpp)
-Svg.create!( svg: 'mpp/mpp', project: mpp)
+mpp_gif = Project.create!(
+  title: "Mouvman Peyzan Papay gif", description: "création d'un logo pour le mouvement paysan Haïtien",
+  category: motion, client: mpp,
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548398804/mpp/MPP.gif"])
 
 ds = Project.create(
   title: "Diplomatie Solidaire", description: "création d'un logo pour le mouvement paysan Haïtien",
   category: logo, client: ds,
   photos: [])
 
-Svg.create!( svg: "diplomatie_solidaire/diplomatie_solidaire_c", project: ds)
 Svg.create!( svg: 'diplomatie_solidaire/diplomatie_solidaire', project: ds)
 

@@ -3,6 +3,6 @@ class Project < ApplicationRecord
   has_many :fonts
   has_many :svgs
 
-  belongs_to :category, optional: true
-  belongs_to :client, optional: true
+  belongs_to :category
+  belongs_to :client
 end

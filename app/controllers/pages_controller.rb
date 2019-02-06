@@ -1,12 +1,13 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home, :logos, :affiches, :motions]
+  skip_before_action :authenticate_user!, only: [:about, :home, :logos, :affiches, :motions]
 
-  def home
+  def about
     font_size(1, 2, 4, 288)
     translate
     rotate
     color(1,10,10,10)
   end
+
   def logos
     font_size(1, 2, 4, 288)
     translate
