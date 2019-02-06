@@ -4,7 +4,7 @@ class ProjectsController < ApplicationController
     @clients = Client.all
   end
   def index
-    @projects = Project.all
+    @projects = Project.all.shuffle
   end
 
   def show
