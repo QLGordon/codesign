@@ -88,7 +88,9 @@
     top: 72pt;
     }
   .content-svg {
+    background: none;
     height: 700px;
+    margin: 0pt 72pt;
     svg {
     position: absolute;
     transition: all 1000ms;
@@ -125,21 +127,30 @@
       }
   }
   .content-text {
+    z-index: 5;
     background: white;
-    // box-shadow: 0pt 0pt 72pt 0pt rgba(0, 0, 0, 0.1);
-    border-right: 1px solid rgba(0,0,0,.5);
-    border-bottom: 1px solid rgba(0,0,0,.5);
+    box-shadow: -12pt 24pt 48pt 0pt rgba(0, 0, 0, 0.05);
+    padding: 24pt 24pt 48pt 24pt;
+    // border-right: 1px solid rgba(0,0,0,.5);
+    // border-bottom: 1px solid rgba(0,0,0,.5);
     // text-align: right;
     // border: 1px solid rgba(255, 255, 255, 1);
-    padding: 24pt 24pt 72pt 0pt;
     margin-bottom: 48pt;
     margin-right: 6pt;
+    h3 {
+      // padding-left: 24pt;
+      margin-bottom: 24pt;
+    }
     h6:first-child {
       color: red;
       padding: 1pt 3pt;
-      border: 1px solid;
+      border: 2px solid;
       display: inline;
       text-align: right;
+      position: absolute;
+      top: 12pt;
+      right: -6pt;
+      background: white;
     }
     .colors {
       position: absolute;
@@ -151,6 +162,22 @@
       bottom: 0pt;
       left: 0pt;
       }
+    .svg {
+      width: 48pt;
+      height: 48pt;
+      border-radius: 50%;
+      // border: 2pt solid;
+      box-shadow: -3pt -3pt 24pt rgba(0,0,0,.05);
+      align-items: center;
+      justify-content: center;
+      padding: 3pt;
+      display: flex;
+      position: absolute;
+      bottom: -12pt;
+      right: -12pt;
+      background: white;
+      z-index: 2;
+    }
     }
   }
 }

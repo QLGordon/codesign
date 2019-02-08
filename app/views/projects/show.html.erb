@@ -5,39 +5,28 @@
       <div class="content-text">
         <% if @project.category %>
         <h6><%= @project.category.name %></h6>
-        <hr>
         <% end %>
-        <% if @project.client.svgs %>
+        <% if @project.client.svgs.first %>
         <div class="svg">
           <% @project.client.svgs.each do |svg| %>
           <%= svg svg.svg %>
           <% end %>
         </div>
+        <% else %>
         <% end %>
         <h3><%= @project.title %></h3>
         <hr>
         <p>
           <%= @project.description %>
-        </p>
-        <hr>
-          <div class="colors" >
-            <% if @project.colors.first %>
-          <% @project.colors.each do |color| %>
-            <div style="
-                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-                font-size: 72pt;
-                "></div>
+          <hr>
+        <div class="shapes">
+          <% if @project.svgs.first %>
+          <% @project.svgs.each do |svg| %>
+            <%= svg svg.svg %>
           <% end %>
-          <% else %>
-          <% @project.client.colors.each do |color| %>
-            <div style="
-                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-                font-size: 72pt;
-                "></div>
           <% end %>
-            <% end %>
         </div>
-        <hr>
+          <hr>
         <i class="fab fa-facebook-square" style="color: black;"></i>
         <i class="fab fa-instagram" style="color: black;"></i>
         <i class="fab fa-behance-square" style="color: black;"></i>
@@ -46,42 +35,47 @@
         <hr>
         <h6>Port-au-Prince • Haïti</h6>
         <h6>2016</h6>
-        <hr>
-        <a href="/">∓</a>
+        <div class="colors" >
+          <% if @project.colors.first %>
+            <% @project.colors.each do |color| %>
+          <div style="
+          background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+          font-size: 24pt;
+          "></div>
+            <% end %>
+          <% else %>
+            <% @project.client.colors.each do |color| %>
+              <div style="
+              background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+              font-size: 24pt;
+              "></div>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </article>
 
-    <article class="col-sm-12 col-md-7">
+    <article class="col-sm-12 col-md-8">
 <!-- start -->
-
-    <% if @project.svgs.first && @project.client.svgs.first %>
-      <div class="content-svg">
-        <% @project.svgs.each do |svg| %>
-        <%= svg svg.svg %>
-        <% end %>
-        <% @project.client.svgs.each do |svg| %>
-        <%= svg svg.svg %>
-        <% end %>
-      </div>
-    <% end %>
-    <% else %>
     <% if @project.photos? %>
       <div class="content-img">
         <% @project.photos.each do |photo|  %>
         <img src="<%= photo %>" alt="">
-        <% end %>
+      <% end %>
       </div>
+
+    <% elsif @project.svgs.first && @project.client.svgs.first %>
+    <div class="content-svg">
+      <% @project.svgs.each do |svg| %>
+      <%= svg svg.svg %>
+      <% end %>
+      <% @project.client.svgs.each do |svg| %>
+      <%= svg svg.svg %>
+      <% end %>
+    </div>
+
     <% end %>
-
 <!-- end -->
-    </article>
-
-    <article class="hidden-xs col-sm-12 col-md-1">
-      <div class="content-preview">
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-twitter-square"></i>
-      </div>
     </article>
   </section>
 </section>
