@@ -1,7 +1,57 @@
 <main id="about">
-<section class="container">
-  <section class="row">
-    <div class="col-xs-6"><h3>Work in Progress</h3></div>
+  <section class="container">
+    <section id="me" class="row">
+
+      <div class="col-xs-12 col-md-4">
+      <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548263285/qlgordon.png" alt="">
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <h3>Qui suis-je ?</h3>
+        <p>Graphiste & designer web passionné par les cultures numériques et la création contemporaine, je partage ma vie entre Paris et l'étranger où je voyage beaucoup  pour des raisons à la fois pro et perso. Ce côté cosmopolite se retrouve dans la proposition éclectique de mes créations graphiques, mon site est conçu comme un cabinet de curiosités regroupant travaux personnels et commandes issus de nombreuses collaborations. Visiteur curieux : vous êtes la bienvenue !</p>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <h3>Qui suis-je ?</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam ab tempora excepturi nisi, laboriosam impedit dignissimos earum at, sapiente provident unde libero. Explicabo repudiandae quibusdam eligendi at tempore, itaque autem. ipsum dolor sit amet, consectetur adipisicing elit. Quae aspernatur, officiis similique eum facilis, recusandae a impedit aliquid reprehenderit! Tempora nostrum ullam temporibus adipisci officiis reprehenderit, corporis laudantium. Voluptates, omnis? ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos minima quis quidem rerum repudiandae optio, ipsa molestias, in deleniti deserunt eligendi incidunt numquam dicta, ratione labore iusto soluta reiciendis quibusdam. ipsum dolor sit amet, consectetur adipisicing elit. Ipsa tenetur, soluta doloremque sed explicabo tempore consequuntur error nisi consectetur saepe dolorem assumenda provident cumque optio accusamus reprehenderit ad. Quae, facere..</p>
+      </div>
+    </section>
+
+    <section id="skills" class="row">
+      <div class="col-xs-12 col-md-4">
+        <h4>Maitrise des logiciels de graphisme</h4>
+        <% @skills_design.svgs.each do |svg| %>
+        <span>
+        <%= svg svg.svg %>
+        </span>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-4">
+        <h4>Maitrise des langages de programmation</h4>
+        <% @skills_web.svgs.each do |svg| %>
+        <span>
+        <%= svg svg.svg %>
+        </span>
+        <% end %>
+      </div>
+      <div class="col-xs-12 col-md-4">
+      <h4>Formations</h4>
+      <% @formations.svgs.each do |svg| %>
+      <span>
+      <%= svg svg.svg %>
+      </span>
+      <% end %>
+      </div>
+    </section>
+    <section id="clients" class="row">
+      <div class="col-xs-12 col-md-12">
+        <h4>Ils m'ont fait confiance</h4>
+        <% @clients.shuffle.each do |client| %>
+        <% if client.svgs.first %>
+        <span>
+        <%= svg client.svgs.first.svg %>
+        </span>
+        <% end %>
+        <% end %>
+      </div>
     </section>
   </section>
 </main>

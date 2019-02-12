@@ -15,15 +15,17 @@
         <h6><%= project.category.name %></h6>
               <% else %>
               <% end %>
-        <% else %>
+        <% elsif project.client.svgs.first && project.svgs.first%>
           <div class="content-card">
             <% if project.category %>
             <h6><%= project.category.name %></h6>
-            <% else %>
-            <% end %>
             <%= svg project.svgs.first.svg %>
             <%= svg project.client.svgs.first.svg %>
+            <% end %>
+            <% else %>
         <% end %>
+        <% if project.photos? || project.client.svgs.first && project.svgs.first %>
+
             <div class="infos">
               <h4><%= project.title %></h4>
               <p><%= project.description[0..250] + "..." %></p>
@@ -44,9 +46,12 @@
                   <% end %>
                 <% end %>
               </div>
-              <h6>Port-au-Prince • Haïti <br>
-              2016</h6>
+              <h6><%= project.city %> • <%= project.country %> <br>
+                <% if project.date %>
+              <%= project.date.year %>
+              <% end %></h6>
             </div>
+        <% end %>
           </div>
         <% end %>
       </article>
