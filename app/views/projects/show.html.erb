@@ -9,7 +9,7 @@
         <% if @project.client.svgs.first %>
         <div class="svg">
           <% @project.client.svgs.each do |svg| %>
-          <%= svg svg.svg %>
+          <img src= "<%= svg.svg %>"  alt="">
           <% end %>
         </div>
         <% else %>
@@ -22,7 +22,7 @@
         <div class="shapes">
           <% if @project.svgs.first %>
           <% @project.svgs.each do |svg| %>
-            <%= svg svg.svg %>
+            <img src= "<%= svg.svg %>" alt="">
           <% end %>
           <% end %>
         </div>
@@ -67,10 +67,10 @@
     <% elsif @project.svgs.first && @project.client.svgs.first %>
     <div class="content-svg">
       <% @project.svgs.each do |svg| %>
-      <%= svg svg.svg %>
+      <img src= "<%= svg.svg %>" alt="">
       <% end %>
       <% @project.client.svgs.each do |svg| %>
-      <%= svg svg.svg %>
+      <img src= "<%= svg.svg %>" alt="">
       <% end %>
     </div>
 

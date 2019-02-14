@@ -19,8 +19,7 @@
           <div class="content-card">
             <% if project.category %>
             <h6><%= project.category.name %></h6>
-            <%= svg project.svgs.first.svg %>
-            <%= svg project.client.svgs.first.svg %>
+            <img class="svg" src= "<%= project.client.svgs.first.svg %>" alt="">
             <% end %>
             <% else %>
         <% end %>

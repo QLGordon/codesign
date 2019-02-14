@@ -20,7 +20,7 @@
         <h4>Maitrise des logiciels de graphisme</h4>
         <% @skills_design.svgs.each do |svg| %>
         <span>
-        <%= svg svg.svg %>
+        <img src= "<%= svg.svg %>" alt="">
         </span>
         <% end %>
       </div>
@@ -28,7 +28,7 @@
         <h4>Maitrise des langages de programmation</h4>
         <% @skills_web.svgs.each do |svg| %>
         <span>
-        <%= svg svg.svg %>
+        <img src= "<%= svg.svg %>" alt="">
         </span>
         <% end %>
       </div>
@@ -36,7 +36,7 @@
       <h4>Formations</h4>
       <% @formations.svgs.each do |svg| %>
       <span>
-      <%= svg svg.svg %>
+      <img src= "<%= svg.svg %>" alt="">
       </span>
       <% end %>
       </div>
@@ -47,7 +47,7 @@
         <% @clients.shuffle.each do |client| %>
         <% if client.svgs.first %>
         <span>
-        <%= svg client.svgs.first.svg %>
+        <img src= "<%= client.svgs.first.svg %>" alt="">
         </span>
         <% end %>
         <% end %>

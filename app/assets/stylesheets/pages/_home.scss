@@ -7,11 +7,12 @@
     #clients {
       margin-top: 72pt;
       text-align: center;
-      span {
+      img {
         width: 144pt;
         height: 144pt;
         display: inline-flex;
         margin: 24pt;
+        object-fit: contain;
       }
     }
     #me {
@@ -29,6 +30,7 @@
       position: inherit;
       z-index: 0;
       span {
+        img {object-fit: contain;}
         width: 48pt;
         height: 48pt;
         display: inline-flex;
