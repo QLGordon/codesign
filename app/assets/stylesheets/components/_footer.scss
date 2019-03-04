@@ -11,7 +11,6 @@ footer {
     bottom: 12pt;
     right: 12pt;
     color: red;
-    transition: all 250ms ease-in-out;
     i {
       font-size: 9pt;
       border: 1pt solid;
@@ -21,9 +20,11 @@ footer {
       transition: all 250ms ease-in-out;
     }
     &:hover {
+      transition: all 250ms ease-in-out;
       color: red;
       cursor: pointer;
       i {
+      transition: all 250ms ease-in-out;
       transform: rotate(45deg);
       }
     }

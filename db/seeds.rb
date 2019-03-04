@@ -9,6 +9,7 @@ p "Destroy all"
 Color.destroy_all
 Font.destroy_all
 Svg.destroy_all
+Work.destroy_all
 Project.destroy_all
 Client.destroy_all
 Category.destroy_all
@@ -126,15 +127,49 @@ Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985126
 p "Creating Projects"
 
 hpp = Project.create!(
+  title: "Haïti Piano Project",
+  description: "Haïti Piano project est un festival de musique classique à l'initiative de Célimène Daudet",
+  category: campaign, client: hpp, country: 'Haïti', date: Date.new(2018,11),
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/c_crop,h_600,w_600/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png'
+  ])
+Work.create!(
   title: "2ème Festival international de Piano d'Haïti",
   description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
 M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
 Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
-  category: campaign, client: hpp, city: 'Jacmel', country: 'Haïti', date: Date.new(2018,11),
-  photos: [
+  category: campaign,
+  project: hpp,
+  city: "Jacmel",
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png'],
+  date: Date.new(2018,11)
+  )
+Work.create!(
+  title: "2ème Festival international de Piano d'Haïti",
+  description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
+M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
+Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
+  category: campaign,
+  project: hpp,
+  city: "Jacmel",
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png',
     'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png'
-  ])
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png'],
+  date: Date.new(2018,11)
+  )
+Work.create!(
+  title: "2ème Festival international de Piano d'Haïti",
+  description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
+M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
+Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
+  category: brand_identity,
+  project: hpp,
+  city: "Jacmel",
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png'],
+  date: Date.new(2018,11)
+  )
 
 Color.create!(red: 24, green: 122, blue: 179, alpha: 1, project: hpp)
 Color.create!(red: 26, green: 39, blue: 51, alpha: 1, project: hpp)
@@ -149,22 +184,39 @@ at = Project.create!(
   title: "Alan Turing",
   description: "Test de scripts animés avec les équations d'Alan Turing",
   category: motion_graphics, client: personal, city: 'Paris', country: 'France', date: Date.new(2018,9),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406363/codesign/Piano-Piano.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406308/codesign/Piano-Organique.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif"])
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif"])
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
+
+Work.create!(
+  title: "Motif de Turing",
+  description: "Lors d'une recherche personelle je me suis amusé avec Photoshop dans ce travail qui anime en 25 i/s le motif d'Allan Turing",
+  category: motion_graphics,
+  project: at,
+  city: "Paris",
+  photos: [
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif"],
+  date: Date.new(2018,11)
+  )
 
 hainet = Project.create!(
   title: "Hainet",
   description: "Communication interne et externe",
   category: brand_identity, client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350870/hainet/hainet_mobil.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548391164/hainet/HainetB.png"])
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png"])
 
-Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet.svg', project: hainet)
+Work.create!(
+  title: "Logo",
+  description: "Refonte du Logo de la marque Hainet Sesanet",
+  category: brand_identity,
+  project: hainet,
+  city: "Port-au-Prince",
+  photos: [
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet.svg",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg"],
+  date: Date.new(2018,11)
+  )
 
 spark = Project.create!(
   title: "Spark",
@@ -186,7 +238,7 @@ fff = Project.create!(
   category: brand_identity, client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350729/institut_francais/fff.gif"])
 
-Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
+# Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
 
 mpp_1 = Project.create!(
   title: "Mouvman Peyzan Papay",

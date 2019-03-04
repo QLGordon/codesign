@@ -1,54 +1,48 @@
 <main id="project">
   <section class="container">
-  <section class="row">
-    <article class="col-sm-12 col-md-4">
-      <div class="content-text">
-        <% if @project.category %>
-        <h6><%= @project.category.name %></h6>
-        <% end %>
-        <% if @project.client.svgs.first %>
-        <div class="svg">
-          <% @project.client.svgs.each do |svg| %>
-          <img src= "<%= svg.svg %>"  alt="">
+<!-- Section Project content -->
+    <section class="row">
+      <article class="col-sm-12 col-md-4">
+        <div class="content-text">
+          <% if @project.client.svgs.first %>
+            <div class="svg">
+              <% @project.client.svgs.each do |svg| %>
+                <img src= "<%= svg.svg %>"  alt="">
+              <% end %>
+            </div>
           <% end %>
-        </div>
-        <% else %>
-        <% end %>
-        <h3><%= @project.title %></h3>
-        <hr>
-        <p>
+          <h3><%= @project.title %></h3>
+          <hr>
+          <% if @project.works %>
+            <% @project.works.each do |work| %>
+              <p class="category"><%= work.category.name %></p>
+            <% end %>
+          <% end %>
+          <br>
+          <h6><%= @project.country %></h6>
+          <hr>
           <%= @project.description %>
-          <hr>
-        <div class="shapes">
-          <% if @project.svgs.first %>
-          <% @project.svgs.each do |svg| %>
-            <img src= "<%= svg.svg %>" alt="">
-          <% end %>
-          <% end %>
-        </div>
-          <hr>
-        <i class="fab fa-facebook-square" style="color: black;"></i>
-        <i class="fab fa-instagram" style="color: black;"></i>
-        <i class="fab fa-behance-square" style="color: black;"></i>
-        <i class="fab fa-twitter-square" style="color: black;"></i>
-        <i class="fab fa-linkedin" style="color: black;"></i>
-        <hr>
-        <h6> <%= @project.city %> • <%= @project.country %></h6>
-        <h6>2016</h6>
-        <div class="colors" >
-          <% if @project.colors.first %>
-            <% @project.colors.each do |color| %>
-          <div style="
-          background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-          font-size: 24pt;
-          "></div>
+          <div class="shapes">
+            <% if @project.svgs.first %>
+              <% @project.svgs.each do |svg| %>
+                <img src= "<%= svg.svg %>" alt="">
+              <% end %>
+            <% end %>
+          </div>
+          <div class="colors" >
+            <% if @project.colors.first %>
+              <% @project.colors.each do |color| %>
+                <div style="
+                  background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+                  font-size: 24pt;">
+                </div>
             <% end %>
           <% else %>
             <% @project.client.colors.each do |color| %>
               <div style="
-              background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-              font-size: 24pt;
-              "></div>
+                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+                font-size: 24pt;">
+              </div>
             <% end %>
           <% end %>
         </div>
@@ -56,27 +50,36 @@
     </article>
 
     <article class="col-sm-12 col-md-8">
-<!-- start -->
-    <% if @project.photos? %>
       <div class="content-img">
         <% @project.photos.each do |photo|  %>
-        <img src="<%= photo %>" alt="">
-      <% end %>
+          <img src="<%= photo %>" alt="">
+        <% end %>
       </div>
-
-    <% elsif @project.svgs.first && @project.client.svgs.first %>
-    <div class="content-svg">
-      <% @project.svgs.each do |svg| %>
-      <img src= "<%= svg.svg %>" alt="">
-      <% end %>
-      <% @project.client.svgs.each do |svg| %>
-      <img src= "<%= svg.svg %>" alt="">
-      <% end %>
-    </div>
-
-    <% end %>
-<!-- end -->
     </article>
   </section>
-</section>
+<!-- Fin Section Project content -->
+<!-- Section Work content -->
+  <section id="work">
+    <% @project.works.each do |work| %>
+      <section class="row">
+        <article id="work" class="col-sm-12 col-md-5">
+          <h1><%= work.title %></h1>
+          <p class="category"><%= work.category.name %></p>
+        </article>
+        <article id="work" class="col-sm-12 col-md-7">
+          <p style=" font-size: 16pt;"><%= work.description %></p>
+        </article>
+      </section>
+
+      <section class="row">
+        <% work.photos.each do |photo| %>
+          <article class="col-sm-12 col-md-4">
+            <img src="<%= photo %>" alt="">
+          </article>
+        <% end %>
+      </section>
+    <% end %>
+  </section>
+<!-- Section Work content -->
+  </section>
 </main>

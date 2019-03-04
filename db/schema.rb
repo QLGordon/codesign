@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_12_140112) do
+ActiveRecord::Schema.define(version: 2019_02_15_151413) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,8 +41,10 @@ ActiveRecord::Schema.define(version: 2019_02_12_140112) do
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "work_id"
     t.index ["client_id"], name: "index_colors_on_client_id"
     t.index ["project_id"], name: "index_colors_on_project_id"
+    t.index ["work_id"], name: "index_colors_on_work_id"
   end
 
   create_table "fonts", force: :cascade do |t|
@@ -79,8 +81,10 @@ ActiveRecord::Schema.define(version: 2019_02_12_140112) do
     t.bigint "project_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.bigint "work_id"
     t.index ["client_id"], name: "index_svgs_on_client_id"
     t.index ["project_id"], name: "index_svgs_on_project_id"
+    t.index ["work_id"], name: "index_svgs_on_work_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -95,13 +99,31 @@ ActiveRecord::Schema.define(version: 2019_02_12_140112) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  create_table "works", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.bigint "project_id"
+    t.bigint "category_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string "photos", default: [], array: true
+    t.string "city"
+    t.date "date"
+    t.index ["category_id"], name: "index_works_on_category_id"
+    t.index ["project_id"], name: "index_works_on_project_id"
+  end
+
   add_foreign_key "clients", "categories"
   add_foreign_key "colors", "clients"
   add_foreign_key "colors", "projects"
+  add_foreign_key "colors", "works"
   add_foreign_key "fonts", "clients"
   add_foreign_key "fonts", "projects"
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "clients"
   add_foreign_key "svgs", "clients"
   add_foreign_key "svgs", "projects"
+  add_foreign_key "svgs", "works"
+  add_foreign_key "works", "categories"
+  add_foreign_key "works", "projects"
 end

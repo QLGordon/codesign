@@ -49,16 +49,16 @@ $font-family-serif:       Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:   Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:        $font-family-sans-serif !default;
 
-$font-size-base:          9pt !default;
+$font-size-base:          11pt !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * .85)) !default; // ~12px
 
-$font-size-h1:            72pt !default; // ~36px
-$font-size-h2:            48pt !default; // ~30px
+$font-size-h1:            30pt !default; // ~36px
+$font-size-h2:            27pt !default; // ~30px
 $font-size-h3:            24pt !default; // ~24px
 $font-size-h4:            12pt !default; // ~18px
 $font-size-h5:            10pt !default;
-$font-size-h6:            7pt !default; // ~12px
+$font-size-h6:            9pt !default; // ~12px
 
 //** Unit-less `line-height` for use in components like buttons.
 $line-height-base:        1.428571429 !default; // 20/14
