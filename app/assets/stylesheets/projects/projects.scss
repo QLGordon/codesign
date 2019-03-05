@@ -1,13 +1,10 @@
-.content-text-affiche {
-  height: 500px;
-}
 #projects {
   margin-top: 72pt;
   .row {
     flex-wrap: wrap;
     .content-card {
-      padding: 30pt 0pt 0pt 0pt;
-      box-shadow: 0pt 0pt 12pt -3pt rgba(0,0,0,.05);
+      padding: 0pt 0pt 0pt 0pt;
+      box-shadow: 0pt 6pt 18pt -3pt rgba(0,0,0,.1);
       margin: 6pt 0pt;
       text-decoration: none;
       overflow: hidden;
@@ -21,14 +18,15 @@
         transform: translateX(-12pt);
         color: rgba(0,0,0,.4);
       }
-      h6 {
+      p.info {
         position: absolute;
         bottom: 24pt;
         right: 0pt;
         opacity: 0;
+        font-size: 9pt;
         text-align: right;
       }
-      h4 { transform: translateX(-24pt); }
+      h4 { transform: translateX(-24pt); font-size: 18pt; }
       .colors {
         position: absolute;
         bottom: 0pt;
@@ -50,9 +48,10 @@
           transition-delay: 150ms;
           transform: translateX(0pt);
         }
-        h6 {
+        p.info {
         transition: all 300ms ease-in-out;
         transition-delay: 400ms;
+        color: rgba(0,0,0,1);
         opacity: 1;
         bottom: 24pt;
         right: 18pt;
@@ -85,6 +84,7 @@
     right: 12pt;
   p.category {
     color: rgba(0,0,0,.4);
+    font-size: 9pt;
     border: solid 1pt;
     padding: 1pt 3pt;
     display: inline;
@@ -93,6 +93,7 @@
     top: -12pt;
     background: rgba(255,255,255,1);
     left: 12pt;
+    z-index: 10;
   }
   }
 }
@@ -108,11 +109,14 @@
         img { padding-bottom: 12pt; }
       }
     }
+    .work-description {
+      border-left: 1pt solid rgba(0,0,0,.25);
+    }
 
   }
   .category {
     color: rgba(0,0,0,.4);
-    font-size: 12pt;
+    font-size: 9pt;
     letter-spacing: 1pt;
   }
   [class*="content-"] {
@@ -126,7 +130,7 @@
       &:last-child { margin-bottom: 24pt; }
       .content-img {
         position: sticky;
-        top: 48pt;
+        padding-top: 48pt;
       }
       .content-text {
         z-index: 5;
@@ -139,8 +143,8 @@
           bottom: 0pt;
           left: 0pt;
           div {
-            height: 24pt;
-            width: 288pt;
+            height: 6pt;
+            width: 1000pt;
             display: table-cell;
           }
         }
@@ -154,7 +158,7 @@
           padding: 3pt;
           display: flex;
           position: absolute;
-          bottom: -12pt;
+          bottom: -20pt;
           right: -12pt;
           background: white;
           z-index: 2;

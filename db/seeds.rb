@@ -22,6 +22,7 @@ brand_identity = Category.create!(name: "Brand Identity")
 campaign = Category.create!(name: "Campaign")
 photography = Category.create!(name: "photographie")
 motion_graphics = Category.create!(name: "Film & Motion graphics")
+digital = Category.create!(name: "Digital design")
 
 culture = Category.create!(name: "culture")
 entreprise = Category.create!(name: "entreprise")
@@ -128,21 +129,23 @@ p "Creating Projects"
 
 hpp = Project.create!(
   title: "Haïti Piano Project",
-  description: "Haïti Piano project est un festival de musique classique à l'initiative de Célimène Daudet",
+  description: "Haïti Piano project est un festival de musique classique à l'initiative de Célimène Daudet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quod ipsa aperiam velit cumque ab autem ipsam, adipisci ipsum? Tempora iusto ducimus ipsa quae, numquam in nihil doloremque similique ea. ipsum dolor sit amet, consectetur adipisicing elit. Optio assumenda nostrum, molestiae esse quas quam molestias placeat nesciunt expedita, aliquam debitis odio iusto inventore perspiciatis rem, fugit, id deleniti obcaecati!",
   category: campaign, client: hpp, country: 'Haïti', date: Date.new(2018,11),
   photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/c_crop,h_600,w_600/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png'
   ])
 Work.create!(
-  title: "2ème Festival international de Piano d'Haïti",
-  description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
+  title: "1er Festival international de Piano d'Haïti",
+  description: "Pour le premier festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
 M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
 Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
   category: campaign,
   project: hpp,
   city: "Jacmel",
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png'],
-  date: Date.new(2018,11)
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551786086/Ha%C3%AFti%20Piano%20Project/piano_1er.gif',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785297/Ha%C3%AFti%20Piano%20Project/hpp_piano.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785298/Ha%C3%AFti%20Piano%20Project/Affiche_hpp_1.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785605/Ha%C3%AFti%20Piano%20Project/Affiche_hpp_1_bus.png'],
+  date: Date.new(2017)
   )
 Work.create!(
   title: "2ème Festival international de Piano d'Haïti",
@@ -152,32 +155,25 @@ Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
   category: campaign,
   project: hpp,
   city: "Jacmel",
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png',
+  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551787334/Ha%C3%AFti%20Piano%20Project/piano_2eme.gif',
     'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png'],
-  date: Date.new(2018,11)
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551786607/Ha%C3%AFti%20Piano%20Project/Indoor-hpp.png'],
+  date: Date.new(2018)
   )
 Work.create!(
-  title: "2ème Festival international de Piano d'Haïti",
-  description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
-M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
-Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
-  category: brand_identity,
+  title: "Site internet",
+  description: "Suite aux deux collaboration avec le Haïti Paino Project, j'assume la refonte du site internet. Le travail est en cours de réalisation.",
+  category: digital,
   project: hpp,
-  city: "Jacmel",
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png'],
-  date: Date.new(2018,11)
+  city: "Paris",
+  photos: [],
+  date: Date.new(2019)
   )
 
 Color.create!(red: 24, green: 122, blue: 179, alpha: 1, project: hpp)
 Color.create!(red: 26, green: 39, blue: 51, alpha: 1, project: hpp)
 Color.create!(red: 253, green: 215, blue: 3, alpha: 1, project: hpp)
-
-Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985200/Ha%C3%AFti%20Piano%20Project/Piano.svg', project: hpp)
-Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985200/Ha%C3%AFti%20Piano%20Project/Piano_1.svg', project: hpp)
-Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985200/Ha%C3%AFti%20Piano%20Project/Piano_2.svg', project: hpp)
 
 
 at = Project.create!(
@@ -207,15 +203,38 @@ hainet = Project.create!(
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png"])
 
 Work.create!(
-  title: "Logo",
+  title: "Refonte du logo",
   description: "Refonte du Logo de la marque Hainet Sesanet",
   category: brand_identity,
   project: hainet,
   city: "Port-au-Prince",
   photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551783854/hainet/HAINET_580.jpg',
     "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet.svg",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg"],
-  date: Date.new(2018,11)
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548389023/hainet/a_wifi.png"],
+  date: Date.new(2016)
+  )
+Work.create!(
+  title: "Hainet Business",
+  description: "Création d'un univers graphique pour la partie business de l'entreprise",
+  category: brand_identity,
+  project: hainet,
+  city: "Port-au-Prince",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548391164/hainet/HainetB.png'],
+  date: Date.new(2017)
+  )
+Work.create!(
+  title: "Hainet Mobile",
+  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+  category: brand_identity,
+  project: hainet,
+  city: "Port-au-Prince",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350870/hainet/hainet_mobil.png'],
+  date: Date.new(2017)
   )
 
 spark = Project.create!(
@@ -232,11 +251,11 @@ Project.create!(
   category: campaign, client: personal,  city: 'Nantes', country: 'France', date: Date.new(2015,6),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350810/KillYourGender.gif"])
 
-fff = Project.create!(
-  title: "festival du film francophone",
-  description: "festival du film francophone",
+ifh_p = Project.create!(
+  title: "Institut Français",
+  description: "Durant 2 ans j'ai travaillé avec l'Institut Français en Haïti. J'y ai réalisé plus de 150 affiches. Les collaborations ont été nombreuses et très diverses. De la signalétique en passant par de l'évènementiel.",
   category: brand_identity, client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350729/institut_francais/fff.gif"])
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551783649/institut_francais/ifh_cover.png"])
 
 # Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
 
