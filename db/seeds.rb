@@ -180,7 +180,7 @@ at = Project.create!(
   title: "Alan Turing",
   description: "Test de scripts animés avec les équations d'Alan Turing",
   category: motion_graphics, client: personal, city: 'Paris', country: 'France', date: Date.new(2018,9),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif"])
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788346/codesign/Turing.gif"])
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
@@ -192,7 +192,11 @@ Work.create!(
   project: at,
   city: "Paris",
   photos: [
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif"],
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406308/codesign/Piano-Organique.gif",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788346/codesign/Turing.gif",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549636860/codesign/codesign_Piano-Piano-red.gif",
+    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788694/codesign/Piano_12.gif"],
   date: Date.new(2018,11)
   )
 
@@ -200,7 +204,7 @@ hainet = Project.create!(
   title: "Hainet",
   description: "Communication interne et externe",
   category: brand_identity, client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png"])
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png"])
 
 Work.create!(
   title: "Refonte du logo",
@@ -233,7 +237,22 @@ Work.create!(
   project: hainet,
   city: "Port-au-Prince",
   photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350870/hainet/hainet_mobil.png'],
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350870/hainet/hainet_mobil.png',
+  ],
+  date: Date.new(2017)
+  )
+Work.create!(
+  title: "Hainet Fibermax",
+  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+  category: campaign,
+  project: hainet,
+  city: "Port-au-Prince",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406017/hainet/fb961754572485.5960eb3d226cc.gif',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548389022/hainet/a_noel.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551795881/hainet/PhotoAgents.png'
+  ],
   date: Date.new(2017)
   )
 
@@ -241,9 +260,18 @@ spark = Project.create!(
   title: "Spark",
   description: "Communication interne et externe",
   category: brand_identity, client: spark, city: 'Paris', country: 'France', date: Date.new(2019,1),
-  photos: [])
-
-Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark.svg', project: spark)
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551790449/Spark/spark_mock.png"])
+Work.create!(
+  title: "Logographie",
+  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+  category: brand_identity,
+  project: spark,
+  city: "Paris",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark.svg',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark_c.svg'],
+  date: Date.new(2019)
+  )
 
 Project.create!(
   title: "Kill your gender",
@@ -255,8 +283,33 @@ ifh_p = Project.create!(
   title: "Institut Français",
   description: "Durant 2 ans j'ai travaillé avec l'Institut Français en Haïti. J'y ai réalisé plus de 150 affiches. Les collaborations ont été nombreuses et très diverses. De la signalétique en passant par de l'évènementiel.",
   category: brand_identity, client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551783649/institut_francais/ifh_cover.png"])
-
+  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551800540/institut_francais/IFH_logos.gif"])
+Work.create!(
+  title: "Jedi mizik",
+  description: "Création d'un univers graphique autour des concerts offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
+  category: campaign,
+  project: ifh_p,
+  city: "Port-au-Prince",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548392026/institut_francais/21559112_1510447122345440_8189747391438187022_n.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797482/institut_francais/24176938_1581715015218650_9169602671311774417_n.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797531/institut_francais/22282126_1529326347124184_2615756073934817481_n.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797787/institut_francais/jedi_mizik.svg'],
+  date: Date.new(2019)
+  )
+Work.create!(
+  title: "Ciné lari a",
+  description: "Création d'un univers graphique autour des séancesde cinéma en plein air offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
+  category: campaign,
+  project: ifh_p,
+  city: "Port-au-Prince",
+  photos: [
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798365/institut_francais/27654518_1643368619053289_4766089820552918695_n.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798364/institut_francais/27654796_1643368615719956_4009558741322415077_n.png',
+    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798364/institut_francais/27460037_1643368625719955_6637365979642535892_n.png'
+    ],
+  date: Date.new(2019)
+  )
 # Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
 
 mpp_1 = Project.create!(
