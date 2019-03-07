@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get '/about', to: 'projects#about'
 
   resources :projects do
-    resources :colors, only: [ :new, :create ]
+    resources :works, only: [ :edit, :update ]
   end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

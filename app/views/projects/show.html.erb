@@ -16,6 +16,17 @@
           <hr>
           <%= @project.description %>
           <br>
+          <% if current_user %>
+            <%= form_for @project, url: {action: "update"} do |f| %>
+                <%= f.text_field :title %>
+                <%= f.text_field :city %>
+                <%= f.text_field :country %>
+                <%= f.text_area :description %>
+                <%= f.collection_select(:category_id, Category.all, :id, :name) %>
+                <br>
+                <%= f.submit "update" %>
+            <% end %>
+          <% end %>
           <hr>
           <% if @project.works %>
           <h3>Réalisations</h3>
@@ -82,6 +93,17 @@
           </article>
         <% end %>
       </section>
+      <% if current_user %>
+        <%= form_for work, url: {action: "update"} do |f| %>
+            <%= f.text_field :title %>
+            <%= f.text_field :city %>
+            <%= f.date_field :date %>
+            <%= f.collection_select(:category_id, Category.all, :id, :name) %> <br>
+            <%= f.text_area :description %>
+            <br>
+            <%= f.submit "update work" %>
+        <% end %>
+      <% end %>
     <% end %>
   </section>
 <!-- Section Work content -->

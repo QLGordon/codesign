@@ -1,5 +1,5 @@
 class ProjectsController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:about, :index, :new, :create, :show, :update]
+  skip_before_action :authenticate_user!, only: [:about, :index, :show]
   def about
     @skills_design = Project.find_by title: 'Skills Design'
     @skills_web = Project.find_by title: 'Skills Web'
@@ -31,20 +31,23 @@ class ProjectsController < ApplicationController
 
   def edit
     @project = Project.find(params[:id])
+    @work = Work.find(params[@project[:id]])
   end
 
   def update
     @project = Project.find(params[:id])
+    @project.works = Work.find(params[:works])
     if @project.update!(project_params)
       redirect_to project_path(@project)
     else
+      render :edit
     end
   end
-
 
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, {photos: []}, :category_id)
+    params.require(:project).permit(:title, :description, {photos:[]}, :city, :country, :category_id, works_attributes: [:id, :title, :description, :category, :city, :date, :project])
   end
 end
+
