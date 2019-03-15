@@ -1,0 +1,16 @@
+<div class="colors" >
+  <% if @project.colors.first %>
+    <% @project.colors.each do |color| %>
+      <div style="
+        background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+        font-size: 72pt;">
+      </div>
+  <% end %>
+<% else %>
+  <% @project.client.colors.each do |color| %>
+    <div style="
+      background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
+      font-size: 72pt;">
+    </div>
+  <% end %>
+<% end %>

@@ -6,9 +6,7 @@
         <div class="content-text">
           <% if @project.client.svgs.first %>
             <div class="svg">
-              <% @project.client.svgs.each do |svg| %>
-                <img src= "<%= svg.svg %>"  alt="">
-              <% end %>
+                <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
             </div>
           <% end %>
           <h3><%= @project.title %></h3>
@@ -16,17 +14,6 @@
           <hr>
           <%= @project.description %>
           <br>
-          <% if current_user %>
-            <%= form_for @project, url: {action: "update"} do |f| %>
-                <%= f.text_field :title %>
-                <%= f.text_field :city %>
-                <%= f.text_field :country %>
-                <%= f.text_area :description %>
-                <%= f.collection_select(:category_id, Category.all, :id, :name) %>
-                <br>
-                <%= f.submit "update" %>
-            <% end %>
-          <% end %>
           <hr>
           <% if @project.works %>
           <h3>Réalisations</h3>
@@ -37,29 +24,7 @@
             <br>
             <% end %>
           <% end %>
-          <div class="shapes">
-            <% if @project.svgs.first %>
-              <% @project.svgs.each do |svg| %>
-                <img src= "<%= svg.svg %>" alt="">
-              <% end %>
-            <% end %>
-          </div>
-          <div class="colors" >
-            <% if @project.colors.first %>
-              <% @project.colors.each do |color| %>
-                <div style="
-                  background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-                  font-size: 24pt;">
-                </div>
-            <% end %>
-          <% else %>
-            <% @project.client.colors.each do |color| %>
-              <div style="
-                background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>);
-                font-size: 24pt;">
-              </div>
-            <% end %>
-          <% end %>
+          <%= render 'colors/show' %>
         </div>
       </div>
     </article>
@@ -72,40 +37,7 @@
       </div>
     </article>
   </section>
-<!-- Fin Section Project content -->
-<!-- Section Work content -->
-  <section id="work">
-    <% @project.works.each do |work| %>
-      <section class="row">
-        <article id="work" class="col-sm-12 col-md-5">
-          <h1><%= work.title %></h1>
-          <p class="category"><%= work.category.name %></p>
-        </article>
-        <article id="work" class="col-sm-12 col-md-7 work-description">
-          <p style=" font-size: 16pt;"><%= work.description %></p>
-        </article>
-      </section>
-
-      <section class="row">
-        <% work.photos.each do |photo| %>
-          <article class="col-sm-12 col-md-4">
-            <img src="<%= photo %>" alt="">
-          </article>
-        <% end %>
-      </section>
-      <% if current_user %>
-        <%= form_for work, url: {action: "update"} do |f| %>
-            <%= f.text_field :title %>
-            <%= f.text_field :city %>
-            <%= f.date_field :date %>
-            <%= f.collection_select(:category_id, Category.all, :id, :name) %> <br>
-            <%= f.text_area :description %>
-            <br>
-            <%= f.submit "update work" %>
-        <% end %>
-      <% end %>
-    <% end %>
-  </section>
-<!-- Section Work content -->
+<%= render 'works/show' %>
+<%= render 'works/edit' %>
   </section>
 </main>
