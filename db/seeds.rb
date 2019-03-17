@@ -174,6 +174,8 @@ Work.create!(
 Color.create!(red: 24, green: 122, blue: 179, alpha: 1, project: hpp)
 Color.create!(red: 26, green: 39, blue: 51, alpha: 1, project: hpp)
 Color.create!(red: 253, green: 215, blue: 3, alpha: 1, project: hpp)
+Color.create!(red: 26, green: 39, blue: 51, alpha: 1, project: hpp)
+Color.create!(red: 253, green: 215, blue: 3, alpha: 1, project: hpp)
 
 
 at = Project.create!(
@@ -184,6 +186,9 @@ at = Project.create!(
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 
 Work.create!(
   title: "Motif de Turing",
@@ -205,6 +210,11 @@ hainet = Project.create!(
   description: "Communication interne et externe",
   category: brand_identity, client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png"])
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: hainet)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: hainet)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
 
 Work.create!(
   title: "Refonte du logo",
@@ -261,6 +271,13 @@ spark = Project.create!(
   description: "Communication interne et externe",
   category: brand_identity, client: spark, city: 'Paris', country: 'France', date: Date.new(2019,1),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551790449/Spark/spark_mock.png"])
+
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: spark)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: spark)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
+
 Work.create!(
   title: "Logographie",
   description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
@@ -273,17 +290,30 @@ Work.create!(
   date: Date.new(2019)
   )
 
-Project.create!(
+kyg = Project.create!(
   title: "Kill your gender",
   description: "Communication pour un évènement organisé dans la ville de Nantes",
   category: campaign, client: personal,  city: 'Nantes', country: 'France', date: Date.new(2015,6),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350810/KillYourGender.gif"])
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: kyg)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: kyg)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
+
 
 ifh_p = Project.create!(
   title: "Institut Français",
   description: "Durant 2 ans j'ai travaillé avec l'Institut Français en Haïti. J'y ai réalisé plus de 150 affiches. Les collaborations ont été nombreuses et très diverses. De la signalétique en passant par de l'évènementiel.",
   category: brand_identity, client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3),
   photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551800540/institut_francais/IFH_logos.gif"])
+
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: ifh_p)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: ifh_p)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
+
 Work.create!(
   title: "Jedi mizik",
   description: "Création d'un univers graphique autour des concerts offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",

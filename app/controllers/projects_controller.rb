@@ -29,9 +29,12 @@ class ProjectsController < ApplicationController
 
   def edit
     @clients = Client.all
+    @project = Project.find(params[:id])
+    @colors = @project.colors
   end
 
   def update
+    @project.colors.destroy_all
     if @project.update!(project_params)
       redirect_to project_path(@project)
     else
@@ -47,7 +50,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :description, :city, :country, :category_id, :client_id,
-                                    works: [:title, :description])
+                                    work_attributes: [:title, :description],
+                                    colors_attributes: [:name, :red, :green, :blue, :_destroy])
   end
 end
-
