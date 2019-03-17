@@ -1,0 +1,16 @@
+<br><br><br><br><br><br><br><br><br>
+<% raise %>
+<%= @work.class %> <%= @project.title %>
+
+<%= form_for @project do |f| %>
+  <%= f.text_field :title %>
+  <%= f.text_field :description %>
+
+  <%= f.select(:category_id) do %>
+    <% @categories.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id) %>
+    <% end %>
+  <% end %>
+
+  <%= f.submit %>
+<% end %>

@@ -1,0 +1,76 @@
+<%= simple_form_for(@project) do |f| %>
+ <main id="project">
+   <section class="container">
+ <!-- Section Project content -->
+     <section class="row">
+       <article class="col-sm-12 col-md-4">
+         <div class="content-text">
+          <% if @project.client.svgs.first %>
+            <div class="svg">
+                <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
+            </div>
+          <% end %>
+          <h3>
+           ✎
+           <br>
+           <%= f.text_field :title %>
+          </h3>
+          <span><%= f.text_field :country %></span>
+          <hr>
+          <%= f.text_area :description %>
+          <br>
+          <br>
+          <%= f.button :submit, "ok" %>
+           <hr>
+           <% if @project.works %>
+           <h3>Réalisations</h3>
+            <% @project.works.each do |work| %>
+            <br>
+              <p><%= work.title %></p>
+
+              <span class="category"><%= work.category.name %> • <%#= work.date.year %> | <%#= work.city %></span>
+            <br>
+            <% end %>
+               </p>
+             <br>
+             <% end %>
+           <%= render 'colors/show' %>
+         </div>
+       </div>
+     </article>
+
+     <article class="col-sm-12 col-md-8">
+       <div class="content-img">
+         <% @project.photos.each do |photo|  %>
+           <img src="<%= photo %>" alt="">
+         <% end %>
+       </div>
+     </article>
+   </section>
+ <%= render 'works/show' %>
+ <%= link_to 'add a work', new_project_work_path(@project) %>
+   </section>
+ <% end %>
+ </main>
+    <%= simple_form_for(@project) do |f| %>
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+      <br>
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+      <br>
+      <%= f.label :client_id %>
+      <%= f.select(:client_id) do %>
+        <% @clients.each do |c| %>
+          <%= content_tag(:option, c.name, value: c.id) %>
+        <% end %>
+      <% end %>
+      <%= form_with(model: @project, local: true) do |f| %>
+        <%= f.fields_for :works do |w| %>
+          <%= w.label :title %> <br>
+          <%= w.text_field :title %> <br>
+        <% end %>
+      <% end %>
+      <br>
+    <%= f.submit %>
+  <% end %>

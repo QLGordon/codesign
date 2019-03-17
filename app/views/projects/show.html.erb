@@ -1,7 +1,9 @@
 <main id="project">
   <section class="container">
+
 <!-- Section Project content -->
     <section class="row">
+
       <article class="col-sm-12 col-md-4">
         <div class="content-text">
           <% if @project.client.svgs.first %>
@@ -9,10 +11,16 @@
                 <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
             </div>
           <% end %>
-          <h3><%= @project.title %></h3>
-          <span><%= @project.country %></span>
+          <h3>
+            <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+            <%= link_to "✎", edit_project_path(@project) %><br>
+
+            <% end %>
+            <%= @project.title %>
+          </h3>
+          <p class="country"><%= @project.country %></p> <br>
           <hr>
-          <%= @project.description %>
+          <p><%= @project.description %></p>
           <br>
           <hr>
           <% if @project.works %>
@@ -20,7 +28,7 @@
             <% @project.works.each do |work| %>
             <br>
               <p><%= work.title %></p>
-              <span class="category"><%= work.category.name %> • <%= work.date.year %> | <%= work.city %></span>
+              <p class="category"><%= work.category.name %> • <%#= work.date.year %> | <%#= work.city %></p>
             <br>
             <% end %>
           <% end %>
@@ -38,6 +46,8 @@
     </article>
   </section>
 <%= render 'works/show' %>
-<%= render 'works/edit' %>
+<% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+<%= link_to 'add a work', new_project_work_path(@project) %>
+<% end %>
   </section>
 </main>

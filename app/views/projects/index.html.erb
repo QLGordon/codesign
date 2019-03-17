@@ -3,6 +3,9 @@
     <section class="row">
       <%= render 'projects/card' %>
     </section>
+    <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+      <%= link_to "add", new_project_path %>
+    <% end %>
   </section>
 </main>
 

@@ -1,5 +1,9 @@
+@keyframes move-line { from { transform: translateX(-12pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
+@keyframes fade-in { from { transform: translateX(144pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
+@keyframes move-line-a { from { transform: translateY(-24pt); opacity: 0; } to { transform: translateY(0pt); opacity: 1; }  }
 #projects {
-  margin-top: 72pt;
+  margin-top: 48pt;
+      .content-card { animation: move-line-a 250ms ease-in-out; animation-fill-mode: both; }
   .row {
     flex-wrap: wrap;
     .content-card {
@@ -80,19 +84,17 @@
   }
   .categories {
     position: absolute;
-    top: 24pt;
-    right: 12pt;
+    top: 3pt;
+    right: 3pt;
   p.category {
     color: rgba(0,0,0,.4);
     font-size: 9pt;
     border: solid 1pt;
-    padding: 1pt 3pt;
+    padding: 1pt 6pt;
     display: inline;
     text-align: right;
     position: relative;
-    top: -12pt;
     background: rgba(255,255,255,1);
-    left: 12pt;
     z-index: 10;
   }
   }
@@ -101,6 +103,29 @@
 // FIN INDEX PROJECTS
 
 #project {
+    input[type="submit"]{
+      width: 24pt;
+      height: 24pt;
+      float: right;
+      text-align: center;
+      padding: 0pt;
+      font-size: 9pt;
+      background: rgba(0,0,255,.5);
+      color: white;
+      border-radius: 50%;
+    }
+  input, textarea {
+    width: 100%;
+    border: none;
+    color: rgba(0,0,255,1);
+    background: rgba(0,0,255,.05);
+    &:focus {
+      outline: none;
+    }
+  }
+  textarea {
+    height: 300px;
+  }
   #work {
     .row {
       flex-wrap: wrap;
@@ -121,7 +146,7 @@
   }
   [class*="content-"] {
     position: sticky;
-    top: 72pt;
+    // top: 72pt;
     background: white;
   }
   .container {
@@ -129,15 +154,21 @@
       margin-bottom: 72pt;
       &:last-child { margin-bottom: 24pt; }
       .content-img {
+        animation: fade-in 450ms ease-in-out;
         position: sticky;
         padding-top: 48pt;
       }
       .content-text {
+        animation: move-line 250ms ease-in-out;
         z-index: 5;
         background: white;
         box-shadow: -12pt 24pt 48pt 0pt rgba(0, 0, 0, 0.05);
         padding: 24pt 24pt 48pt 24pt;
         margin-top: 24pt;
+        h3 { animation: 300ms ease-in-out move-line; }
+        p.country { animation: 600ms ease-in-out move-line; }
+        p { animation: 900ms ease-in-out move-line; }
+        p.category { animation: 1200ms ease-in-out move-line; }
         .colors {
           position: absolute;
           bottom: 0pt;
@@ -162,7 +193,7 @@
           right: -12pt;
           background: white;
           z-index: 2;
-          img { object-fit: contain;}
+          img { object-fit: contain; }
         }
       }
     }

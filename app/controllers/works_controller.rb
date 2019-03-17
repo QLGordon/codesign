@@ -1,10 +1,24 @@
 class WorksController < ApplicationController
-  before_action :set_work, only: [:show, :edit, :update, :destroy]
+  before_action :set_project
+
+  def new
+    @work = @project.works.build
+    @categories = Category.all
+  end
+
+  def create
+    @work = Work.new(work_params)
+    @work.project = @project
+    @work.save!
+    redirect_to project_path(@project)
+  end
 
   def edit
     @project = Project.find(params[:id])
-    @work = Work.find(params[works[:id]])
-    @work.project = Work.find(params[:project_id])
+    @work = Work.find(params[:id])
+    @work.project = @project
+    @categories = Category.all
+    # @work.project = Work.find(params[:project_id])
   end
 
   def update
@@ -19,8 +33,8 @@ class WorksController < ApplicationController
 
   private
 
-  def set_work
-    @work = Work.find(params[:id])
+  def set_project
+    @project = Project.find(params[:project_id])
   end
 
   def work_params

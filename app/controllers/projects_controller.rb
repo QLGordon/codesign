@@ -3,15 +3,20 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:show, :edit, :update, :destroy]
 
   def index
-    @projects = Project.all
+    @projects = Project.all - Project.where("title" => "Formations") - Project.where("title" => "Skills Design") - Project.where("title" => "Skills Web")
   end
 
   def show
+    @project = Project.find(params[:id])
+    @clients = Client.all
+    @categories = Category.all
   end
 
   def new
     @project = Project.new
+    @project.works.build
     @categories = Category.all
+    @clients = Client.all
   end
 
   def create
@@ -23,6 +28,7 @@ class ProjectsController < ApplicationController
   end
 
   def edit
+    @clients = Client.all
   end
 
   def update
@@ -40,7 +46,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, {photos:[]}, :city, :country, :category_id)
+    params.require(:project).permit(:title, :description, :city, :country, :category_id, :client_id,
+                                    works: [:title, :description])
   end
 end
 

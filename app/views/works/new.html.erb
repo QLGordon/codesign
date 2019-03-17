@@ -1,0 +1,23 @@
+<main id="project">
+  <section class="container">
+    <section class="row">
+        <article class="col-sm-12">
+          <div class="content-text">
+            <strong>Add a work on <%= @project.title %></strong>
+            <br>
+            <%= @work.class %> <%= @project.title %>
+            <%= form_for [@project, @work] do |f| %>
+            <%= f.text_field :title %>
+            <%= f.text_field :description %>
+            <%= f.select(:category_id) do %>
+            <% @categories.each do |c| %>
+              <%= content_tag(:option, c.name, value: c.id) %>
+            <% end %>
+          <% end %>
+          <%= f.submit %>
+        <% end %>
+        </div>
+      </article>
+    </section>
+  </section>
+</main>
