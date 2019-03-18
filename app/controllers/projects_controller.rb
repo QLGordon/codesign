@@ -50,7 +50,7 @@ class ProjectsController < ApplicationController
 
   def project_params
     params.require(:project).permit(:title, :description, :city, :country, :category_id, :client_id,
-                                    work_attributes: [:title, :description],
+                                    works_attributes: [:title, :description, :photos, :city, :date, :category_id, :_destroy],
                                     colors_attributes: [:name, :red, :green, :blue, :_destroy])
   end
 end

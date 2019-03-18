@@ -23,28 +23,18 @@
           <% @project.colors.each do |color| %>
           <div class="color-form">
             <% if color.present? %>
-
               <%= f.fields_for :colors, color do |color_fields| %>
                 <%= color_fields.number_field :red %> <%= color_fields.number_field :green %> <%= color_fields.number_field :blue %>
-                <h4 style="color: rgba(<%= color.red %>, <%= color.green %>, <%= color.blue %>, 1 )">███<%= color_fields.check_box :_destroy %></h4>
+                <h4 style="color: rgba(
+                <%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);
+                ">███<%= color_fields.check_box :_destroy %></h4>
               <% end %>
             <% end %>
             </div>
           <% end %>
           <%= f.button :submit, "ok" %>
            <hr>
-           <% if @project.works %>
-           <h3>Réalisations</h3>
-            <% @project.works.each do |work| %>
-            <br>
-              <p><%= work.title %></p>
 
-              <p class="category"><%= work.category.name %> • <%#= work.date.year %> | <%#= work.city %></p>
-            <br>
-            <% end %>
-               </p>
-             <br>
-             <% end %>
            <%= render 'colors/show' %>
          </div>
        </div>
@@ -63,25 +53,3 @@
    </section>
  <% end %>
  </main>
-    <%= simple_form_for(@project) do |f| %>
-      <%= f.label :title %>
-      <%= f.text_field :title %>
-      <br>
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-      <br>
-      <%= f.label :client_id %>
-      <%= f.select(:client_id) do %>
-        <% @clients.each do |c| %>
-          <%= content_tag(:option, c.name, value: c.id) %>
-        <% end %>
-      <% end %>
-      <%= form_with(model: @project, local: true) do |f| %>
-        <%= f.fields_for :works do |w| %>
-          <%= w.label :title %> <br>
-          <%= w.text_field :title %> <br>
-        <% end %>
-      <% end %>
-      <br>
-    <%= f.submit %>
-  <% end %>
