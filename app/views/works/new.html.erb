@@ -10,7 +10,7 @@
             <% @categories.each do |c| %>
               <%= content_tag(:option, c.name, value: c.id) %>
             <% end %>
-          <% end %><span> • </span><%= f.date_field :date %> <span> | </span><%= f.text_field :city, placeholder: "city" %> </p><br>
+          <% end %><span></span><%= f.date_field :date %> <span> </span><%= f.text_field :city, placeholder: "city" %> </p><br>
         </div>
         </article>
         <article class="col-md-7 col-sm-12 work-description">

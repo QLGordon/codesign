@@ -21,6 +21,9 @@
           <br>
           <hr>
           <% if @project.works %>
+          <h3><% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+          <%= link_to "✎", edit_project_work_path(@project) %>
+          <% end %></h3>
           <h3>Réalisations</h3>
             <% @project.works.each do |work| %>
             <br>

@@ -4,8 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about'
 
   resources :projects do
-    resources :works, only: [ :index, :new, :create, :edit, :upadte ]
+    resources :works
   end
-  resources :works, only: [ :show, :destroy ]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

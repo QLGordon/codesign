@@ -14,9 +14,8 @@ class WorksController < ApplicationController
   end
 
   def edit
-    @project = Project.find(params[:id])
-    @work = Work.find(params[:id])
-    @work.project = @project
+    @works = Work.find(@project.works.ids)
+    @works.each { |work| @work }
     @categories = Category.all
     # @work.project = Work.find(params[:project_id])
   end
@@ -25,7 +24,7 @@ class WorksController < ApplicationController
     @work = Work.find(params[:id])
     @work.project = Project.find(params[:project_id])
     if @work.update!(work_params)
-      redirect_to work_path(@work)
+      redirect_to project_path(@project)
     else
       render :edit
     end

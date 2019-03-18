@@ -103,23 +103,29 @@
 // FIN INDEX PROJECTS
 
     input[type="submit"]{
-      width: 24pt;
-      height: 24pt;
       float: right;
-      text-align: center;
       padding: 0pt;
-      font-size: 9pt;
-      background: black;
-      color: white;
-      border-radius: 50%;
+      font-size: 24pt;
+      text-align: left;
+      color: black;
+      &:focus {
+      transition: all 250ms;
+        outline: none;
+        border-left: 6pt solid black;
+        padding-left: 6pt;
+      }
     }
   input, textarea {
     width: 100%;
     border: none;
     color: rgba(0,0,255,1);
-    &:focus {
+    border-left: 1pt solid black;
+    padding-left: 3pt;
+    &:focus, &:hover {
+    transition: all 250ms;
       outline: none;
-      background: rgba(0,0,0,.05)
+      border-left: 6pt solid black;
+      padding-left: 6pt;
     }
   }
   textarea {
