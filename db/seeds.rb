@@ -122,9 +122,8 @@ p "Creating Projects"
 hpp = Project.create!(
   title: "Haïti Piano Project",
   description: "Haïti Piano project est un festival de musique classique à l'initiative de Célimène Daudet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quod ipsa aperiam velit cumque ab autem ipsam, adipisci ipsum? Tempora iusto ducimus ipsa quae, numquam in nihil doloremque similique ea. ipsum dolor sit amet, consectetur adipisicing elit. Optio assumenda nostrum, molestiae esse quas quam molestias placeat nesciunt expedita, aliquam debitis odio iusto inventore perspiciatis rem, fugit, id deleniti obcaecati!",
-  category: campaign, client: hpp, country: 'Haïti', date: Date.new(2018,11),
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/c_crop,h_600,w_600/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png'
-  ])
+  client: hpp, country: 'Haïti', date: Date.new(2018,11)
+  )
 Work.create!(
   title: "1er Festival international de Piano d'Haïti",
   description: "Pour le premier festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
@@ -133,10 +132,6 @@ Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
   category: campaign,
   project: hpp,
   city: "Jacmel",
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551786086/Ha%C3%AFti%20Piano%20Project/piano_1er.gif',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785297/Ha%C3%AFti%20Piano%20Project/hpp_piano.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785298/Ha%C3%AFti%20Piano%20Project/Affiche_hpp_1.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551785605/Ha%C3%AFti%20Piano%20Project/Affiche_hpp_1_bus.png'],
   date: Date.new(2017)
   )
 Work.create!(
@@ -147,10 +142,6 @@ Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
   category: campaign,
   project: hpp,
   city: "Jacmel",
-  photos: ['https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551787334/Ha%C3%AFti%20Piano%20Project/piano_2eme.gif',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350936/Ha%C3%AFti%20Piano%20Project/a_hpp.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551786607/Ha%C3%AFti%20Piano%20Project/Indoor-hpp.png'],
   date: Date.new(2018)
   )
 Work.create!(
@@ -159,7 +150,6 @@ Work.create!(
   category: digital,
   project: hpp,
   city: "Paris",
-  photos: [],
   date: Date.new(2019)
   )
 
@@ -173,8 +163,7 @@ Color.create!(red: 253, green: 215, blue: 3, alpha: 1, project: hpp)
 at = Project.create!(
   title: "Alan Turing",
   description: "Test de scripts animés avec les équations d'Alan Turing",
-  category: motion_graphics, client: personal, city: 'Paris', country: 'France', date: Date.new(2018,9),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788346/codesign/Turing.gif"])
+  client: personal, city: 'Paris', country: 'France', date: Date.new(2018,9))
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
@@ -188,20 +177,13 @@ Work.create!(
   category: motion_graphics,
   project: at,
   city: "Paris",
-  photos: [
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406285/codesign/Piano2.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406308/codesign/Piano-Organique.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788346/codesign/Turing.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549636860/codesign/codesign_Piano-Piano-red.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788694/codesign/Piano_12.gif"],
   date: Date.new(2018,11)
   )
 
 hainet = Project.create!(
   title: "Hainet",
   description: "Communication interne et externe",
-  category: brand_identity, client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png"])
+  client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7))
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: hainet)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
@@ -214,12 +196,6 @@ Work.create!(
   category: brand_identity,
   project: hainet,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551783854/hainet/HAINET_580.jpg',
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet.svg",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548389023/hainet/a_wifi.png"],
   date: Date.new(2016)
   )
 Work.create!(
@@ -228,8 +204,6 @@ Work.create!(
   category: brand_identity,
   project: hainet,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548391164/hainet/HainetB.png'],
   date: Date.new(2017)
   )
 Work.create!(
@@ -238,9 +212,6 @@ Work.create!(
   category: brand_identity,
   project: hainet,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350870/hainet/hainet_mobil.png',
-  ],
   date: Date.new(2017)
   )
 Work.create!(
@@ -249,20 +220,13 @@ Work.create!(
   category: campaign,
   project: hainet,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548406017/hainet/fb961754572485.5960eb3d226cc.gif',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548351144/hainet/hainet_fibre.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548389022/hainet/a_noel.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551795881/hainet/PhotoAgents.png'
-  ],
   date: Date.new(2017)
   )
 
 spark = Project.create!(
   title: "Spark",
   description: "Communication interne et externe",
-  category: brand_identity, client: spark, city: 'Paris', country: 'France', date: Date.new(2019,1),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551790449/Spark/spark_mock.png"])
+  client: spark, city: 'Paris', country: 'France', date: Date.new(2019,1))
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: spark)
@@ -276,17 +240,13 @@ Work.create!(
   category: brand_identity,
   project: spark,
   city: "Paris",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark.svg',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark_c.svg'],
   date: Date.new(2019)
   )
 
 kyg = Project.create!(
   title: "Kill your gender",
   description: "Communication pour un évènement organisé dans la ville de Nantes",
-  category: campaign, client: personal,  city: 'Nantes', country: 'France', date: Date.new(2015,6),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350810/KillYourGender.gif"])
+  client: personal,  city: 'Nantes', country: 'France', date: Date.new(2015,6))
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: kyg)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
@@ -297,8 +257,7 @@ Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
 ifh_p = Project.create!(
   title: "Institut Français",
   description: "Durant 2 ans j'ai travaillé avec l'Institut Français en Haïti. J'y ai réalisé plus de 150 affiches. Les collaborations ont été nombreuses et très diverses. De la signalétique en passant par de l'évènementiel.",
-  category: brand_identity, client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3),
-  photos: ["https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551800540/institut_francais/IFH_logos.gif"])
+  client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3))
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: ifh_p)
@@ -312,11 +271,6 @@ Work.create!(
   category: campaign,
   project: ifh_p,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548392026/institut_francais/21559112_1510447122345440_8189747391438187022_n.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797482/institut_francais/24176938_1581715015218650_9169602671311774417_n.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797531/institut_francais/22282126_1529326347124184_2615756073934817481_n.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551797787/institut_francais/jedi_mizik.svg'],
   date: Date.new(2019)
   )
 Work.create!(
@@ -325,11 +279,6 @@ Work.create!(
   category: campaign,
   project: ifh_p,
   city: "Port-au-Prince",
-  photos: [
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798365/institut_francais/27654518_1643368619053289_4766089820552918695_n.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798364/institut_francais/27654796_1643368615719956_4009558741322415077_n.png',
-    'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551798364/institut_francais/27460037_1643368625719955_6637365979642535892_n.png'
-    ],
   date: Date.new(2019)
   )
 # Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
@@ -337,46 +286,31 @@ Work.create!(
 mpp_1 = Project.create!(
   title: "Mouvman Peyzan Papay",
   description: "création d'un logo pour le mouvement paysan Haïtien",
-  category: brand_identity, client: mpp, city: 'Papay', country: 'Haïti', date: Date.new(2016,5),
-  photos: [
-    "https://mir-s3-cdn-cf.behance.net/project_modules/disp/0d390938145993.5960f439382eb.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548398804/mpp/MPP.gif"
-  ])
+  client: mpp, city: 'Papay', country: 'Haïti', date: Date.new(2016,5),
+  )
 Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160830/mpp/mpp.svg', project: mpp_1)
 
 ds = Project.create(
   title: "Diplomatie Solidaire",
   description: "création d'un logo pour le mouvement paysan Haïtien",
-  category: brand_identity, client: ds,  city: 'Paris', country: 'France', date: Date.new(2016,1),
-  photos: [])
+  client: ds,  city: 'Paris', country: 'France', date: Date.new(2016,1),
+  )
 
 Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985279/dipomatie_solidaire/diplomatie_solidaire.svg', project: ds)
 
 ambafrance_tweeter = Project.create(
   title: "Twitter Ambassade",
   description: "création d'un logo pour le mouvement paysan Haïtien",
-  category: campaign, client: ambafrance,  city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2015, 12),
-  photos: [
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548400741/Ambafranceht/CDFH2.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548407831/Ambafranceht/20mars.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548408415/Ambafranceht/14juillet.gif",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548408619/Ambafranceht/DaHp6N9XcAAvW6W.jpg",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548408674/Ambafranceht/DXxPXOjVwAA5MUT.jpg"
-  ])
+  client: ambafrance,  city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2015, 12),
+  )
 
 cath_flon_p = Project.create(
   title: "Catherine Flon",
   description: "création d'un logo pour le mouvement paysan Haïtien",
-  category: brand_identity, client: cath_flon,  city: 'Paris', country: 'France', date: Date.new(2018,3),
-  photos: [
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977878/Catherine%20Flon/06436145468885.5848356929194.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977877/Catherine%20Flon/34a3de45468885.58322ce1e2062.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977876/Catherine%20Flon/03cb2d45468885.58322ce1e2d89.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977875/Catherine%20Flon/c84ae645468885.58322ce1e263d.png",
-    "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977875/Catherine%20Flon/f771d045468885.58322ce1e32bb.png"
-  ])
+  client: cath_flon,  city: 'Paris', country: 'France', date: Date.new(2018,3),
+  )
 
-skills_design = Project.create!( title: "Skills Design", description: "", category: digital, client: personal)
+skills_design = Project.create!( title: "Skills Design", description: "", client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589/Skills/Ps.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ae.svg", project: skills_design)
@@ -385,14 +319,14 @@ Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589/Skills/Lr.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161590/Skills/XD.svg", project: skills_design)
 
-skills_web = Project.create!( title: "Skills Web", description: "", category: digital, client: personal)
+skills_web = Project.create!( title: "Skills Web", description: "", client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/CSS.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/HTML.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Ruby.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Rails.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Js.svg", project: skills_web)
 
-formation = Project.create!( title: "Formations", description: "", category: digital, client: personal)
+formation = Project.create!( title: "Formations", description: "", client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/Renoir.svg", project: formation)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/LISAA.svg", project: formation)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/lewagon.svg", project: formation)

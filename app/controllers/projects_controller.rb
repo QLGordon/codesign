@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
     @project.works.build
     @categories = Category.all
     @clients = Client.all
+    @color = Color.new
   end
 
   def create
@@ -24,6 +25,8 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.save!
     @project.category_id = params[:project][:category_id]
+    redirect_to project_path(@project)
+
     # raise
   end
 
@@ -49,8 +52,8 @@ class ProjectsController < ApplicationController
   end
 
   def project_params
-    params.require(:project).permit(:title, :description, :city, :country, :category_id, :client_id,
-                                    works_attributes: [:title, :description, :photos, :city, :date, :category_id, :_destroy],
+    params.require(:project).permit(:title, :description, :city, :country, :photo, :category_id, :client_id,
+                                    works_attributes: [:title, :description, :city, :date, :category_id, :_destroy],
                                     colors_attributes: [:name, :red, :green, :blue, :_destroy])
   end
 end
