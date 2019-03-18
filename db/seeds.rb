@@ -24,19 +24,11 @@ photography = Category.create!(name: "photographie")
 motion_graphics = Category.create!(name: "Film & Motion graphics")
 digital = Category.create!(name: "Digital design")
 
-culture = Category.create!(name: "culture")
-entreprise = Category.create!(name: "entreprise")
-administration = Category.create!(name: "administration")
-fake = Category.create!(name: "plus")
-perso = Category.create!(name: "plus")
-association = Category.create!(name: "association")
-start_up = Category.create!(name: "Start-Up")
-
 #________C_L_I_E_N_T_S__________________________________________________________
 
 p "Creating Clients"
 ifh = Client.create!( name: "Institut Français en Haïti",
-  description: "L'Institut français en Haïti (IFH) fait partie du réseau mondial des instituts français. Son bureau est basé à Port-au-Prince, la capitale du pays.", category: culture)
+  description: "L'Institut français en Haïti (IFH) fait partie du réseau mondial des instituts français. Son bureau est basé à Port-au-Prince, la capitale du pays.")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161107/institut_francais/ifh.svg", client: ifh)
 
 Color.create!(red: 28, green: 138, blue: 201, alpha: 1, client: ifh)
@@ -45,55 +37,55 @@ Color.create!(red: 254, green: 237, blue: 1, alpha: 1, client: ifh)
 Color.create!(red: 249, green: 37, blue: 64, alpha: 1, client: ifh)
 Color.create!(red: 58, green: 237, blue: 183, alpha: 1, client: ifh)
 
-hpp = Client.create!( name: "Haïti Piano Project", description: "", category: culture)
+hpp = Client.create!( name: "Haïti Piano Project", description: "")
 
-ambafrance = Client.create!( name: "Ambassade de France en Haïti", description: "", category: administration)
+ambafrance = Client.create!( name: "Ambassade de France en Haïti", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549983910/Ambafranceht/ambafrance.svg", client: ambafrance)
 
 Color.create!(red: 24, green: 34, blue: 134, alpha: 1, client: ambafrance)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, client: ambafrance)
 Color.create!(red: 251, green: 15, blue: 12, alpha: 1, client: ambafrance)
 
-se = Client.create!( name: "Sibylline escapade", description: "", category: start_up)
+se = Client.create!( name: "Sibylline escapade", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160742/Sibylline/sibylline_c.svg", client: se)
 
-hainet = Client.create!( name: "Hainet", description: "", category: entreprise)
+hainet = Client.create!( name: "Hainet", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg", client: hainet)
 Color.create!(red: 30, green: 147, blue: 236, alpha: 1, client: hainet)
 Color.create!(red: 248, green: 124, blue: 39, alpha: 1, client: hainet)
 Color.create!(red: 55, green: 51, blue: 46, alpha: 1, client: hainet)
 
-personal = Client.create!( name: "QL Gordon", description: "", category: perso)
+personal = Client.create!( name: "QL Gordon", description: "")
 
-spark = Client.create!( name: "Spark", description: "", category: start_up)
+spark = Client.create!( name: "Spark", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark_c.svg", client: spark)
 Color.create!(red: 90, green: 225, blue: 183, alpha: 1, client: spark)
 Color.create!(red: 9, green: 115, blue: 255, alpha: 1, client: spark)
 
-mpp = Client.create!( name: "Mouvman Payzan Papay", description: "", category: association)
+mpp = Client.create!( name: "Mouvman Payzan Papay", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160830/mpp/mpp_c.svg", client: mpp)
 Color.create!(red: 251, green: 186, blue: 0, alpha: 1, client: mpp)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, client: mpp)
 
-ds = Client.create!( name: "Diplomatie Solidaire", description: "", category: association)
+ds = Client.create!( name: "Diplomatie Solidaire", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985279/dipomatie_solidaire/diplomatie_solidaire_c.svg", client: ds)
 
 Color.create!(red: 250, green: 27, blue: 17, alpha: 1, client: ds)
 Color.create!(red: 0, green: 28, blue: 131, alpha: 1, client: ds)
 Color.create!(red: 34, green: 31, blue: 28, alpha: 1, client: ds)
 
-ue = Client.create!( name: "Union Européenne", description: "", category: administration)
+ue = Client.create!( name: "Union Européenne", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161049/codesign/ue_c.svg", client: ue)
 
 Color.create!(red: 255, green: 255, blue: 0, alpha: 1, client: ue)
 Color.create!(red: 015, green: 33, blue: 139, alpha: 1, client: ue)
 
-concern = Client.create!( name: "Concern Worldwide", description: "", category: association)
+concern = Client.create!( name: "Concern Worldwide", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161030/codesign/concern_c.svg", client: concern)
 
 Color.create!(red: 31, green: 80, blue: 45, alpha: 1, client: concern)
 
-starcom = Client.create!( name: "Starcom Mediavest Haïti", description: "", category: entreprise)
+starcom = Client.create!( name: "Starcom Mediavest Haïti", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161010/codesign/starcom_c.svg", client: starcom)
 
 Color.create!(red: 255, green: 140, blue: 0, alpha: 1, client: starcom)
@@ -101,25 +93,25 @@ Color.create!(red: 255, green: 44, blue: 0, alpha: 1, client: starcom)
 Color.create!(red: 255, green: 214, blue: 0, alpha: 1, client: starcom)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, client: starcom)
 
-ddb = Client.create!( name: "DDB", description: "", category: entreprise)
+ddb = Client.create!( name: "DDB", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160990/codesign/ddb_c.svg", client: ddb)
 
 Color.create!(red: 236, green: 195, blue: 7, alpha: 1, client: ddb)
 Color.create!(red: 14, green: 12, blue: 21, alpha: 1, client: ddb)
 
-enedis = Client.create!( name: "Enedis", description: "", category: entreprise)
+enedis = Client.create!( name: "Enedis", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160973/codesign/enedis_c.svg", client: enedis)
 
 Color.create!(red: 0, green: 76, blue: 172, alpha: 1, client: enedis)
 Color.create!(red: 148, green: 204, blue: 0, alpha: 1, client: enedis)
 
-pantheon_sorbonne = Client.create!( name: "Université Paris 1 Panthéon Sorbonne", description: "", category: administration)
+pantheon_sorbonne = Client.create!( name: "Université Paris 1 Panthéon Sorbonne", description: "")
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160954/codesign/pantheon_sorbonne_c.svg", client: pantheon_sorbonne)
 
 Color.create!(red: 190, green: 124, blue: 8, alpha: 1, client: pantheon_sorbonne)
 Color.create!(red: 10, green: 39, blue: 86, alpha: 1, client: pantheon_sorbonne)
 
-cath_flon = Client.create!( name: "Catherine Flon", description: "", category: entreprise)
+cath_flon = Client.create!( name: "Catherine Flon", description: "")
 
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985126/Catherine%20Flon/cath_flon_c.svg", client: cath_flon)
 
@@ -384,7 +376,7 @@ cath_flon_p = Project.create(
     "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977875/Catherine%20Flon/f771d045468885.58322ce1e32bb.png"
   ])
 
-skills_design = Project.create!( title: "Skills Design", description: "", category: perso, client: personal)
+skills_design = Project.create!( title: "Skills Design", description: "", category: digital, client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589/Skills/Ps.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ae.svg", project: skills_design)
@@ -393,14 +385,14 @@ Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589/Skills/Lr.svg", project: skills_design)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161590/Skills/XD.svg", project: skills_design)
 
-skills_web = Project.create!( title: "Skills Web", description: "", category: perso, client: personal)
+skills_web = Project.create!( title: "Skills Web", description: "", category: digital, client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/CSS.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/HTML.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Ruby.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Rails.svg", project: skills_web)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161595/Skills/Js.svg", project: skills_web)
 
-formation = Project.create!( title: "Formations", description: "", category: perso, client: personal)
+formation = Project.create!( title: "Formations", description: "", category: digital, client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/Renoir.svg", project: formation)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/LISAA.svg", project: formation)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/lewagon.svg", project: formation)

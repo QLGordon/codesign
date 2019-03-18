@@ -102,7 +102,6 @@
 
 // FIN INDEX PROJECTS
 
-#project {
     input[type="submit"]{
       width: 24pt;
       height: 24pt;
@@ -110,7 +109,7 @@
       text-align: center;
       padding: 0pt;
       font-size: 9pt;
-      background: rgba(0,0,255,.5);
+      background: black;
       color: white;
       border-radius: 50%;
     }
@@ -118,9 +117,9 @@
     width: 100%;
     border: none;
     color: rgba(0,0,255,1);
-    background: rgba(0,0,255,.05);
     &:focus {
       outline: none;
+      background: rgba(0,0,0,.05)
     }
   }
   textarea {
@@ -130,6 +129,10 @@
     display: table-cell;
     padding: 6pt;
   }
+    .work-description {
+      border-left: 1pt solid rgba(0,0,0,.25);
+    }
+#project {
   #work {
     .row {
       flex-wrap: wrap;
@@ -138,8 +141,13 @@
         img { padding-bottom: 12pt; }
       }
     }
-    .work-description {
-      border-left: 1pt solid rgba(0,0,0,.25);
+    .large-button {
+      font-size: 48pt;
+      font-weight: 700;
+      text-align: center;
+      background: black; color: white;
+      transition: all 250ms;
+      &:hover { background: white; color: black;}
     }
 
   }
