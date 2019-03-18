@@ -4,7 +4,7 @@
 <!-- Section Project content -->
     <section class="row">
 
-      <article class="col-sm-12 col-md-4">
+      <article class="col-sm-12 col-md-5">
         <div class="content-text">
           <% if @project.client.svgs.first %>
             <div class="svg">
@@ -20,7 +20,7 @@
           </h3>
           <p class="country"><%= @project.country %></p> <br>
           <hr>
-          <p><%= @project.description %></p>
+          <p><%= markdown(@project.description) %></p>
           <br>
           <hr>
           <% if @project.works %>
@@ -37,7 +37,7 @@
       </div>
     </article>
 
-    <article class="col-sm-12 col-md-8">
+    <article class="col-sm-12 col-md-7">
       <div class="content-img">
         <% @project.photos.each do |photo|  %>
           <img src="<%= photo %>" alt="">

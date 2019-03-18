@@ -126,6 +126,10 @@
   textarea {
     height: 300px;
   }
+  .color-form {
+    display: table-cell;
+    padding: 6pt;
+  }
   #work {
     .row {
       flex-wrap: wrap;
