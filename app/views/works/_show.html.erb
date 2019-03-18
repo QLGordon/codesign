@@ -20,4 +20,15 @@
     </section>
   <% end %>
   <%#= render 'works/new' %>
+  <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+        <%= link_to new_project_work_path(@project) do %>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="large-button">
+        <p>Ajouter un travail</p>
+      </div>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
 </section>

@@ -1,23 +1,26 @@
-<main id="project">
+<main id="work" style="margin-top: 72pt;">
   <section class="container">
     <section class="row">
-        <article class="col-sm-12">
+        <article class="col-md-5 col-sm-12">
           <div class="content-text">
-            <strong>Add a work on <%= @project.title %></strong>
-            <br>
-            <%= @work.class %> <%= @project.title %>
             <%= form_for [@project, @work] do |f| %>
-            <%= f.text_field :title %>
-            <%= f.text_field :description %>
+            <h3><%= f.text_field :title, placeholder: "titre" %></h3>
+            <p class="category" style="display: inline-flex;" >
             <%= f.select(:category_id) do %>
             <% @categories.each do |c| %>
               <%= content_tag(:option, c.name, value: c.id) %>
             <% end %>
-          <% end %>
-          <%= f.submit %>
-        <% end %>
+          <% end %><span> • </span><%= f.date_field :date %> <span> | </span><%= f.text_field :city, placeholder: "city" %> </p><br>
         </div>
+        </article>
+        <article class="col-md-7 col-sm-12 work-description">
+          <div class="content-text">
+            <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
+            <%= f.text_field :photos, placeholder: "url photo" %><br>
+          <%= f.submit %>
+      </div>
       </article>
+        <% end %>
     </section>
   </section>
 </main>
