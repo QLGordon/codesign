@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @clients = Client.all
     @categories = Category.all
+    @works = @project.works
   end
 
   def new
