@@ -124,6 +124,8 @@ hpp = Project.create!(
   description: "Haïti Piano project est un festival de musique classique à l'initiative de Célimène Daudet Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem quod ipsa aperiam velit cumque ab autem ipsam, adipisci ipsum? Tempora iusto ducimus ipsa quae, numquam in nihil doloremque similique ea. ipsum dolor sit amet, consectetur adipisicing elit. Optio assumenda nostrum, molestiae esse quas quam molestias placeat nesciunt expedita, aliquam debitis odio iusto inventore perspiciatis rem, fugit, id deleniti obcaecati!",
   client: hpp, country: 'Haïti', date: Date.new(2018,11)
   )
+hpp.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/c_crop,h_600,w_600/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png"
+hpp.save
 Work.create!(
   title: "1er Festival international de Piano d'Haïti",
   description: "Pour le premier festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
@@ -164,6 +166,8 @@ at = Project.create!(
   title: "Alan Turing",
   description: "Test de scripts animés avec les équations d'Alan Turing",
   client: personal, city: 'Paris', country: 'France', date: Date.new(2018,9))
+at.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551788346/codesign/Turing.gif"
+at.save
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
@@ -184,6 +188,8 @@ hainet = Project.create!(
   title: "Hainet",
   description: "Communication interne et externe",
   client: hainet, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2016,7))
+hainet.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548409366/hainet/HainetSA.png"
+hainet.save
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: hainet)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
@@ -227,6 +233,8 @@ spark = Project.create!(
   title: "Spark",
   description: "Communication interne et externe",
   client: spark, city: 'Paris', country: 'France', date: Date.new(2019,1))
+spark.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551790449/Spark/spark_mock.png"
+spark.save
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: spark)
@@ -247,6 +255,9 @@ kyg = Project.create!(
   title: "Kill your gender",
   description: "Communication pour un évènement organisé dans la ville de Nantes",
   client: personal,  city: 'Nantes', country: 'France', date: Date.new(2015,6))
+kyg.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548350810/KillYourGender.gif"
+kyg.save
+
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: kyg)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: kyg)
@@ -258,6 +269,8 @@ ifh_p = Project.create!(
   title: "Institut Français",
   description: "Durant 2 ans j'ai travaillé avec l'Institut Français en Haïti. J'y ai réalisé plus de 150 affiches. Les collaborations ont été nombreuses et très diverses. De la signalétique en passant par de l'évènementiel.",
   client: ifh, city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2018,3))
+ifh_p.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1551800540/institut_francais/IFH_logos.gif"
+ifh_p.save
 
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: ifh_p)
@@ -288,6 +301,8 @@ mpp_1 = Project.create!(
   description: "création d'un logo pour le mouvement paysan Haïtien",
   client: mpp, city: 'Papay', country: 'Haïti', date: Date.new(2016,5),
   )
+mpp_1.remote_photo_url = "https://mir-s3-cdn-cf.behance.net/project_modules/disp/0d390938145993.5960f439382eb.gif"
+mpp_1.save
 Svg.create!( svg: 'https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160830/mpp/mpp.svg', project: mpp_1)
 
 ds = Project.create(
@@ -303,12 +318,22 @@ ambafrance_tweeter = Project.create(
   description: "création d'un logo pour le mouvement paysan Haïtien",
   client: ambafrance,  city: 'Port-au-Prince', country: 'Haïti', date: Date.new(2015, 12),
   )
+ambafrance_tweeter.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1548408415/Ambafranceht/14juillet.gif"
+ambafrance_tweeter.save
 
 cath_flon_p = Project.create(
   title: "Catherine Flon",
   description: "création d'un logo pour le mouvement paysan Haïtien",
   client: cath_flon,  city: 'Paris', country: 'France', date: Date.new(2018,3),
   )
+cath_flon_p.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549977878/Catherine%20Flon/06436145468885.5848356929194.png"
+cath_flon_p.save
+
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: cath_flon_p)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: cath_flon_p)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: cath_flon_p)
+Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: cath_flon_p)
+Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: cath_flon_p)
 
 skills_design = Project.create!( title: "Skills Design", description: "", client: personal)
 Svg.create!( svg: "https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161589/Skills/Ps.svg", project: skills_design)

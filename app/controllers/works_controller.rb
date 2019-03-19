@@ -3,14 +3,22 @@ class WorksController < ApplicationController
 
   def new
     @work = @project.works.build
+    @image = @work.images.build
     @categories = Category.all
   end
 
   def create
     @work = Work.new(work_params)
     @work.project = @project
-    @work.save!
-    redirect_to project_path(@project)
+
+         if @work.save
+           params[:images]['photo'].each do |a|
+              @image = @work.images.create!(:photo => a, :work_id => @work.id)
+           end
+           redirect_to project_path(@project)
+         else
+
+       end
   end
 
   def edit
@@ -37,6 +45,7 @@ class WorksController < ApplicationController
   end
 
   def work_params
-    params.require(:work).permit(:title, :description, {photos: []}, :city, :date, :category_id, :project_id)
+    params.require(:work).permit(:title, :description, :city, :date, :category_id, :project_id,
+      images_attributes:[:photo])
   end
 end

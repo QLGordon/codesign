@@ -101,40 +101,6 @@
 }
 
 // FIN INDEX PROJECTS
-
-    input[type="submit"]{
-      float: right;
-      padding: 0pt;
-      font-size: 24pt;
-      text-align: left;
-      color: black;
-      &:focus {
-      transition: all 250ms;
-        outline: none;
-        border-left: 6pt solid black;
-        padding-left: 6pt;
-      }
-    }
-  input, textarea {
-    width: 100%;
-    border: none;
-    color: rgba(0,0,255,1);
-    border-left: 1pt solid black;
-    padding-left: 3pt;
-    &:focus, &:hover {
-    transition: all 250ms;
-      outline: none;
-      border-left: 6pt solid black;
-      padding-left: 6pt;
-    }
-  }
-  textarea {
-    height: 300px;
-  }
-  .color-form {
-    display: table-cell;
-    padding: 6pt;
-  }
     .work-description {
       border-left: 1pt solid rgba(0,0,0,.25);
     }

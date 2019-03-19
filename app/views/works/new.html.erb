@@ -16,7 +16,12 @@
         <article class="col-md-7 col-sm-12 work-description">
           <div class="content-text">
             <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
-            <%= f.text_field :photos, placeholder: "url photo" %><br>
+            <%= f.fields_for :images do |image| %>
+              <%= image.label :photo %>
+              <% 6.times do %>
+              <%= image.file_field :photo, :multiple => true, name: "images[photo][]" %>
+              <% end %>
+            <% end %>
           <%= f.submit %>
       </div>
       </article>

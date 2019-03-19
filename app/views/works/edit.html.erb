@@ -21,7 +21,7 @@
         <article class="col-md-7 col-sm-12 work-description">
           <div class="content-text">
             <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
-            <%= f.text_field :photos, placeholder: "url photo" %><br>
+            <%= f.text_field :photo, multiple: true, name: "images[photo][]", placeholder: "url photo" %><br>
             <%= f.submit %>
           </div>
         </article>

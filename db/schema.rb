@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_18_222606) do
+ActiveRecord::Schema.define(version: 2019_03_19_113436) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -57,6 +57,14 @@ ActiveRecord::Schema.define(version: 2019_03_18_222606) do
     t.datetime "updated_at", null: false
     t.index ["client_id"], name: "index_fonts_on_client_id"
     t.index ["project_id"], name: "index_fonts_on_project_id"
+  end
+
+  create_table "images", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "work_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["work_id"], name: "index_images_on_work_id"
   end
 
   create_table "projects", force: :cascade do |t|
@@ -106,10 +114,8 @@ ActiveRecord::Schema.define(version: 2019_03_18_222606) do
     t.bigint "category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "photos", default: [], array: true
     t.string "city"
     t.date "date"
-    t.string "photo"
     t.index ["category_id"], name: "index_works_on_category_id"
     t.index ["project_id"], name: "index_works_on_project_id"
   end
@@ -120,6 +126,7 @@ ActiveRecord::Schema.define(version: 2019_03_18_222606) do
   add_foreign_key "colors", "works"
   add_foreign_key "fonts", "clients"
   add_foreign_key "fonts", "projects"
+  add_foreign_key "images", "works"
   add_foreign_key "projects", "categories"
   add_foreign_key "projects", "clients"
   add_foreign_key "svgs", "clients"

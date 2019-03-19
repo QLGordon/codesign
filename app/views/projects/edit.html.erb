@@ -18,6 +18,8 @@
           <p class="country"><%= f.text_field :country %></p>
           <hr>
           <%= f.text_area :description %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
           <br>
           <br>
           <% @project.colors.each do |color| %>
