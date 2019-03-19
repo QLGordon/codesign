@@ -1,8 +1,8 @@
 <% @projects.each do |project| %>
   <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
     <%= link_to project_path(project) do %>
-      <% if project.photos? %>
-        <div class="content-card" style=" background: url(<%= project.photos[0] %>); background-position: center;background-repeat: no-repeat; background-size: cover;">
+      <% if project.photo? %>
+        <div class="content-card" style=" background: url(<%= project.photo %>); background-position: center;background-repeat: no-repeat; background-size: cover;">
         <% if project.works %>
           <div class="categories">
             <% project.works.uniq { |work| work.category }.each do |work| %>
@@ -21,7 +21,7 @@
           </div>
         <% end %>
       <% end %>
-    <% if project.photos? || project.client.svgs.first && project.svgs.first %>
+    <% if project.photo? || project.client.svgs.first && project.svgs.first %>
       <div class="infos">
         <h4><%= project.title %></h4>
         <p><%= markdown(project.description[0..140]) %></p>

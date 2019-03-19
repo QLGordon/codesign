@@ -18,6 +18,8 @@
           <p class="country"><%= f.text_field :country %></p>
           <hr>
           <%= f.text_area :description %>
+          <%= f.input :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
           <br>
           <br>
           <% @project.colors.each do |color| %>
@@ -42,9 +44,9 @@
 
      <article class="col-sm-12 col-md-7">
        <div class="content-img">
-         <% @project.photos.each do |photo|  %>
-           <img src="<%= photo %>" alt="">
-         <% end %>
+
+           <img src="<%= @project.photo %>" alt="">
+
        </div>
      </article>
    </section>

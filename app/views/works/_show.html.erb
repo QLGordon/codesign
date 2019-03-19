@@ -11,9 +11,9 @@
     </section>
 
     <section class="row">
-      <% work.photos.each do |photo| %>
+      <% work.images.each do |image| %>
         <article class="col-sm-12 col-md-4">
-          <img src="<%= photo %>" alt="">
+          <img src="<%= image.photo %>" alt="">
   <%#= render 'works/edit' %>
         </article>
       <% end %>

@@ -1,8 +1,45 @@
-#form {
-height: 100vw;
-form {
-  padding-top: 72pt;
-  display: grid;
-  margin: 0pt 288pt;
+input[type="submit"]{
+  float: right;
+  padding: 0pt;
+  font-size: 24pt;
+  text-align: left;
+  color: black;
+  &:focus {
+  transition: all 250ms;
+    outline: none;
+    border-left: 6pt solid black;
+    padding-left: 6pt;
+  }
 }
+
+input, textarea, select {
+  width: 100%;
+  border: none;
+  color: rgba(0,0,255,1);
+  border-left: 1pt solid black;
+  padding-left: 3pt;
+  &:focus, &:hover {
+  transition: all 250ms;
+    outline: none;
+    border-left: 6pt solid black;
+    padding-left: 6pt;
+  }
+}
+
+textarea {
+  height: 300px;
+}
+
+.color-form {
+  display: table-cell;
+  padding: 6pt;
+}
+
+select {
+  appearance: none;
+  border-radius: 0pt;
+  border: none;
+  background: white;
+  color: black;
+  padding: 6pt;
 }
