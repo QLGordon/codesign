@@ -12,7 +12,6 @@
       <%= f.text_area :description, placeholder: "Description" %>  <!-- [...] -->
         <%= f.input :photo %>
         <%= f.input :photo_cache, as: :hidden %>
-
         <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
 <% 5.times do %>
         <div class="color-form">

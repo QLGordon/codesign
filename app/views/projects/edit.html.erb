@@ -22,6 +22,7 @@
           <%= f.input :photo_cache, as: :hidden %>
           <br>
           <br>
+          <div class="colors-form">
           <% @project.colors.each do |color| %>
           <div class="color-form">
             <% if color.present? %>
@@ -29,11 +30,13 @@
                 <%= color_fields.number_field :red %> <%= color_fields.number_field :green %> <%= color_fields.number_field :blue %>
                 <h4 style="color: rgba(
                 <%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);
-                ">███<%= color_fields.check_box :_destroy %></h4>
+                ">███</h4>
               <% end %>
+
             <% end %>
             </div>
           <% end %>
+        </div>
           <%= f.button :submit, "ok" %>
            <hr>
 

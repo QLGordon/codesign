@@ -6,7 +6,7 @@
         <p class="category"><%= work.category.name %></p>
       </article>
       <article id="work" class="col-sm-12 col-md-7 work-description">
-        <p style=" font-size: 16pt;"><%= work.description %></p>
+        <%= markdown work.description %>
       </article>
     </section>
 

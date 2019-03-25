@@ -35,6 +35,9 @@ class ProjectsController < ApplicationController
     @clients = Client.all
     @project = Project.find(params[:id])
     @colors = @project.colors
+    3.times do
+    @color = @project.colors.build
+    end
   end
 
   def update
@@ -43,6 +46,12 @@ class ProjectsController < ApplicationController
       redirect_to project_path(@project)
     else
       render :edit
+    end
+  end
+
+  def destroy
+    if @project.destroy
+      redirect_to projects_path
     end
   end
 

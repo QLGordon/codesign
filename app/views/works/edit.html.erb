@@ -4,6 +4,7 @@
       <section class="row">
         <article class="col-md-5 col-sm-12">
           <div class="content-text">
+            <%= link_to '⤬', [@project, @work], :method => :delete %>
               <%= form_for [@project, @work] do |f| %>
                 <h3><%= f.text_field :title, placeholder: "titre" %></h3>
                 <p class="category" style="display: inline-flex;" >
@@ -22,11 +23,8 @@
           <div class="content-text">
             <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
             <%= f.fields_for :images do |image| %>
-              <h1>test</h1>
-              <%= image.label :photo %>
-
-                  <%= image.file_field :photo, :multiple => true, name: "images[photo][]" %>
-
+                <%= image.file_field :photo, name: "images[photo][]" %>
+                <%= image.check_box :_destroy %>
               <% end %>
             <%= f.submit %>
           </div>

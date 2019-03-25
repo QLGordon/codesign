@@ -105,6 +105,13 @@
       border-left: 1pt solid rgba(0,0,0,.25);
     }
 #project {
+  .colors-form {
+    display: flex;
+    flex-wrap: wrap;
+    .color-form {
+      display: flex;
+    }
+  }
   #work {
     .row {
       flex-wrap: wrap;

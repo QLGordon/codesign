@@ -10,14 +10,16 @@
           <% end %>
           <h3>
             <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <%= link_to "✎", edit_project_path(@project, @work) %><br>
+            <%= link_to "✎", edit_project_path(@project, @work) %>
+            <%= link_to '⤬', @project, :method => :delete %>
+                                <br>
 
             <% end %>
             <%= @project.title %>
           </h3>
           <p class="country"><%= @project.country %></p> <br>
           <hr>
-          <p><%= markdown(@project.description) %></p>
+          <p><%= markdown @project.description %></p>
           <br>
           <hr>
           <% if @project.works %>
@@ -26,7 +28,10 @@
           <% end %></h3>
           <h3>Réalisations</h3>
             <% @project.works.each do |work| %>
-            <br><%= link_to "✎", edit_project_work_path(@project.id, work) %>
+            <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+            <br>
+            <%= link_to "✎", edit_project_work_path(@project.id, work) %>
+            <% end %>
               <p><%= work.title %></p>
               <p class="category"><%= work.category.name %><% if work.date && work.city %> • <%= work.date.year %> | <%= work.city %> <% end %> </p>
             <br>

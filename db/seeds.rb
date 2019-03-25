@@ -126,34 +126,34 @@ hpp = Project.create!(
   )
 hpp.remote_photo_url = "https://res.cloudinary.com/dhp5qp6ol/image/upload/c_crop,h_600,w_600/v1549981385/Ha%C3%AFti%20Piano%20Project/Hpp_base.png"
 hpp.save
-Work.create!(
-  title: "1er Festival international de Piano d'Haïti",
-  description: "Pour le premier festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
-M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
-Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
-  category: campaign,
-  project: hpp,
-  city: "Jacmel",
-  date: Date.new(2017)
-  )
-Work.create!(
-  title: "2ème Festival international de Piano d'Haïti",
-  description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
-M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
-Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
-  category: campaign,
-  project: hpp,
-  city: "Jacmel",
-  date: Date.new(2018)
-  )
-Work.create!(
-  title: "Site internet",
-  description: "Suite aux deux collaboration avec le Haïti Paino Project, j'assume la refonte du site internet. Le travail est en cours de réalisation.",
-  category: digital,
-  project: hpp,
-  city: "Paris",
-  date: Date.new(2019)
-  )
+# Work.create!(
+#   title: "1er Festival international de Piano d'Haïti",
+#   description: "Pour le premier festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
+# M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
+# Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
+#   category: campaign,
+#   project: hpp,
+#   city: "Jacmel",
+#   date: Date.new(2017)
+#   )
+# Work.create!(
+#   title: "2ème Festival international de Piano d'Haïti",
+#   description: "Pour le deuxième festival international de Piano en Haïti Célimène Daudet a voulu une affiche sobre qui respire la joie.
+# M’inspirant de la forme même d’un Piano, j’ai proposé cette affiche colorée où trois pianos dansent pour ne former plus qu’une forme au centre.
+# Le trait tremblant est un clin dœil à l’art naïf Haïtien.",
+#   category: campaign,
+#   project: hpp,
+#   city: "Jacmel",
+#   date: Date.new(2018)
+#   )
+# Work.create!(
+#   title: "Site internet",
+#   description: "Suite aux deux collaboration avec le Haïti Paino Project, j'assume la refonte du site internet. Le travail est en cours de réalisation.",
+#   category: digital,
+#   project: hpp,
+#   city: "Paris",
+#   date: Date.new(2019)
+#   )
 
 Color.create!(red: 24, green: 122, blue: 179, alpha: 1, project: hpp)
 Color.create!(red: 26, green: 39, blue: 51, alpha: 1, project: hpp)
@@ -175,14 +175,14 @@ Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: at)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: at)
 
-Work.create!(
-  title: "Motif de Turing",
-  description: "Lors d'une recherche personelle je me suis amusé avec Photoshop dans ce travail qui anime en 25 i/s le motif d'Allan Turing",
-  category: motion_graphics,
-  project: at,
-  city: "Paris",
-  date: Date.new(2018,11)
-  )
+# Work.create!(
+#   title: "Motif de Turing",
+#   description: "Lors d'une recherche personelle je me suis amusé avec Photoshop dans ce travail qui anime en 25 i/s le motif d'Allan Turing",
+#   category: motion_graphics,
+#   project: at,
+#   city: "Paris",
+#   date: Date.new(2018,11)
+#   )
 
 hainet = Project.create!(
   title: "Hainet",
@@ -196,38 +196,38 @@ Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: hainet)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: hainet)
 
-Work.create!(
-  title: "Refonte du logo",
-  description: "Refonte du Logo de la marque Hainet Sesanet",
-  category: brand_identity,
-  project: hainet,
-  city: "Port-au-Prince",
-  date: Date.new(2016)
-  )
-Work.create!(
-  title: "Hainet Business",
-  description: "Création d'un univers graphique pour la partie business de l'entreprise",
-  category: brand_identity,
-  project: hainet,
-  city: "Port-au-Prince",
-  date: Date.new(2017)
-  )
-Work.create!(
-  title: "Hainet Mobile",
-  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
-  category: brand_identity,
-  project: hainet,
-  city: "Port-au-Prince",
-  date: Date.new(2017)
-  )
-Work.create!(
-  title: "Hainet Fibermax",
-  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
-  category: campaign,
-  project: hainet,
-  city: "Port-au-Prince",
-  date: Date.new(2017)
-  )
+# Work.create!(
+#   title: "Refonte du logo",
+#   description: "Refonte du Logo de la marque Hainet Sesanet",
+#   category: brand_identity,
+#   project: hainet,
+#   city: "Port-au-Prince",
+#   date: Date.new(2016)
+#   )
+# Work.create!(
+#   title: "Hainet Business",
+#   description: "Création d'un univers graphique pour la partie business de l'entreprise",
+#   category: brand_identity,
+#   project: hainet,
+#   city: "Port-au-Prince",
+#   date: Date.new(2017)
+#   )
+# Work.create!(
+#   title: "Hainet Mobile",
+#   description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+#   category: brand_identity,
+#   project: hainet,
+#   city: "Port-au-Prince",
+#   date: Date.new(2017)
+#   )
+# Work.create!(
+#   title: "Hainet Fibermax",
+#   description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+#   category: campaign,
+#   project: hainet,
+#   city: "Port-au-Prince",
+#   date: Date.new(2017)
+#   )
 
 spark = Project.create!(
   title: "Spark",
@@ -242,14 +242,14 @@ Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: spark)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: spark)
 
-Work.create!(
-  title: "Logographie",
-  description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
-  category: brand_identity,
-  project: spark,
-  city: "Paris",
-  date: Date.new(2019)
-  )
+# Work.create!(
+#   title: "Logographie",
+#   description: "Création d'un univers graphique pour la partie téléphonie de l'entreprise",
+#   category: brand_identity,
+#   project: spark,
+#   city: "Paris",
+#   date: Date.new(2019)
+#   )
 
 kyg = Project.create!(
   title: "Kill your gender",
@@ -278,22 +278,22 @@ Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
 Color.create!(red: 255, green: 255, blue: 255, alpha: 1, project: ifh_p)
 Color.create!(red: 0, green: 0, blue: 0, alpha: 1, project: ifh_p)
 
-Work.create!(
-  title: "Jedi mizik",
-  description: "Création d'un univers graphique autour des concerts offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
-  category: campaign,
-  project: ifh_p,
-  city: "Port-au-Prince",
-  date: Date.new(2019)
-  )
-Work.create!(
-  title: "Ciné lari a",
-  description: "Création d'un univers graphique autour des séancesde cinéma en plein air offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
-  category: campaign,
-  project: ifh_p,
-  city: "Port-au-Prince",
-  date: Date.new(2019)
-  )
+# Work.create!(
+#   title: "Jedi mizik",
+#   description: "Création d'un univers graphique autour des concerts offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
+#   category: campaign,
+#   project: ifh_p,
+#   city: "Port-au-Prince",
+#   date: Date.new(2019)
+#   )
+# Work.create!(
+#   title: "Ciné lari a",
+#   description: "Création d'un univers graphique autour des séancesde cinéma en plein air offerts par l'Institut Français à Port-au-Prince. Création d'affiches déclinables.",
+#   category: campaign,
+#   project: ifh_p,
+#   city: "Port-au-Prince",
+#   date: Date.new(2019)
+#   )
 # Color.create!(red: 28, green: 138, blue: 201, alpha: 1, project: fff)
 
 mpp_1 = Project.create!(
