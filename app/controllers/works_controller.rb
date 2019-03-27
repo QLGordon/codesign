@@ -30,11 +30,7 @@ class WorksController < ApplicationController
   def update
     @work = Work.find(params[:id])
     @work.project = Project.find(params[:project_id])
-    @work.images.destroy_all
     if @work.update!(work_params)
-      params[:images]['photo'].each do |a|
-      @image = @work.images.create!(:photo => a, :work_id => @work.id)
-      end
       redirect_to project_path(@project)
     else
       render :edit
