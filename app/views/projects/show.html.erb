@@ -1,7 +1,11 @@
-<main id="project">
-  <section class="container">
+<main id="project" class="container">
     <section class="row">
-      <article class="col-sm-12 col-md-5">
+    <article class="col-sm-12 col-md-5">
+      <div class="content-img">
+          <img src="<%= @project.photo %>" alt="">
+      </div>
+    </article>
+      <article class="col-sm-12 col-md-7">
         <div class="content-text">
           <% if @project.client.svgs.first %>
             <div class="svg">
@@ -10,46 +14,51 @@
           <% end %>
           <h3>
             <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <%= link_to "✎", edit_project_path(@project, @work) %>
-            <%= link_to '⤬', @project, :method => :delete %>
-                                <br>
-
+              <%= link_to "⦿", edit_project_path(@project, @work) %>
+              <%= link_to '⊖', @project, :method => :delete %>
+              <br>
             <% end %>
-            <%= @project.title %>
+          <%= @project.title %>
           </h3>
-          <p class="country"><%= @project.country %></p> <br>
+          <p class="country"><%= @project.country %></p><br>
           <hr>
-          <p><%= markdown @project.description %></p>
-          <br>
+          <p><%= markdown @project.description %></p><br>
           <hr>
-          <% if @project.works %>
-          <h3><% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
 
-          <% end %></h3>
-          <h3>Réalisations</h3>
+          <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+            <h3>Réalisations <%= link_to "⊕", new_project_work_path(@project) %></h3><br>
             <% @project.works.each do |work| %>
-            <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <br>
-            <%= link_to "✎", edit_project_work_path(@project.id, work) %>
+              <p>
+                <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
+                <%= work.title %>
+              </p>
+              <p class="category">
+                <%= work.category.name %>
+                <% if work.date && work.city %>
+                  • <%= work.date.year %> | <%= work.city %>
+                <% end %>
+              </p><br>
             <% end %>
-              <p><%= work.title %></p>
-              <p class="category"><%= work.category.name %><% if work.date && work.city %> • <%= work.date.year %> | <%= work.city %> <% end %> </p>
-            <br>
-            <% end %>
+              <% else %>
+              <h3>Réalisations</h3><br>
+              <% @project.works.each do |work| %>
+                <p>
+                  <%= work.title %>
+                </p>
+                <p class="category">
+                  <%= work.category.name %>
+                  <% if work.date && work.city %>
+                    • <%= work.date.year %> | <%= work.city %>
+                  <% end %>
+                </p><br>
+              <% end %>
+
           <% end %>
           <%= render 'colors/show' %>
         </div>
       </div>
     </article>
-
-    <article class="col-sm-12 col-md-7">
-      <div class="content-img">
-
-          <img src="<%= @project.photo %>" alt="">
-
-      </div>
-    </article>
   </section>
 <%= render 'works/show' %>
-  </section>
+
 </main>

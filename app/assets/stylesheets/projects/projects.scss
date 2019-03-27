@@ -1,17 +1,22 @@
 @keyframes move-line { from { transform: translateX(-12pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
-@keyframes fade-in { from { transform: translateX(144pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
+@keyframes fade-in { from { transform: translateX(-144pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
 @keyframes move-line-a { from { transform: translateY(-24pt); opacity: 0; } to { transform: translateY(0pt); opacity: 1; }  }
 #projects {
   margin-top: 48pt;
-      .content-card { animation: move-line-a 250ms ease-in-out; animation-fill-mode: both; }
   .row {
     flex-wrap: wrap;
+    .add {
+      &:hover {background: black; color: white;}
+    }
     .content-card {
+      animation: move-line-a 250ms ease-in-out; animation-fill-mode: both;
       padding: 0pt 0pt 0pt 0pt;
       box-shadow: 0pt 6pt 18pt -3pt rgba(0,0,0,.1);
       margin: 6pt 0pt;
       text-decoration: none;
       overflow: hidden;
+      width: 100%;
+      height: 250px;
     .infos {
       background: rgba(255,255,255,1) !important;
       padding: 18pt;
@@ -101,24 +106,18 @@
 }
 
 // FIN INDEX PROJECTS
-    .work-description {
-      border-left: 1pt solid rgba(0,0,0,.25);
-    }
 #project {
-  .colors-form {
-    display: flex;
-    flex-wrap: wrap;
-    .color-form {
-      display: flex;
-    }
-  }
-  #work {
-    .row {
+    #work {
+      .row {
       flex-wrap: wrap;
       article {
         flex-grow: 1;
         img { padding-bottom: 12pt; }
       }
+    }
+  .work-description {
+      border-left: 1pt solid rgba(0,0,0,.25);
+    p { font-size: 18pt; }
     }
     .large-button {
       font-size: 48pt;
@@ -140,7 +139,7 @@
     // top: 72pt;
     background: white;
   }
-  .container {
+
     .row {
       margin-bottom: 72pt;
       &:last-child { margin-bottom: 24pt; }
@@ -148,6 +147,7 @@
         animation: fade-in 450ms ease-in-out;
         position: sticky;
         padding-top: 48pt;
+        height: 100%;
       }
       .content-text {
         animation: move-line 250ms ease-in-out;
@@ -188,5 +188,5 @@
         }
       }
     }
-  }
+
 }
