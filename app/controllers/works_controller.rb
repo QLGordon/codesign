@@ -1,6 +1,6 @@
 class WorksController < ApplicationController
   before_action :set_project
-  before_action :set_work, only: [:show, :edit, :update, :destroy]
+  before_action :set_work, only: [:show, :update, :destroy]
 
   def new
     @work = @project.works.build
@@ -24,13 +24,14 @@ class WorksController < ApplicationController
     @work = @project.works.find(params[:id])
     @image = @work.images.build
     @categories = Category.all
-    # @work.project = Work.find(params[:project_id])
   end
 
   def update
-    @work = Work.find(params[:id])
-    @work.project = Project.find(params[:project_id])
     if @work.update!(work_params)
+      @work.images.destroy_all
+      params[:images]['photo'].each do |a|
+        @image = @work.images.create!(:photo => a, :work_id => @work.id)
+      end
       redirect_to project_path(@project)
     else
       render :edit
@@ -54,6 +55,6 @@ class WorksController < ApplicationController
 
   def work_params
     params.require(:work).permit(:title, :description, :city, :date, :category_id, :project_id,
-      images_attributes:[:photo, :_destroy])
+      images_attributes: [:photo, :_destroy, :work_id, :id])
   end
 end
