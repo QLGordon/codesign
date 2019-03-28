@@ -1,64 +1,65 @@
 <main id="project" class="container">
-    <section class="row">
+  <section class="row">
     <article class="col-sm-12 col-md-5">
+    <!-- Texte -->
+      <div class="content-text">
+      <!-- logo -->
+        <% if @project.client.svgs.first %>
+          <div class="svg">
+            <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
+          </div>
+        <% end %>
+      <!-- logo -->
+      <!-- titre -->
+        <h3>
+        <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+          <%= link_to "⦿", edit_project_path(@project, @work) %>
+          <%= link_to '⊖', @project, :method => :delete %>
+          <br>
+        <% end %>
+        <%= @project.title %>
+        </h3>
+        <!-- titre -->
+        <!-- Pays et Description -->
+        <p class="country"><%= @project.country %></p><br>
+        <hr>
+        <div class="project-description"><p><%= markdown @project.description %></p></div>
+        <hr>
+        <!-- Pays et Description -->
+        <!-- Réalisations -->
+        <h3>Réalisations
+          <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+            <%= link_to "⊕", new_project_work_path(@project) %>
+          <% end %>
+        </h3>
+        <% @project.works.each do |work| %>
+          <p>
+            <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+              <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
+            <% end %>
+            <%= work.title %>
+          </p>
+          <p class="category">
+            <%= work.category.name %>
+            <% if work.date && work.city %>
+              • <%= work.date.year %> | <%= work.city %>
+            <% end %>
+          </p><br>
+        <% end %>
+        <!-- Réalisations -->
+        <!-- couleurs -->
+        <%= render 'colors/show' %>
+        <!-- couleurs -->
+      </div>
+    </article>
+    <!-- Texte -->
+    <!-- image -->
+    <article class="col-sm-12 col-md-7">
       <div class="content-img">
           <img src="<%= @project.photo %>" alt="">
       </div>
     </article>
-      <article class="col-sm-12 col-md-7">
-        <div class="content-text">
-          <% if @project.client.svgs.first %>
-            <div class="svg">
-                <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
-            </div>
-          <% end %>
-          <h3>
-            <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-              <%= link_to "⦿", edit_project_path(@project, @work) %>
-              <%= link_to '⊖', @project, :method => :delete %>
-              <br>
-            <% end %>
-          <%= @project.title %>
-          </h3>
-          <p class="country"><%= @project.country %></p><br>
-          <hr>
-          <p><%= markdown @project.description %></p><br>
-          <hr>
-
-          <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <h3>Réalisations <%= link_to "⊕", new_project_work_path(@project) %></h3><br>
-            <% @project.works.each do |work| %>
-              <p>
-                <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
-                <%= work.title %>
-              </p>
-              <p class="category">
-                <%= work.category.name %>
-                <% if work.date && work.city %>
-                  • <%= work.date.year %> | <%= work.city %>
-                <% end %>
-              </p><br>
-            <% end %>
-              <% else %>
-              <h3>Réalisations</h3><br>
-              <% @project.works.each do |work| %>
-                <p>
-                  <%= work.title %>
-                </p>
-                <p class="category">
-                  <%= work.category.name %>
-                  <% if work.date && work.city %>
-                    • <%= work.date.year %> | <%= work.city %>
-                  <% end %>
-                </p><br>
-              <% end %>
-
-          <% end %>
-          <%= render 'colors/show' %>
-        </div>
-      </div>
-    </article>
+    <!-- image -->
   </section>
-<%= render 'works/show' %>
-
+  <%= render 'works/show' %>
 </main>

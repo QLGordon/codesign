@@ -24,7 +24,7 @@
     <% if project.photo? || project.client.svgs.first && project.svgs.first %>
       <div class="infos">
         <h4><%= project.title %></h4>
-        <p><%= markdown(project.description[0..140]) %></p>
+        <p><%= markdown(project.description[0..140] + '…') %></p>
       <div class="colors" >
         <% if project.colors.first %>
           <% project.colors.each do |color| %>
