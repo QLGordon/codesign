@@ -13,7 +13,7 @@ class WorksController < ApplicationController
     @work.project = @project
          if @work.save
            params[:images]['photo'].each do |a|
-              @image = @work.images.create!(:photo => a, :work_id => @work.id)
+            @image = @work.images.create!(:photo => a, :work_id => @work.id)
            end
            redirect_to project_path(@project)
          else
@@ -22,15 +22,16 @@ class WorksController < ApplicationController
 
   def edit
     @work = @project.works.find(params[:id])
-    @image = @work.images.build
+    @images = @work.images
     @categories = Category.all
   end
 
   def update
     if @work.update!(work_params)
-      @work.images.destroy_all
-      params[:images]['photo'].each do |a|
-        @image = @work.images.create!(:photo => a, :work_id => @work.id)
+      if params[:images]
+        params[:images]['photo'].each do |a|
+          @image = @work.images.create!(photo: a, work_id: @work.id)
+        end
       end
       redirect_to project_path(@project)
     else

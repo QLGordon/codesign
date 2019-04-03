@@ -22,9 +22,13 @@
         <article class="col-md-7 col-sm-12 work-description">
           <div class="content-text">
             <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
-                  <%= f.fields_for :images do |image| %>
-                    <%= image.label :photo %>
-                      <%= image.file_field :photo, :multiple => true, name: "images[photo][]" %>
+                  <% @images.each do |image| %>
+                    <img src="<%= image.photo %>" alt="">
+                  <% end %>
+                  <%= f.fields_for :images do |image_field| %>
+                    <%= image_field.label :photo %>
+                      <%= image_field.file_field :photo, :multiple => true, name: "images[photo][]" %>
+                      <%= image_field.check_box :_destroy %>
                   <% end %>
             <%= f.submit %>
           </div>
