@@ -4,27 +4,36 @@ input[type="submit"]{
   font-size: 24pt;
   text-align: left;
   color: black;
+  width:2em;
   &:focus {
   transition: all 250ms;
     outline: none;
-    border-left: 6pt solid black;
-    padding-left: 6pt;
+    // border-left: 6pt solid black;
+    padding-left: 0pt;
+  }
+}
+input.rgb{
+  width: 3em;
+  &:hover, &:focus {
+    appearance: none;
   }
 }
 
 input, textarea, select {
   width: 100%;
   border: none;
-  color: rgba(0,0,255,1);
-  border-left: 1pt solid black;
+  color: rgba(0,0,0,1);
+  // border-left: 1pt solid black;
   padding-left: 3pt;
+  // background: rgba(0,0,0,.05);
+  font-family: monaco;
   &:focus, &:hover {
   transition: all 250ms;
     outline: none;
-    border-left: 6pt solid black;
+    // border-left: 6pt solid black;
     padding-left: 6pt;
   }
-}
+  }
 
 textarea {
   height: 300px;

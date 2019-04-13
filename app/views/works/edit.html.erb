@@ -13,7 +13,7 @@
                     <%= content_tag(:option, c.name, value: c.id) %>
                   <% end %>
                 <% end %>
-                  <%= f.date_field :date %>
+                  <%= f.text_field :date %>
                   <%= f.text_field :city, placeholder: "city" %>
                 </p>
                 <br>
@@ -30,7 +30,7 @@
                       <%= image_field.file_field :photo, :multiple => true, name: "images[photo][]" %>
                       <%= image_field.check_box :_destroy %>
                   <% end %>
-            <%= f.submit %>
+            <%= f.submit value: "OK" %>
           </div>
         </article>
       </section>

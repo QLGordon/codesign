@@ -8,9 +8,11 @@
             <p class="category" style="display: inline-flex;" >
             <%= f.select(:category_id) do %>
             <% @categories.each do |c| %>
-              <%= content_tag(:option, c.name, value: c.id) %>
+              <%= content_tag(:option, c.name.capitalize, value: c.id ) %>
             <% end %>
-          <% end %><span></span><%= f.date_field :date %> <span> </span><%= f.text_field :city, placeholder: "city" %> </p><br>
+          <% end %><br>
+          <%= f.text_field :date, value: Date.today %>
+          <%= f.text_field :city, value: "Paris", placeholder: "city" %></p><br>
         </div>
         </article>
         <article class="col-md-7 col-sm-12 work-description">
@@ -20,7 +22,7 @@
               <%= image.label :photo %>
                 <%= image.file_field :photo, :multiple => true, name: "images[photo][]" %>
             <% end %>
-          <%= f.submit %>
+          <%= f.submit value: "OK" %>
       </div>
       </article>
         <% end %>

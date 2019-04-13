@@ -1,6 +1,15 @@
+    <div class="content-img">
+        <img style="height: 75vh; width: 100vw; object-fit: cover;" src="<%= @project.photo %>" alt="">
+    </div>
 <main id="project" class="container">
+  <!-- image -->
   <section class="row">
-    <article class="col-sm-12 col-md-5">
+  <article class="col-sm-12 col-md-12">
+  </article>
+  </section>
+  <!-- image -->
+  <section class="row">
+    <article class="col-sm-12 col-md-12">
     <!-- Texte -->
       <div class="content-text">
       <!-- logo -->
@@ -53,13 +62,6 @@
       </div>
     </article>
     <!-- Texte -->
-    <!-- image -->
-    <article class="col-sm-12 col-md-7">
-      <div class="content-img">
-          <img src="<%= @project.photo %>" alt="">
-      </div>
-    </article>
-    <!-- image -->
   </section>
   <%= render 'works/show' %>
 </main>

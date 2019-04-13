@@ -1,4 +1,4 @@
-<%= simple_form_for(@project) do |f| %>
+<%= form_for(@project) do |f| %>
  <main id="project">
    <section class="container">
  <!-- Section Project content -->
@@ -16,8 +16,8 @@
           <p class="country"><%= f.text_field :country %></p>
           <hr>
           <%= f.text_area :description %>
-          <%= f.input :photo %>
-          <%= f.input :photo_cache, as: :hidden %>
+          <%= f.label :photo %>
+          <%= f.file_field :photo %>
           <br>
           <br>
           <div class="colors-form">
@@ -25,7 +25,7 @@
           <div class="color-form">
             <% if color.present? %>
               <%= f.fields_for :colors, color do |color_fields| %>
-                <%= color_fields.number_field :red %> <%= color_fields.number_field :green %> <%= color_fields.number_field :blue %>
+                <%= color_fields.text_field :red, class: "rgb", placeholder: "red" %> <%= color_fields.text_field :green, class: "rgb", placeholder: "Gre" %> <%= color_fields.text_field :blue, class: "rgb", placeholder: "Blu" %>
                 <h4 style="color: rgba(
                 <%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);
                 ">███</h4>
@@ -35,8 +35,8 @@
             </div>
           <% end %>
         </div>
-          <%= f.button :submit, "ok" %>
-           <hr>
+          <%= f.submit value: "OK" %>
+
 
            <%= render 'colors/show' %>
          </div>

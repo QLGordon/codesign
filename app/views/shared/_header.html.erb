@@ -1,64 +1,31 @@
 <% if @project %>
-<header>
-  <section class="container">
-  <section class="row">
-    <article class="col-xs-12 col-sm-6 col-md-4">
-      <div class="content">
-        <a href="/projects"><h1></h1>
-        <h3>mes projets</h3></a>
-      </div>
-    </article>
-    <article class="hidden-xs hidden-sm col-md-8">
-    <h2 style="font-size: 14pt; text-align: right;"><%= @project.title %></h2>
-
-    </article>
-  </section>
-  </section>
+<% if @project.colors.first %>
+<header style="background: rgba( <%= @project.colors.first.red %>, <%= @project.colors.first.green %>, <%= @project.colors.first.blue %>,1); color: rgba( <%= @project.colors.second.red %>, <%= @project.colors.second.green %>, <%= @project.colors.second.blue %>,1) ">
+  <% else %>
+  <header>
+<% end %>
+<a href="/projects"><h6>⬅︎</h6>
+</a>
+<div class="content">
+<h2 style="font-size: 14pt;"><%= @project.title %></h2>
+<span><%= @project.country %></span> • <span><%= @project.date.year %></span>
+</div>
 </header>
 
 <% elsif @projects %>
 
 <header>
-  <section class="container">
-  <section class="row">
-    <article class="col-xs-12 col-sm-6 col-md-4">
-      <div class="content">
-        <a href="/about"><h1>QLGordon</h1></a>
-      </div>
-    </article>
-    <article class="hidden-xs col-sm-6 col-md-8">
+        <a href="/about"><h3>QLGordon</h3></a>
       <h4 style="font-size: 24pt; text-align: right;">Graphisme & Web</h4>
-    </article>
-  </section>
-  </section>
 </header>
 
 <% else %>
 
 <header>
-  <section class="container">
-  <section class="row">
-    <article class="col-xs-6 col-sm-6 col-md-4">
-      <div class="content">
         <a href="/projects"><h1></h1>
         <h3>mes projets</h3></a>
-      </div>
-    </article>
-    <article class="col-xs-6 col-sm-6 col-md-4">
       <h4 style="font-size: 18pt;">QLGordon</h4>
       <p style="text-align: center;">Graphisme & Web</p>
-    </article>
-    <article class="hidden-xs col-sm-6 col-md-4">
-      <div class="content-sm" >
-        <i class="fab fa-facebook-square"></i>
-        <i class="fab fa-instagram"></i>
-        <i class="fab fa-behance-square"></i>
-        <i class="fab fa-twitter-square"></i>
-        <i class="fab fa-linkedin"></i>
-      </div>
-    </article>
-  </section>
-  </section>
 </header>
 <% end %>
 
