@@ -1,7 +1,20 @@
 header {
-  mix-blend-mode: overlay;
   position: fixed;
   top: 24pt;
   left: 24pt;
   padding: 6pt;
+  span { letter-spacing: 2pt; }
+  h2 {
+    font-size: 3em;
+  }
+  p { font-size: 2em;}
+  .content {
+    background: white;
+    padding: 12pt 24pt 48pt 24pt;
+    box-shadow: 0pt 0pt 12pt rgba(0,0,0,.25);
+    transform: translateX(-288pt);
+    transition: all 300ms ease-in-out;
+    &:hover {transform: translateX(-36pt);}
+  }
+  h4 { transform: rotate(90deg); position: absolute; top: 12pt; right: -6pt;}
 }

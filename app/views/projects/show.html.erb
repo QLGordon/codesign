@@ -1,5 +1,5 @@
     <div class="content-img">
-        <img style="height: 75vh; width: 100vw; object-fit: cover;" src="<%= @project.photo %>" alt="">
+        <img style="height: 75vh; width: 100vw; object-fit: contain;" src="<%= @project.photo %>" alt="">
     </div>
 <main id="project" class="container">
   <!-- image -->
@@ -32,7 +32,7 @@
         <!-- Pays et Description -->
         <p class="country"><%= @project.country %></p><br>
         <hr>
-        <div class="project-description"><p><%= markdown @project.description %></p></div>
+        <div class="project-description"><p></p></div>
         <hr>
         <!-- Pays et Description -->
         <!-- Réalisations -->

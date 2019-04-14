@@ -1,31 +1,34 @@
 <% if @project %>
 <% if @project.colors.first %>
-<header style="background: rgba( <%= @project.colors.first.red %>, <%= @project.colors.first.green %>, <%= @project.colors.first.blue %>,1); color: rgba( <%= @project.colors.second.red %>, <%= @project.colors.second.green %>, <%= @project.colors.second.blue %>,1) ">
+<header style=" color: rgba( <%= @project.colors.first.red %>, <%= @project.colors.first.green %>, <%= @project.colors.first.blue %>,1); width: 288pt;">
   <% else %>
   <header>
 <% end %>
-<a href="/projects"><h6>⬅︎</h6>
-</a>
+<a href="/projects" style="position: fixed; top: 12pt; left: 12pt;"><h6>⬅︎</h6></a>
 <div class="content">
-<h2 style="font-size: 14pt;"><%= @project.title %></h2>
+  <h4>infos</h4>
+<h2><%= @project.title %></h2>
+<% if @project.date && @project.country %>
 <span><%= @project.country %></span> • <span><%= @project.date.year %></span>
+<p><%= markdown @project.description %></p>
+<% end %>
 </div>
 </header>
 
 <% elsif @projects %>
 
 <header>
-        <a href="/about"><h3>QLGordon</h3></a>
-      <h4 style="font-size: 24pt; text-align: right;">Graphisme & Web</h4>
+  <a href="/about"><h6>QLGordon</h6></a>
+  <h3>Graphisme & Web</h3>
 </header>
 
 <% else %>
 
 <header>
-        <a href="/projects"><h1></h1>
-        <h3>mes projets</h3></a>
-      <h4 style="font-size: 18pt;">QLGordon</h4>
-      <p style="text-align: center;">Graphisme & Web</p>
+  <a href="/projects"><h1></h1>
+  <h3>mes projets</h3></a>
+  <h3>QLGordon</h3>
+  <p>Graphisme & Web</p>
 </header>
 <% end %>
 
