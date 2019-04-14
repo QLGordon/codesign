@@ -3,7 +3,7 @@
   <% @project.works.each do |work| %>
 
     <section class="row">
-      <article id="work" class="col-sm-12 col-md-5">
+      <article id="<%= work.title %>" class="col-sm-12 col-md-5">
         <h1><%= work.title %></h1>
         <p class="category"><%= work.category.name %></p>
       </article>

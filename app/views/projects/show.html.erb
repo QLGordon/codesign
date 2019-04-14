@@ -1,13 +1,7 @@
     <div class="content-img">
-        <img style="height: 75vh; width: 100vw; object-fit: contain;" src="<%= @project.photo %>" alt="">
+        <img style="height: 75vh; width: 100vw; object-fit: cover;" src="<%= @project.photo %>" alt="">
     </div>
 <main id="project" class="container">
-  <!-- image -->
-  <section class="row">
-  <article class="col-sm-12 col-md-12">
-  </article>
-  </section>
-  <!-- image -->
   <section class="row">
     <article class="col-sm-12 col-md-12">
     <!-- Texte -->
@@ -18,22 +12,16 @@
             <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
           </div>
         <% end %>
-      <!-- logo -->
-      <!-- titre -->
+        <div class="edit">
         <h3>
         <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
           <%= link_to "⦿", edit_project_path(@project, @work) %>
           <%= link_to '⊖', @project, :method => :delete %>
           <br>
         <% end %>
-        <%= @project.title %>
         </h3>
-        <!-- titre -->
-        <!-- Pays et Description -->
-        <p class="country"><%= @project.country %></p><br>
-        <hr>
-        <div class="project-description"><p></p></div>
-        <hr>
+        </div>
+        <div class="project-real">
         <!-- Pays et Description -->
         <!-- Réalisations -->
         <h3>Réalisations
@@ -46,7 +34,7 @@
             <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
               <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
             <% end %>
-            <%= work.title %>
+            <a href="#<%= work.title %>"><%= work.title %></a>
           </p>
           <p class="category">
             <%= work.category.name %>
@@ -55,6 +43,7 @@
             <% end %>
           </p><br>
         <% end %>
+        </div>
         <!-- Réalisations -->
         <!-- couleurs -->
         <%= render 'colors/show' %>

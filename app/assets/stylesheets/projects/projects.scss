@@ -107,7 +107,28 @@
 
 // FIN INDEX PROJECTS
 #project {
+  .project-real {
+    z-index: 200;
+    position: fixed;
+    top: 36pt;
+    right: -272pt;
+    width: 272pt;
+    background: white;
+    padding: 12pt 48pt 24pt 24pt;
+    box-shadow: 0pt 0pt 12pt rgba(0,0,0,.15);
+    transform: translateX(-24pt);
+    transition: all 300ms ease-in-out;
+    &:hover {transform: translateX(-224pt);}
+  }
+  .edit {
+    position: fixed;
+    top: 0pt;
+    right: 0pt;
+    h3 { font-size: 24pt; }
+  }
     #work {
+      position: relative;
+      z-index: -1;
       .row {
       flex-wrap: wrap;
       article {
@@ -141,48 +162,39 @@
   }
 
     .row {
-      margin-bottom: 72pt;
+      margin-bottom: 24pt;
       &:last-child { margin-bottom: 24pt; }
       .content-img {
         animation: fade-in 450ms ease-in-out;
         position: sticky;
-        padding-top: 48pt;
+        padding-top: 12pt;
         height: 100%;
       }
       .content-text {
-        animation: move-line 250ms ease-in-out;
-        z-index: 5;
-        background: white;
-        box-shadow: -12pt 24pt 48pt 0pt rgba(0, 0, 0, 0.05);
-        padding: 24pt 24pt 48pt 24pt;
-        margin-top: 24pt;
         .project-description { font-size: 16pt; }
         h3 { animation: 300ms ease-in-out move-line; }
         p.country { animation: 600ms ease-in-out move-line; }
         p { animation: 900ms ease-in-out move-line; }
         p.category { animation: 1200ms ease-in-out move-line; }
         .colors {
-          position: absolute;
+          position: fixed;
           bottom: 0pt;
           left: 0pt;
           div {
-            height: 6pt;
-            width: 1000pt;
-            display: table-cell;
           }
         }
         .svg {
           width: 48pt;
           height: 48pt;
           border-radius: 50%;
-          box-shadow: -3pt -3pt 24pt rgba(0,0,0,.05);
+          box-shadow: 0pt 9pt 12pt rgba(0,0,0,.15);
           align-items: center;
           justify-content: center;
           padding: 3pt;
           display: flex;
-          position: absolute;
-          bottom: -20pt;
-          right: -12pt;
+          position: fixed;
+          bottom: 24pt;
+          right: 12pt;
           background: white;
           z-index: 2;
           img { object-fit: contain; }
