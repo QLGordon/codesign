@@ -109,7 +109,7 @@
 #project {
   .project-real {
     position: absolute;
-    bottom: 12pt;
+    bottom: 48pt;
     p, h1, h2, h3, h6 {
       display: inline-table;
       box-shadow: 0 64pt 20pt 20pt white inset;
@@ -160,7 +160,7 @@
   .content {
     position: fixed;
     z-index: 100;
-    top: 12pt;
+    top: 48pt;
     left: 24pt;
     padding: 6pt;
     p { font-size: 1.25em;}
@@ -222,7 +222,7 @@
           padding: 3pt;
           display: flex;
           position: absolute;
-          bottom: -12pt;
+          bottom: 48pt;
           right: 12pt;
           background: white;
           z-index: 2;
