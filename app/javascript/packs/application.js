@@ -4,10 +4,10 @@ const headerScroll = () => {
   let prevScrollpos = window.pageYOffset;
   window.onscroll = function() {
     let currentScrollPos = window.pageYOffset;
-    if (prevScrollpos > currentScrollPos || document.querySelector('header').onmouseover) {
-      document.querySelector('header').style.opacity = "1";
+    if (prevScrollpos > currentScrollPos || document.querySelector('.content').onmouseover) {
+      document.querySelector('.content').style.opacity = "1";
     } else {
-      document.querySelector('header').style.opacity = ".1";
+      document.querySelector('.content').style.opacity = ".1";
     }
     prevScrollpos = currentScrollPos;
   }
