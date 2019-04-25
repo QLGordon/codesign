@@ -1,5 +1,26 @@
+@keyframes move-line { from { transform: translateX(-12pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
 #about {
-  margin-top: 72pt;
+  // margin-top: 72pt;
+    #me {
+      height:100vh;
+      .about-description {
+        div {
+          &:first-child { animation: move-line 500ms ease-in-out; animation-delay: 0ms; animation-fill-mode: both; }
+          animation: move-line 500ms ease-in-out; animation-fill-mode: both; animation-delay: 250ms;
+          margin-top: 24pt;
+          padding-bottom: 24pt;
+          p { column-count: 2; column-gap: 24pt; font-size: 10pt; }
+          h3 { font-size: 1.5em; line-height: 2em;}
+          border-bottom: 1pt solid rgba(0,0,0,.1);
+          &:last-child { animation: move-line 500ms ease-in-out;  animation-delay: 500ms; animation-fill-mode: both; border: none; }
+      img {
+        z-index: -20;
+        position: inherit;
+        height: 100vh !important;
+          }
+        }
+      }
+    }
   .container {
     #clients {
       margin-top: 72pt;
@@ -10,12 +31,6 @@
         display: inline-flex;
         margin: 12pt 24pt;
         object-fit: contain;
-      }
-    }
-    #me {
-      img {
-        z-index: -20;
-        position: inherit;
       }
     }
     #skills {
