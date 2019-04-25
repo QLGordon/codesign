@@ -21,30 +21,6 @@
         <% end %>
         </h3>
         </div>
-        <div class="project-real">
-        <!-- Pays et Description -->
-        <!-- Réalisations -->
-        <h3>Réalisations
-          <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <%= link_to "⊕", new_project_work_path(@project) %>
-          <% end %>
-        </h3>
-        <% @project.works.each do |work| %>
-          <p>
-            <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-              <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
-            <% end %>
-            <a href="#<%= work.title %>"><%= work.title %></a>
-          </p>
-          <p class="category">
-            <%= work.category.name %>
-            <% if work.date && work.city %>
-              • <%= work.date.year %> | <%= work.city %>
-            <% end %>
-          </p><br>
-        <% end %>
-        </div>
-        <!-- Réalisations -->
         <!-- couleurs -->
         <%= render 'colors/show' %>
         <!-- couleurs -->

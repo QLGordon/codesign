@@ -1,10 +1,10 @@
 <% if @project %>
 <% if @project.colors.first %>
-<header style=" color: rgba( <%= @project.colors.first.red %>, <%= @project.colors.first.green %>, <%= @project.colors.first.blue %>,1); width: 288pt;">
+<header id="navbar" style=" width: 1pt; height: 1pt;">
   <% else %>
   <header>
 <% end %>
-<a href="/projects" style="position: fixed; top: 12pt; left: 12pt;"><h6>⇤</h6></a>
+<a href="/projects" style="position: fixed; top: 3pt; left: 3pt;"><h6>⇤</h6></a>
 <div class="content">
   <h4>infos</h4>
   <h2><%= @project.title %></h2>
@@ -12,19 +12,41 @@
     <span><%= @project.country %></span></span>
     <p><%= markdown @project.description %></p>
   <% end %>
+  <hr>
+  <div class="project-real">
+    <h3>Réalisations
+      <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+        <%= link_to "⊕", new_project_work_path(@project) %>
+      <% end %>
+    </h3>
+    <% @project.works.each do |work| %>
+      <p>
+        <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+          <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
+        <% end %>
+        <a href="#<%= work.title %>"><%= work.title %></a>
+      </p>
+      <p class="category">
+        <%= work.category.name %>
+        <% if work.date && work.city %>
+          • <%= work.date.year %> | <%= work.city %>
+        <% end %>
+      </p><br>
+    <% end %>
+  </div>
 </div>
 </header>
 
 <% elsif @projects %>
 
-<header>
+<header id="navbar">
   <a href="/about"><h6>QLGordon</h6></a>
   <h3>Graphisme & Web</h3>
 </header>
 
 <% else %>
 
-<header>
+<header id="navbar">
   <a href="/projects"><h1></h1>
   <h3>mes projets</h3></a>
   <h3>QLGordon</h3>

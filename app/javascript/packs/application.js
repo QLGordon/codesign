@@ -1,13 +1,16 @@
 import "bootstrap";
 
 const headerScroll = () => {
-  const header = document.querySelector('header');
-  document.addEventListener("scroll", function(){
-    if (document.scrollTop > 50 || document.scrollTop < 350) {
-    header.className = "slideUp";
+  let prevScrollpos = window.pageYOffset;
+  window.onscroll = function() {
+    let currentScrollPos = window.pageYOffset;
+    if (prevScrollpos > currentScrollPos || document.querySelector('header').onmouseover) {
+      document.querySelector('header').style.opacity = "1";
+    } else {
+      document.querySelector('header').style.opacity = ".1";
+    }
+    prevScrollpos = currentScrollPos;
   }
-  });
 };
 
 headerScroll();
-console.log("helloguuurl");
