@@ -184,16 +184,16 @@
           }
         }
         .svg {
-          width: 48pt;
-          height: 48pt;
+          width: 144pt;
+          height: 144pt;
           border-radius: 50%;
           box-shadow: 0pt 9pt 12pt rgba(0,0,0,.15);
           align-items: center;
           justify-content: center;
           padding: 3pt;
           display: flex;
-          position: fixed;
-          bottom: 24pt;
+          position: absolute;
+          bottom: -24pt;
           right: 12pt;
           background: white;
           z-index: 2;

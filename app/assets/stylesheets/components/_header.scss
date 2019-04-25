@@ -6,7 +6,7 @@ header {
   padding: 6pt;
   transition: opacity 500ms ease-in-out;
   opacity: 1;
-  &:hover { opacity: 1 !important; }
+  &:hover &:active { opacity: 1 !important; }
   span { letter-spacing: 2pt; }
   h2 {
     font-size: 3em;
