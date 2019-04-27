@@ -143,6 +143,8 @@
       background: black; color: white;
       transition: all 250ms;
       &:hover { background: white; color: black;}
+      &:focus { background: white; color: black;}
+      &:active { background: white; color: black;}
     }
 
   }

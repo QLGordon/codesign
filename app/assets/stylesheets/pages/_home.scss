@@ -5,7 +5,7 @@
       height:100vh;
       .about-description {
         div {
-          &:first-child { animation: move-line 500ms ease-in-out; animation-delay: 0ms; animation-fill-mode: both; }
+          &:first-child { animation: move-line 500ms ease-in-out; animation-delay: 0ms; animation-fill-mode: both; margin-top: 48pt; }
           animation: move-line 500ms ease-in-out; animation-fill-mode: both; animation-delay: 250ms;
           margin-top: 24pt;
           padding-bottom: 24pt;
@@ -37,7 +37,7 @@
       padding: 72pt 0pt 72pt;
       flex-wrap: wrap;
       background: white;
-      box-shadow: 0pt -48pt 12pt -48pt rgba(0,0,0,.1), 0pt 48pt 48pt -48pt rgba(0,0,0,.1);
+
       // text-align: center;
       position: inherit;
       z-index: 0;
