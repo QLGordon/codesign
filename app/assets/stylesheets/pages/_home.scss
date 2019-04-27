@@ -1,22 +1,48 @@
-@keyframes move-line { from { transform: translateX(-12pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
+@keyframes move-line {
+  from { transform: translateX(-12pt); opacity: 0; }
+  to { transform: translateX(0pt); opacity: 1; }
+}
 #about {
   // margin-top: 72pt;
     #me {
       height:100vh;
       .about-description {
+        img { margin-left: 24pt;}
+        h3 {
+          animation: move-line 500ms ease-in-out;
+          color: white;
+          font-weight: 100;
+          font-size: 1.5em;
+          padding:3pt 6pt;
+          margin: 24pt 0pt 9pt;
+          background: black;
+          display: inline-block;
+        }
         div {
-          &:first-child { animation: move-line 500ms ease-in-out; animation-delay: 0ms; animation-fill-mode: both; margin-top: 48pt; }
-          animation: move-line 500ms ease-in-out; animation-fill-mode: both; animation-delay: 250ms;
-          margin-top: 24pt;
+          column-count: 3;
+          column-gap: 24pt;
+          font-size: 10pt;
+          column-fill: balance;
+          animation: move-line 500ms ease-in-out;
+          animation-fill-mode: both;
+          animation-delay: 250ms;
           padding-bottom: 24pt;
-          p { column-count: 2; column-gap: 24pt; font-size: 10pt; }
-          h3 { font-size: 1.5em; line-height: 2em;}
           border-bottom: 1pt solid rgba(0,0,0,.1);
-          &:last-child { animation: move-line 500ms ease-in-out;  animation-delay: 500ms; animation-fill-mode: both; border: none; }
-      img {
-        z-index: -20;
-        position: inherit;
-        height: 100vh !important;
+          p {
+            margin-bottom: 9pt;
+            text-align: justify;
+          }
+          &:first-child {
+            margin-top: 48pt;
+            animation: move-line 500ms ease-in-out;
+            animation-delay: 0ms;
+            animation-fill-mode: both;
+          }
+          &:last-child {
+            animation: move-line 500ms ease-in-out;
+            animation-delay: 500ms;
+            animation-fill-mode: both;
+            border: none;
           }
         }
       }
@@ -37,8 +63,6 @@
       padding: 72pt 0pt 72pt;
       flex-wrap: wrap;
       background: white;
-
-      // text-align: center;
       position: inherit;
       z-index: 0;
       span {
