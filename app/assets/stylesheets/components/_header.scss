@@ -10,3 +10,8 @@ header {
   }
   h6 { font-size: 14pt; }
 }
+.head-op {
+  transform-origin: left;
+  transform: rotate(90deg);
+  top: -6pt;
+}

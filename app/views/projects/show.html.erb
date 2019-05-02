@@ -21,14 +21,6 @@
         <% end %>
         </h3>
         </div>
-        <div class="content">
-          <h4>infos</h4>
-          <h2><%= @project.title %></h2>
-          <% if @project.country %>
-            <span><%= @project.country %></span></span>
-            <p><%= markdown @project.description %></p>
-          <% end %>
-        </div>
         <div class="project-real">
           <h3>Réalisations </h3>
             <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
@@ -56,5 +48,17 @@
     </article>
     <!-- Texte -->
   </section>
+  <section class="row">
+    <article class="col-xs-12">
+        <div class="content">
+          <h4>infos</h4>
+          <h2><%= @project.title %></h2>
+          <% if @project.country %>
+            <span><%= @project.country %></span></span>
+            <p><%= markdown @project.description %></p>
+          <% end %>
+        </div>
+        </article>
+        </section>
   <%= render 'works/show' %>
 </main>
