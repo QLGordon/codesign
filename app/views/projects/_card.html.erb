@@ -1,5 +1,5 @@
 <% @projects.each do |project| %>
-  <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 card">
     <%= link_to project_path(project) do %>
       <% if project.photo? %>
         <div class="content-card" style=" background: url(<%= project.photo %>); background-position: center;background-repeat: no-repeat; background-size: cover;">
@@ -25,7 +25,7 @@
       <div class="infos">
         <h4><%= project.title %></h4>
         <p><%= markdown(project.description) %></p>
-<!--       <div class="colors" >
+      <div class="colors" >
         <% if project.colors.first %>
           <% project.colors.each do |color| %>
             <div style="background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>); font-size: 24pt;"></div>
@@ -35,11 +35,11 @@
             <div style="background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>); font-size: 24pt;"></div>
           <% end %>
         <% end %>
-      </div> -->
+      </div>
       <p class="info"><%= project.country %></p>
     </div>
   <% end %>
 </div>
 <% end %>
-</article>
+</div>
 <% end %>

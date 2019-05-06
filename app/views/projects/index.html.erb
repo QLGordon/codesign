@@ -1,16 +1,15 @@
 <main id="projects">
-  <section class="container">
-    <section class="row">
+  <div class="container">
+    <div class="row">
       <%= render 'projects/card' %>
       <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-          <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <div class="content-card add" style="font-size: 72pt; justify-content: center; align-items: center; display: flex;">
+      <article class="col-xs-12 col-sm-6 col-md-4 col-lg-4">
+        <div class="content-card add" style="font-size: 72pt; justify-content: center; align-items: center; display: flex;">
               <%= link_to "⊕", new_project_path %>
-            </div>
-          </article>
-        <% end %>
-
-    </section>
-  </section>
+        </div>
+      </article>
+      <% end %>
+    </div>
+  </div>
 </main>
 
