@@ -1,0 +1,30 @@
+.card {
+  position: relative;
+  .card-img-top {
+    max-height: 288pt;
+    object-fit: cover;
+  }
+  .card-body {
+    transition: all 250ms ease-in-out;
+    padding: 0pt 9pt;
+    height: 0pt;
+    overflow: hidden;
+    position: relative;
+    z-index: 0;
+    .card-title{
+      position: absolute;
+      top: 0pt;
+      left: 9pt;
+      z-index: 10;
+    }
+    .card-text{
+      transition: all 250ms ease-in-out;
+      position: relative;
+      height: 72pt;
+      top: 0;
+    }
+  }
+  &:hover {
+    .card-text { top: -72pt; }
+  }
+}

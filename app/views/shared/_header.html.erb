@@ -1,15 +1,12 @@
 <% if @project %>
-<% if @project.colors.first %>
-<header id="navbar" style=" width: 1pt; height: 1pt;">
-  <% else %>
-  <header>
-<% end %>
-<a href="/projects" style="position: fixed; top: 3pt; left: 3pt; font-size: 3em;">⇤</a>
+
+<header>
+  <a href="/projects" style="position: fixed; top: 3pt; left: 3pt; font-size: 3em;">⇤</a>
 </header>
 
 <% elsif @projects %>
 
-<header id="navbar" class="head-op">
+<header>
   <a href="/about"><h6>QLGordon - site en construction</h6></a>
   <h3>Graphisme & Web</h3>
 </header>
@@ -17,10 +14,11 @@
 <% else %>
 
 <header id="navbar" class="content">
-  <a href="/projects"><h1></h1>
-  <h3>mes projets</h3></a>
-  <h3>QLGordon </h3><h6>- site en construction</h6>
+  <a href="/projects"><h3>mes projets</h3></a>
+  <h3>QLGordon </h3>
+  <h6>- site en construction</h6>
   <p>Graphisme & Web</p>
 </header>
+
 <% end %>
 

@@ -1,45 +1,13 @@
+<div class="card-columns">
 <% @projects.each do |project| %>
-  <div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 card">
-    <%= link_to project_path(project) do %>
-      <% if project.photo? %>
-        <div class="content-card" style=" background: url(<%= project.photo %>); background-position: center;background-repeat: no-repeat; background-size: cover;">
-        <% if project.works %>
-          <div class="categories">
-            <% project.works.uniq { |work| work.category }.each do |work| %>
-              <p class="category"><%= work.category.name %></p>
-            <% end %>
-          </div>
-        <% end %>
-      <% elsif project.client.svgs.first && project.svgs.first%>
-        <div class="content-card" style=" background: url(<%= project.client.svgs.first.svg %>); background-position: center;background-repeat: no-repeat; background-size: contain;">
-        <% if project.works %>
-          <div class="categories">
-            <% project.works.uniq { |work| work.category }.each do |work| %>
-              <p class="category"><%= work.category.name %></p>
-            <% end %>
-            <img class="svg" src= "<%= project.client.svgs.first.svg %>" alt="">
-          </div>
-        <% end %>
-      <% end %>
-    <% if project.photo? || project.client.svgs.first && project.svgs.first %>
-      <div class="infos">
-        <h4><%= project.title %></h4>
-        <p><%= markdown(project.description) %></p>
-      <div class="colors" >
-        <% if project.colors.first %>
-          <% project.colors.each do |color| %>
-            <div style="background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>); font-size: 24pt;"></div>
-          <% end %>
-        <% else %>
-          <% project.client.colors.each do |color| %>
-            <div style="background: rgb(<%= color.red %>, <%= color.green %>, <%= color.blue %>); font-size: 24pt;"></div>
-          <% end %>
-        <% end %>
-      </div>
-      <p class="info"><%= project.country %></p>
-    </div>
-  <% end %>
+<div class="card" style="width: 288pt;">
+<%= link_to project_path(project) do %>
+  <img src="<%= project.photo %>" class="card-img-top" alt="...">
+<% end %>
+  <div class="card-body">
+    <h5 class="card-title"><%= project.title %></h5>
+    <p class="card-text"><%= project.description %></p>
+  </div>
 </div>
 <% end %>
 </div>
-<% end %>
