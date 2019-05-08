@@ -1,19 +1,23 @@
 <main id="projects">
   <div class="container">
-    <div class="row">
-      <%= render 'projects/card' %>
-
-      <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-
-      <article class="col">
-        <div class="content-card add" style="font-size: 72pt; justify-content: center; align-items: center; display: flex;">
-              <%= link_to "⊕", new_project_path %>
-        </div>
-      </article>
-
-      <% end %>
-
-    </div>
+  <div class="row">
   </div>
+    <div class="row">
+      <div class="card-columns">
+      <%= render 'projects/card' %>
+      <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+      <%= link_to new_project_path do %>
+      <div class="card">
+        <img src="https://picsum.photos/200/100" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Ajouter un projet</h5>
+          <p class="card-text"></p>
+        </div>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+    </div>
+    </div>
 </main>
 

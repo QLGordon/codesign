@@ -1,13 +1,12 @@
-<div class="card-columns">
+
 <% @projects.each do |project| %>
-<div class="card" style="width: 288pt;">
 <%= link_to project_path(project) do %>
+<div class="card shadow border-0">
   <img src="<%= project.photo %>" class="card-img-top" alt="...">
-<% end %>
-  <div class="card-body">
-    <h5 class="card-title"><%= project.title %></h5>
-    <p class="card-text"><%= project.description %></p>
+  <div class="card-body bg-white">
+    <h4 class="card-title py-3 px-4"><%= project.title %></h4>
+    <p class="card-text py-3 px-4"><%= project.description %></p>
   </div>
 </div>
 <% end %>
-</div>
+<% end %>

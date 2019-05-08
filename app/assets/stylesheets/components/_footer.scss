@@ -1,0 +1,7 @@
+footer {
+  i {
+    padding: 3pt;
+    font-size: 16pt;
+    &:hover { transition: 350ms; color: blue; }
+  }
+}

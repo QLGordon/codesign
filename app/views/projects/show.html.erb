@@ -1,5 +1,5 @@
     <div class="content-img">
-        <img style="height: 100vh; width: 100vw; object-fit: cover;" src="<%= @project.photo %>" alt="">
+        <img style="height: 100vh; width: 100%; top: 0pt; object-fit: cover;" src="<%= @project.photo %>" alt="">
     </div>
 <main id="project" class="container">
   <section class="row">
@@ -8,9 +8,7 @@
       <div class="content-text">
       <!-- logo -->
         <% if @project.client.svgs.first %>
-          <div class="svg">
-            <img src= "<%= @project.client.svgs.first.svg %>"  alt="">
-          </div>
+            <img id="badge" class="shadow" src= "<%= @project.client.svgs.first.svg %>"  alt="">
         <% end %>
         <div class="edit">
         <h3>
