@@ -1,34 +1,25 @@
 <main id="project">
-
-    <div class="head" >
-        <img class="banner position-relative" src="<%= @project.photo %>" alt="">
-        <% if @project.client.svgs.first %>
-            <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
-          <% else %>
-            <div id="badge" class="shadow-lg a-b-right"></div>
-        <% end %>
-    </div>
+  <div class="head" >
+      <img class="banner position-relative" src="<%= @project.photo %>" alt="">
+      <% if @project.client.svgs.first %>
+          <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
+        <% else %>
+          <div id="badge" class="shadow-lg a-b-right"></div>
+      <% end %>
+  </div>
 
   <div class="container">
     <%= render 'shared/real' %>
-
-        <!-- couleurs -->
-        <%= render 'colors/show' %>
-        <!-- couleurs -->
-      </div>
-    </article>
-    <!-- Texte -->
-    <article class="col-xs-12">
-        <div class="content">
-          <h4>infos</h4>
-          <h2><%= @project.title %></h2>
-          <% if @project.country %>
-            <span><%= @project.country %></span></span>
-            <p><%= markdown @project.description %></p>
-          <% end %>
-        </div>
-        </article>
-
+    <%= render 'colors/show' %>
+    <div class="content">
+        <h4>infos</h4>
+        <h2><%= @project.title %></h2>
+        <% if @project.country %>
+          <span><%= @project.country %></span></span>
+          <p><%= markdown @project.description %></p>
+        <% end %>
+    </div>
+  </div>
   <%= render 'works/show' %>
   </div>
 </main>

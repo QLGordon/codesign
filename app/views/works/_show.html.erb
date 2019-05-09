@@ -1,27 +1,16 @@
 <section id="work">
-
   <% @project.works.each do |work| %>
-
-    <section class="row">
-      <article id="<%= work.title %>" class="col-sm-12 col-md-5">
-        <h1><%= work.title %></h1>
-        <p class="category"><%= work.category.name %></p>
+      <p class="category"><%= work.category.name %></p>
+      <article id="<%= work.title %>" class="row">
+        <h1 class="col-3"><%= work.title %></h1>
+        <div class="col flex-grow-1">
+          <%= markdown work.description %>
+        </div>
       </article>
-      <article id="work" class="col-sm-12 col-md-7 work-description">
-        <%= markdown work.description %>
-      </article>
-    </section>
 
-    <section class="row">
       <% work.images.each do |image| %>
-
-        <article class="col-sm-12 col-md-6">
-          <img class="img-work"  src="<%= image.photo %>" alt="">
-        </article>
-
+      <img class="banner"  width="100vw" src="<%= image.photo %>" alt="">
       <% end %>
-
-    </section>
 
   <% end %>
 
