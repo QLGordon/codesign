@@ -1,25 +1,26 @@
 <div id="real" class="a-b-left">
   <!-- TODO REFACTO CODE DYNAMIQUE CSS -->
   <div class="btn-group btn-group-sm" role="group" aria-label="...">
-    <a class="btn bg-light">Rélisations</a>
     <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
     <%= link_to "NEW", new_project_work_path(@project), class: [:btn, "btn-primary"] %>
     <% end %>
   </div>
+
   <% @project.works.each do |work| %>
-    <p>
-      <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-      <div class="btn-group btn-group-sm" role="group" aria-label="...">
-        <%= link_to "EDIT", edit_project_work_path(@project.id, work), class: [:btn, "btn-warning"] %>
-      <% end %>
-      <a href="#<%= work.title %>" class="btn bg-light">
-        <%= work.title %>
-        <span><%= work.category.name %></span>
-      </a>
-        <% if work.date && work.city %>
-          <div style="display: none"><h6> <%= work.date.year %> </h6> <h6> <%= work.city %> </h6></div>
-        <% end %>
-      </div>
-    </p>
+  <div class="btn-group btn-group-sm" role="group" aria-label="...">
+  <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+    <%= link_to "EDIT", edit_project_work_path(@project.id, work), class: [:btn, "btn-warning"] %>
   <% end %>
+  </div>
+
+    <a href="#<%= work.title %>" class="btn bg-light">
+      <strong><%= work.title %></strong>
+      <em><%= work.category.name %></em>
+    </a>
+    <% if work.date && work.city %>
+    <div style="display: none"><h6> <%= work.date.year %> </h6> <h6> <%= work.city %> </h6></div>
+
+    <% end %>
+  <% end %>
+
 </div>

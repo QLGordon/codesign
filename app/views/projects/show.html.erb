@@ -6,12 +6,14 @@
         <% else %>
           <div id="badge" class="shadow-lg a-b-right"></div>
       <% end %>
+    <%= render 'shared/real' %>
+    <div class="a-t-left">
+    </div>
   </div>
 
   <div class="container">
-    <%= render 'shared/real' %>
     <%= render 'colors/show' %>
-    <div class="content">
+    <div class="content p-4">
         <h4>infos</h4>
         <h2><%= @project.title %></h2>
         <% if @project.country %>
@@ -19,7 +21,7 @@
           <p><%= markdown @project.description %></p>
         <% end %>
     </div>
-  </div>
   <%= render 'works/show' %>
+  </div>
   </div>
 </main>

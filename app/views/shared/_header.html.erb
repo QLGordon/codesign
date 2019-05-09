@@ -1,5 +1,4 @@
 <% if @project %>
-
 <header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
     <a href="/projects" class="text-left col">↤ retour</a>
   <div class="col justify-content-center align-items-center d-flex bg-transparent">
@@ -7,7 +6,7 @@
   </div>
   <h2 class="col text-right my-4 mx-0" style="font-size: 16pt; color: <%= @color_d %>;"><%= @project.title %></h2>
   <div id="edit" class="row">
-    <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+    <% if current_user && @project.id && current_user.email == "quentin.gourdon@gmail.com" %>
     <div class="btn-group btn-group-sm" role="group" aria-label="...">
       <%= link_to "EDIT", edit_project_path(@project, @work), class: [:btn, "btn-warning"] %>
       <%= link_to 'DELETE', @project, :method => :delete, class: [:btn, "btn-danger"] %>

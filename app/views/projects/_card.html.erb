@@ -3,16 +3,14 @@
 <div class="card shadow border-0">
   <div class="row">
     <h4 class=" col card-title"><%= project.title %></h4>
-    <div class="col">
-      <% project.works.each do |work| %>
-      <span style="font-size: 9pt;"><%= work.title %></span>
-      <% end %>
-    </div>
+
   </div>
 <%= link_to project_path(project) do %>
   <img src="<%= project.photo %>" class="card-img-top" alt="...">
   <div class="card-body bg-white">
-    <p class="card-text py-3 px-4"><%= project.description %></p>
+    <% project.works.each do |work| %>
+    <h4><%= work.title %></h4>
+    <% end %>
   </div>
 <% end %>
 </div>

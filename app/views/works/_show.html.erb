@@ -1,16 +1,25 @@
-<section id="work">
+<section id="work" class="border">
   <% @project.works.each do |work| %>
-      <p class="category"><%= work.category.name %></p>
-      <article id="<%= work.title %>" class="row">
-        <h1 class="col-3"><%= work.title %></h1>
-        <div class="col flex-grow-1">
+      <div id="<%= work.title %>" class="row m-0">
+        <h3 class="col text-right p-4 flex-shrink-1 m-0 border"><%= work.title %></h3>
+        <div class="col-9 p-4 border">
           <%= markdown work.description %>
         </div>
-      </article>
 
-      <% work.images.each do |image| %>
-      <img class="banner"  width="100vw" src="<%= image.photo %>" alt="">
-      <% end %>
+          <h6 class="col flex-shrink-1 category p-4 m-0 text-left border"><%= work.category.name %></h6>
+
+      </div>
+
+
+        <% work.images.each do |image| %>
+          <% if image.photo.url.split('.').last == "svg" %>
+          <img class="svg row" src="<%= image.photo %>" alt="">
+          <% elsif image.photo.url.split('.').last != "svg" %>
+          <!-- TODO Add a hover height -->
+          <img class="img-contain" src="<%= image.photo %>" alt="">
+          <% end %>
+        <% end %>
+
 
   <% end %>
 

@@ -1,8 +1,9 @@
 .banner {
-  max-height: 100vh;
   width: 100%;
+  height: 100vh;
   top: 0pt;
   object-fit: cover;
+  position: relative;
 }
 .a-b-left {
   position: absolute;
@@ -14,7 +15,32 @@
   right: 48pt;
   bottom: 48pt;
 }
+.a-t-right {
+  position: absolute;
+  right: 48pt;
+  top: 48pt;
+}
+.a-t-left {
+  position: absolute;
+  left: 48pt;
+  top: 48pt;
+}
+
+.img-contain {
+  width: 100%;;
+  height: 100%;
+  object-fit: contain;
+}
 
 #real {
 
+}
+
+.svg {
+  height: 288pt;
+  position: sticky;
+  top: 0pt;
+  img { height: 288pt;}
+  .sticky {
+  }
 }
