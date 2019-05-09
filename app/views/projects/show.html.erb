@@ -1,52 +1,23 @@
-    <div class="content-img">
-        <img style="height: 100vh; width: 100%; top: 0pt; object-fit: cover;" src="<%= @project.photo %>" alt="">
-    </div>
-<main id="project" class="container">
-  <section class="row">
-    <article class="col-sm-12 col-md-12">
-    <!-- Texte -->
-      <div class="content-text">
-      <!-- logo -->
+<main id="project">
+
+    <div class="head" >
+        <img class="banner position-relative" src="<%= @project.photo %>" alt="">
         <% if @project.client.svgs.first %>
-            <img id="badge" class="shadow" src= "<%= @project.client.svgs.first.svg %>"  alt="">
+            <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
+          <% else %>
+            <div id="badge" class="shadow-lg a-b-right"></div>
         <% end %>
-        <div class="edit">
-        <h3>
-        <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-          <%= link_to "⦿", edit_project_path(@project, @work) %>
-          <%= link_to '⊖', @project, :method => :delete %>
-          <br>
-        <% end %>
-        </h3>
-        </div>
-        <div class="project-real">
-          <h3>Réalisations </h3>
-            <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-              <h3> <%= link_to "⊕", new_project_work_path(@project) %> </h3>
-            <% end %> <br>
-          <% @project.works.each do |work| %>
-            <p>
-              <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-                <%= link_to "⦿", edit_project_work_path(@project.id, work) %>
-              <% end %>
-              <a href="#<%= work.title %>"><%= work.title %></a>
-            </p>
-            <p class="category">
-              <%= work.category.name %></p>
-              <% if work.date && work.city %>
-                <div style="display: none"><h6> <%= work.date.year %> </h6> <h6> <%= work.city %> </h6></div>
-              <% end %>
-            <br>
-          <% end %>
-        </div>
+    </div>
+
+  <div class="container">
+    <%= render 'shared/real' %>
+
         <!-- couleurs -->
         <%= render 'colors/show' %>
         <!-- couleurs -->
       </div>
     </article>
     <!-- Texte -->
-  </section>
-  <section class="row">
     <article class="col-xs-12">
         <div class="content">
           <h4>infos</h4>
@@ -57,6 +28,7 @@
           <% end %>
         </div>
         </article>
-        </section>
+
   <%= render 'works/show' %>
+  </div>
 </main>

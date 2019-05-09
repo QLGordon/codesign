@@ -2,15 +2,24 @@
 <!-- Generator: Adobe Illustrator 23.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <svg version="1.1" id="visage" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
    viewBox="0 0 102 102" style="enable-background:new 0 0 102 102;" xml:space="preserve">
+
+
 <style type="text/css">
   .st0{fill-rule:evenodd;clip-rule:evenodd;}
-  #visage {width: 24pt; padding: 1pt; animation:350ms bgcolor; background: white; fill: red; border-radius: 50%; border: 3pt solid red;}
+  #visage {width: 24pt; transform: scale(1); padding: 3pt; animation: 650ms alternate bgcolor; border-radius: 50%; fill: <%= @color_a %>;}
   @keyframes bgcolor {
     0% {
-      transform: scale(0) translatey(-48pt);
+      transform: scale(0) translatey(-9pt);
+      fill: <%= @color_b %> ;
     }
+    35% {
+      transform: scale(1) translatey(-3pt);
+      fill: <%= @color_b %> ;
+    }
+
     100% {
       transform: scale(1) translatey(0pt);
+      fill: <%= @color_a %> ;
     }
   }
 </style>
