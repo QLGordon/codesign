@@ -37,10 +37,9 @@
 }
 
 .svg {
-  height: 288pt;
-  position: sticky;
-  top: 0pt;
-  img { height: 288pt;}
+  position: relative;
+  display: flex;
+  img { height: 288pt; width:100%;}
   .sticky {
   }
 }
