@@ -1,5 +1,6 @@
-<section id="work" class=" pt-5">
+<section id="work" class="pt-5 pb-5">
   <% @project.works.each do |work| %>
+  <div class="pt-5">
       <div id="<%= work.title %>" class="row border ml-0 mr-0">
         <h3 class="col text-right p-4 m-0 border"><%= work.title %></h3>
         <div class="col-8 p-4 border">
@@ -18,6 +19,7 @@
           <img class="img-contain border border-top-0" src="<%= image.photo %>" alt="">
           <% end %>
         <% end %>
+        </div>
 
   <% end %>
 
