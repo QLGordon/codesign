@@ -1,0 +1,4 @@
+
+<% 5.times do %>
+<i style="display: block; transform: scale(<%= [0.75,0.25,0.5].to_a.sample %>)translateY(<%= (0..9).to_a.sample %>pt) translateX(<%= (-9..9).to_a.sample %>pt);"><%= render 'shared/visage'%></i>
+<% end %>

@@ -1,240 +1,45 @@
-@keyframes move-line { from { transform: translateX(-12pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
-@keyframes fade-in { from { transform: translateX(-144pt); opacity: 0; } to { transform: translateX(0pt); opacity: 1; }  }
-@keyframes move-line-a { from { transform: translateY(-24pt); opacity: 0; } to { transform: translateY(0pt); opacity: 1; }  }
-#projects {
-  margin-top: 24pt;
-  .row {
-    flex-wrap: wrap;
-    .add {
-      &:hover {background: black; color: white;}
-    }
-    .content-card {
-      animation: move-line-a 250ms ease-in-out; animation-fill-mode: both;
-      padding: 0pt 0pt 0pt 0pt;
-      box-shadow: 0pt 6pt 18pt -3pt rgba(0,0,0,.1);
-      margin: 6pt 0pt;
-      text-decoration: none;
-      overflow: hidden;
-      width: 100%;
-      height: 250px;
-    .infos {
-      background: rgba(255,255,255,1) !important;
-      padding: 18pt;
-      height: 250px;
-      transform: translatey(100%);
-      p {
-        margin-top: 12pt;
-        transform: translateX(-12pt);
-        color: rgba(0,0,0,.4);
-      }
-      p.info {
-        position: absolute;
-        bottom: 24pt;
-        right: 0pt;
-        opacity: 0;
-        font-size: 9pt;
-        text-align: right;
-      }
-      h4 { transform: translateX(-24pt); font-size: 18pt; }
-      .colors {
-        position: absolute;
-        bottom: 0pt;
-        left: 0pt;
-        div {
-          height: 12pt;
-          width: 500pt;
-          display: table-cell;
-        }
-      }
-    }
-    &:hover {
-      transition: all 250ms ease-in-out;
-      .infos {
-        transition: all 250ms ease-in-out;
-        transform: translatey(0%);
-        p {
-          transition: all 500ms ease-in-out;
-          transition-delay: 150ms;
-          transform: translateX(0pt);
-        }
-        p.info {
-        transition: all 300ms ease-in-out;
-        transition-delay: 400ms;
-        color: rgba(0,0,0,1);
-        opacity: 1;
-        bottom: 24pt;
-        right: 18pt;
-        }
-        h4 {
-          transition: all 500ms ease-in-out;
-          transform: translateX(0pt);
-        }
-        .colors {
-          div {
-            transition: all 200ms ease-in-out;
-            transition-delay: 300ms;
-            width: 1000pt;
-            &:first-child { transition: all 200ms ease-in-out; transition-delay: 200ms; }
-            &:last-child { transition: all 200ms ease-in-out; transition-delay: 400ms; }
-          }
-        }
-      }
-    }
-    img {
-      position: absolute;
-      z-index: -10;
-      height: 250px;
-      }
-    }
-  }
-  .categories {
-    position: absolute;
-    top: 3pt;
-    right: 3pt;
-  p.category {
-    color: rgba(0,0,0,.4);
-    font-size: 9pt;
-    border: solid 1pt;
-    padding: 1pt 6pt;
-    display: inline;
-    text-align: right;
-    position: relative;
-    background: rgba(255,255,255,1);
-    z-index: 10;
-  }
-  }
+.banner {
+  width: 100%;
+  height: 100vh;
+  top: 0pt;
+  object-fit: cover;
+  position: relative;
+}
+.a-b-left {
+  position: absolute;
+  left: 48pt;
+  bottom: 48pt;
+}
+.a-b-right {
+  position: absolute;
+  right: 48pt;
+  bottom: 48pt;
+}
+.a-t-right {
+  position: absolute;
+  right: 48pt;
+  top: 48pt;
+}
+.a-t-left {
+  position: absolute;
+  left: 48pt;
+  top: 48pt;
 }
 
-// FIN INDEX PROJECTS
-#project {
-  .project-real {
-    position: absolute;
-    bottom: 48pt;
-    p, h1, h2, h3, h6 {
-      display: inline-table;
-      box-shadow: 0 64pt 20pt 20pt white inset;
-      padding: 3pt 9pt;
-      margin: 2pt;
-    }
-  }
-  .edit {
-    position: fixed;
-    top: 0pt;
-    right: 0pt;
-    h3 { font-size: 24pt; }
-  }
-    #work {
-      position: relative;
-      z-index: -1;
-      .row {
-      flex-wrap: wrap;
-      article {
-        flex-grow: 1;
-      }
-    }
-  .work-description {
-      border-left: 1pt solid rgba(0,0,0,.25);
-    p { font-size: 18pt; }
-    }
-    .large-button {
-      font-size: 48pt;
-      font-weight: 700;
-      text-align: center;
-      background: black; color: white;
-      transition: all 250ms;
-      &:hover { background: white; color: black;}
-      &:focus { background: white; color: black;}
-      &:active { background: white; color: black;}
-    }
+.img-contain {
+  width: 100%;;
+  height: 100%;
+  object-fit: contain;
+}
 
-  }
-  .category {
-    color: rgba(0,0,0,.4);
-    font-size: 9pt;
-    letter-spacing: 1pt;
-    margin-left: -2pt;
-  }
-  [class*="content-"] {
-    position: sticky;
-    // top: 72pt;
-    background: white;
-  }
-  // .content {
-  //   position: fixed;
-  //   z-index: 100;
-  //   top: 48pt;
-  //   left: 24pt;
-  //   padding: 6pt;
-  //   p { font-size: 1.25em;}
-  //   opacity: 1;
-  //   width: 276pt;
-  //   margin-top: 6pt;
-  //   background: rgba(255,255,255,0);
-  //   padding: 24pt 24pt 48pt 24pt;
-  //   box-shadow: 0pt 0pt 12pt rgba(0,0,0,0);
-  //   transform: translateX(-312pt);
-  //   transition: all 300ms ease-in-out;
-  //   &:hover, :active, :focus {
-  //     transform: translateX(-36pt);
-  //     background: rgba(255,255,255,1);
-  //     box-shadow: 0pt 0pt 12pt rgba(0,0,0,.25);
-  //     opacity: 1 !important;
-  //   }
-  //   h4 {
-  //     transform: rotate(90deg);
-  //     position: absolute;
-  //     top: 25pt;
-  //     right: -66pt;
-  //     text-transform: uppercase;
-  //     font-size: 3em;
-  //   }
-  // }
-  .content {
-    color: rgba(0,0,0,1);
+#real {
 
+}
+
+.svg {
+  position: relative;
+  display: flex;
+  img { height: 288pt; width:100%;}
+  .sticky {
   }
-
-    .row {
-      margin-bottom: 24pt;
-      &:last-child { margin-bottom: 24pt; }
-      .img-work {
-        // border: 1pt red solid;
-        max-height: 95vh;
-        max-width: 95vw;
-        margin-bottom: 5vh;
-        // height: auto;
-        // width: auto;
-        object-fit: contain;
-
-      }
-      .content-text {
-        .project-description { font-size: 16pt; }
-        h3 { animation: 150ms ease-in-out move-line; }
-        p.country { animation: 300ms ease-in-out move-line; }
-        p { animation: 450ms ease-in-out move-line; }
-        p.category { animation: 600ms ease-in-out move-line; }
-        .colors {
-          position: fixed;
-          bottom: 0pt;
-          left: 0pt;
-        }
-        .svg {
-          width: 72pt;
-          height: 72pt;
-          border-radius: 50%;
-          box-shadow: 0pt 9pt 12pt rgba(0,0,0,.15);
-          align-items: center;
-          justify-content: center;
-          padding: 3pt;
-          display: flex;
-          position: absolute;
-          bottom: 48pt;
-          right: 12pt;
-          background: white;
-          z-index: 2;
-          img { object-fit: contain; }
-        }
-      }
-    }
-
 }

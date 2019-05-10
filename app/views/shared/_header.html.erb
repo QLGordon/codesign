@@ -1,26 +1,38 @@
 <% if @project %>
-<% if @project.colors.first %>
-<header id="navbar" style=" width: 1pt; height: 1pt;">
-  <% else %>
-  <header>
-<% end %>
-<a href="/projects" style="position: fixed; top: 3pt; left: 3pt; font-size: 3em;">⇤</a>
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
+    <a href="/projects" class="text-left col">↤ retour</a>
+  <div class="col justify-content-center align-items-center d-flex bg-transparent">
+    <%= render 'shared/couronne'%>
+  </div>
+  <h2 class="col text-right my-4 mx-0" style="font-size: 16pt; color: <%= @color_d %>;"><%= @project.title %></h2>
+  <div id="edit" class="row">
+    <% if current_user && @project.id && current_user.email == "quentin.gourdon@gmail.com" %>
+    <div class="btn-group btn-group-sm" role="group" aria-label="...">
+      <%= link_to "EDIT", edit_project_path(@project, @work), class: [:btn, "btn-warning"] %>
+      <%= link_to 'DELETE', @project, :method => :delete, class: [:btn, "btn-danger"] %>
+    </div>
+      <br>
+    <% end %>
+  </div>
 </header>
+
 
 <% elsif @projects %>
 
-<header id="navbar" class="head-op">
-  <a href="/about"><h6>QLGordon - site en construction</h6></a>
-  <h3>Graphisme & Web</h3>
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
+    <a class="col text-left" href="/about"><h6>QLGordon - site en construction</h6></a>
+    <div class="col justify-content-center align-items-center d-flex bg-white">
+      <%= render 'shared/couronne'%>
+    </div>
+    <h4 class="col text-right my-4 mx-0">Graphisme & Web</h4>
 </header>
 
 <% else %>
-
-<header id="navbar" class="content">
-  <a href="/projects"><h1></h1>
-  <h3>mes projets</h3></a>
-  <h3>QLGordon </h3><h6>- site en construction</h6>
-  <p>Graphisme & Web</p>
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
+  <%= render 'shared/couronne'%>
+    <a  class="col text-left" href="/projects"><h4>mes projets</h4></a>
+    <h4 class="col text-right my-4 mx-0">Graphisme & Web</h4>
 </header>
+
 <% end %>
 
