@@ -6,7 +6,7 @@
 
 <style type="text/css">
   .st0{fill-rule:evenodd;clip-rule:evenodd;}
-  #visage {width: 24pt; transform: scale(1); padding: 3pt; animation: <%= (350..900).to_a.sample %>ms alternate bgcolor; border-radius: 50%; fill: <%= @color_a %>;}
+  #visage { margin: 12pt; width: 24pt; transform: scale(2); padding: 3pt; animation: <%= (350..900).to_a.sample %>ms alternate bgcolor; border-radius: 50%; fill: <%= @color_a %>;}
   @keyframes bgcolor {
     0% {
       transform: scale(0) translatey(-9pt);
@@ -18,7 +18,7 @@
     }
 
     100% {
-      transform: scale(1) translatey(0pt);
+      transform: scale(2) translatey(0pt);
       fill: <%= @color_a %> ;
     }
   }

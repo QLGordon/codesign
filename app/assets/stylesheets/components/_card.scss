@@ -2,11 +2,11 @@
   position: relative;
   overflow: hidden;
   &:hover {
-    .card-body { transition: all 350ms; opacity: 1; box-shadow: 0 .5rem 2rem rgba(0,0,0,1)!important;
-    .card-title { transition-delay: 250ms; transition: all 350ms; opacity: 1; transform: translatex(0pt); }
-    .card-text { transition-delay: 300ms; transition: all 500ms; opacity: 1; transform: translatex(0pt); }
-  }
-
+    .card-body {
+      transition: all 350ms; opacity: 1; box-shadow: 0 .5rem 2rem rgba(0,0,0,1)!important;
+      .card-title { transition-delay: 250ms; transition: all 350ms; opacity: 1; transform: translatex(0pt); }
+      .card-text { transition-delay: 300ms; transition: all 500ms; opacity: 1; transform: translatex(0pt); }
+    }
   }
   .card-img-top {
   }

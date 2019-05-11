@@ -1,22 +1,19 @@
-<div id="real" class="a-b-left">
+<div id="real" class="head a-b-left">
   <!-- TODO REFACTO CODE DYNAMIQUE CSS -->
-  <div class="btn-group btn-group-sm" role="group" aria-label="...">
+  <div aria-label="...">
     <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
     <%= link_to "NEW", new_project_work_path(@project), class: [:btn, "btn-primary"] %>
     <% end %>
   </div>
 
   <% @project.works.each do |work| %>
-  <div class="btn-group btn-group-sm" role="group" aria-label="...">
+  <div class="bg-white p-2 my-2 rounded shadow">
   <% if @project.works && current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-    <%= link_to "EDIT", edit_project_work_path(@project.id, work), class: [:btn, "btn-warning"] %>
+    <%= link_to "EDIT", edit_project_work_path(@project.id, work) %>
   <% end %>
-  </div>
-
-    <a href="#<%= work.title %>" class="btn bg-light">
       <strong><%= work.title %></strong>
       <em><%= work.category.name %></em>
-    </a>
+  </div>
     <% if work.date && work.city %>
     <div style="display: none"><h6> <%= work.date.year %> </h6> <h6> <%= work.city %> </h6></div>
 

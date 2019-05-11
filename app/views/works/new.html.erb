@@ -1,31 +1,45 @@
 <main id="work" style="margin-top: 72pt;">
-  <section class="container">
-    <section class="row">
-        <article class="col-md-5 col-sm-12">
-          <div class="content-text">
-            <%= form_for [@project, @work] do |f| %>
-            <h3><%= f.text_field :title, placeholder: "titre" %></h3>
-            <p class="category" style="display: inline-flex;" >
-            <%= f.select(:category_id) do %>
-            <% @categories.each do |c| %>
-              <%= content_tag(:option, c.name.capitalize, value: c.id ) %>
-            <% end %>
-          <% end %><br>
-          <%= f.text_field :date, value: Date.today %>
-          <%= f.text_field :city, value: "Paris", placeholder: "city" %></p><br>
-        </div>
-        </article>
-        <article class="col-md-7 col-sm-12 work-description">
-          <div class="content-text">
-            <p style=" font-size: 16pt;"><%= f.text_area :description, placeholder: "description" %></p><br>
-            <%= f.fields_for :images do |image| %>
-              <%= image.label :photo %>
-                <%= image.file_field :photo, :multiple => true, name: "images[photo][]" %>
-            <% end %>
-          <%= f.submit value: "OK" %>
+  <%= form_for [@project, @work] do |f| %>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <%= f.text_field :title, placeholder: "titre", class: ["form-control"] %>
       </div>
-      </article>
+      <div class="col">
+        <%= f.select(:category_id) do %>
+        <% @categories.each do |c| %>
+        <%= content_tag(:option, c.name.capitalize, value: c.id, class: ["form-control"]) %>
         <% end %>
-    </section>
-  </section>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.text_field :date, value: Date.today, class: ["form-control"] %>
+      </div>
+      <div class="col">
+        <%= f.text_field :city, value: "Paris", placeholder: "city", class: ["form-control"] %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+    <%= f.text_area :description, placeholder: "description", class: ["form-control"], rows: 10 %>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.fields_for :images do |image| %>
+          <%= image.label :photo %>
+          <%= image.file_field :photo, :multiple => true, name: "images[photo][]"%>
+        <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col">
+        <%= f.submit value: "OK", class: ["btn btn-primary"] %>
+      </div>
+    </div>
+<% end %>
+</div>
 </main>

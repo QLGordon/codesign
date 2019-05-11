@@ -35,9 +35,7 @@ class ProjectsController < ApplicationController
     @clients = Client.all
     @project = Project.find(params[:id])
     @colors = @project.colors
-    3.times do
     @color = @project.colors.build
-    end
   end
 
   def update

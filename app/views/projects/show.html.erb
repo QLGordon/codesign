@@ -1,14 +1,14 @@
 <main id="project">
   <div class="head" >
-      <img class="banner position-relative" src="<%= @project.photo %>" alt="">
-      <% if @project.client.svgs.first %>
-          <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
-        <% else %>
-          <div id="badge" class="shadow-lg a-b-right"></div>
-      <% end %>
-    <%= render 'shared/real' %>
-    <div class="a-t-left">
+    <img class="banner position-relative" src="<%= @project.photo %>" alt="">
+    <% if @project.client.svgs.first %>
+    <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
+    <% else %>
+    <div id="badge" class="shadow-lg a-b-right">
+      <%= render 'shared/visage' %>
     </div>
+    <% end %>
+    <%= render 'shared/real' %>
   </div>
 
   <div class="container">

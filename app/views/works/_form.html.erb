@@ -1,0 +1,43 @@
+<%= form_for [@project, @work] do |f| %>
+<div class="container">
+  <div class="row my-5">
+    <div class="col">
+      <%= f.text_field :title, placeholder: "titre", class: ["form-control"] %>
+    </div>
+    <%= f.select(:category_id) do %>
+      <% @categories.each do |c| %>
+      <%= content_tag(:option, c.name, value: c.id, class: ["form-control"]) %>
+      <% end %>
+    <% end %>
+    </div>
+  <div class="row">
+    <div class="col">
+      <%= f.text_field :date, class: ["form-control"] %>
+    </div>
+    <div class="col">
+      <%= f.text_field :city, placeholder: "city", class: ["form-control"] %>
+  </div>
+</div>
+<div class="row my-5">
+  <div class="col">
+    <%= f.text_area :description, placeholder: "description", class: ["form-control"], rows: 10, value: markdown(@project.description) %>
+  </div>
+</div>
+  <% @images.each do |image| %>
+  <img src="<%= image.photo %>" alt="">
+  <% end %>
+  <%= f.fields_for :images do |image_field| %>
+    <%= image_field.label :photo %>
+    <%= image_field.file_field :photo, :multiple => true, name: "images[photo][]" %>
+    <%= image_field.check_box :_destroy %>
+  <% end %>
+  <div class="row my-5">
+    <div class="col">
+      <%= f.submit value: "OK", class: ["btn btn-primary"] %>
+    </div>
+    <div class="col">
+      <%= link_to 'DELETE', [@project, @work], :method => :delete, class: ["btn btn-danger"] %>
+    </div>
+  </div>
+  <% end %>
+</div>
