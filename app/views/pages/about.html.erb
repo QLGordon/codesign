@@ -1,63 +1,160 @@
-<main id="about">
-  <section class="container">
-    <section id="me" class="row">
-      <div class="col-xs-2"></div>
-      <div class="col-xs-8 about-description">
-        <div>
-          <h3>Expérience</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officia nostrum repellendus id voluptatem ea laborum quaerat fugit at aliquam consequuntur, quidem est quos debitis inventore ullam, eos aspernatur voluptatibus aperiam. ipsum dolor sit amet, consectetur adipisicing elit. Quo inventore fugit odit id voluptates consequuntur consectetur laudantium, iusto explicabo est corrupti incidunt, a? Tempore quia asperiores labore dolorem, et laudantium.</p>
-          <hr>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus in rerum autem officiis dolorem magnam nisi neque deserunt, optio pariatur accusantium voluptates corporis. Ab nihil modi, cum iure blanditiis rerum. ipsum dolor sit amet, consectetur adipisicing elit. Esse itaque eos, similique quisquam eaque unde repudiandae beatae earum possimus nisi assumenda illum molestiae sapiente vel dolorem cum ut, explicabo atque.</p>
-        </div>
-        <div>
-          <h3>Formation</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus consectetur assumenda laudantium, vitae sed veniam quisquam laborum est natus et ea voluptates sequi quo architecto distinctio nobis necessitatibus numquam sit. ipsum dolor sit amet, consectetur adipisicing elit. Nulla quidem aliquam, iusto quae! Nemo at, nostrum laboriosam necessitatibus molestias consequatur facere consequuntur placeat quidem doloremque aspernatur, ratione culpa magnam sapiente.</p>
-        </div>
-        <div>
-          <h3>À propos</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Itaque asperiores in saepe voluptatum iure magnam neque. Iure fugit aperiam sequi, voluptates dolores consequuntur, quam cum soluta laudantium, iste quas debitis. ipsum dolor sit amet, consectetur adipisicing elit. Rem ipsa aliquid facere quae! Pariatur perferendis sequi fugit incidunt, et temporibus nesciunt, ab voluptatibus suscipit repudiandae, nobis consectetur nostrum. Suscipit, id!</p>
-        </div>
-      </div>
-      <div class="col-xs-2"></div>
-    </section>
+<main id="about" class="container head">
+  <div class="head text-center">
+    <%= image_tag("Quentin", class: ["rounded-circle shadow"], style: "width: 144pt; height: 144pt; border: solid 3pt white;") %> <br>
+    <h1>Hello, je suis Quentin</h1>
+    <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus ullam est, eos minima nisi illo asperiores, repellat ab officia dignissimos odio repudiandae tempore obcaecati at dolorum nulla, nesciunt maiores nobis. ipsum dolor sit amet, consectetur adipisicing elit. Dolorum facere repellat quos consequatur, quae modi, velit dignissimos possimus qui soluta alias maiores ducimus hic nam accusantium, eligendi minima praesentium, fugiat? ipsum dolor sit amet, consectetur adipisicing elit. Doloribus quam quod aliquam atque optio dolores inventore repudiandae id necessitatibus eius, labore sed, aperiam natus. Autem eos omnis accusantium cumque in!</p>
+  </div>
+  <table>
+    <tr>
+      <td>
 
-    <section id="skills" class="row">
-      <div class="col-xs-12 col-md-4">
-        <h4>Maitrise des logiciels de graphisme</h4>
-        <% @skills_design.svgs.each do |svg| %>
-        <span>
-        <img src= "<%= svg.svg %>" alt="">
-        </span>
-        <% end %>
-      </div>
-      <div class="col-xs-12 col-md-4">
-        <h4>Maitrise des langages de programmation</h4>
+      </td>
+      <td class="pl-5">
+      </td>
+    </tr>
+  </table>
+  <table id="table">
+    <th class="border-bottom" colspan="3"><h2>Formations</h2></th>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/lewagon.svg" alt="Le Wagon" width="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Le Wagon</h3>
+        <h4>Développeur Web Fullstack, Batch #200</h4><br>
+        <p><strong>Paris <br> 2018</strong><br>
+        9 semaines de bootcamp intensif en code : HTML, CSS, Bootstrap, JavaScript ES2015, SQL, git, GitHub, Heroku and Ruby on Rails.</p>
+      </td>
+      <td valign="baseline">
         <% @skills_web.svgs.each do |svg| %>
-        <span>
-        <img src= "<%= svg.svg %>" alt="">
-        </span>
+        <img src= "<%= svg.svg %>" alt="" width="24pt" class="m-2">
         <% end %>
-      </div>
-      <div class="col-xs-12 col-md-4">
-      <h4>Formations</h4>
-      <% @formations.svgs.each do |svg| %>
-      <span>
-      <img src= "<%= svg.svg %>" alt="">
-      </span>
-      <% end %>
-      </div>
-    </section>
-    <section id="clients" class="row">
-      <div class="col-xs-12 col-md-12">
-        <h4>Ils m'ont fait confiance</h4>
-        <% @clients.shuffle.each do |client| %>
-        <% if client.svgs.first %>
-        <span>
-        <img src= "<%= client.svgs.first.svg %>" alt="">
-        </span>
+      </td>
+    </tr>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/LISAA.svg" alt="LISAA" width="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>L'Institut des Arts Appliqués</h3>
+        <h4>Bachelor Designer graphique</h4><br>
+        <p><strong>Rennes <br> 2010-2013</strong><br>
+        Mise à niveau d’arts appliqués, techniques de représentation (dessin, photographie, maquette, infographie), design graphique, typographie, motion design, identité visuelle, etc.</p>
+      </td>
+      <td valign="baseline">
+        <% @skills_design.svgs.each do |svg| %>
+        <img src= "<%= svg.svg %>" alt="" width="24pt" class="m-2">
         <% end %>
-        <% end %>
-      </div>
-    </section>
-  </section>
+      </td>
+    </tr>
+    <tr>
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/Renoir.svg" alt="Lycée Auguste et Jean Renoir" width="48pt" class="mr-2">
+      </td>
+      <td colspan="2" valign="baseline">
+        <h3>Lycée Auguste et Jean Renoir</h3>
+        <h4>Bac S option Cinéma</h4><br>
+        <p><strong>Angers <br> 2009</strong><br>
+        </p>
+      </td>
+    </tr>
+  </table>
+
+  <table id="table">
+    <th class="border-bottom" colspan="3"><h2>Expériences</h2></th>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161515/formation/lewagon.svg" alt="Le Wagon" width="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Teacher Assistant</h3>
+        <h4>Le Wagon</h4><br>
+        <h6>Paris <br> janvier & mai 2019 <br>freelance</h6>
+        <p>Appui pédagogique, analyse & résolution de problèmes de code, aide à la gestion du stress.</p>
+      </td>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161107/institut_francais/ifh.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Directeur de la communication</h3>
+        <h4>Institut Français en Haïti</h4><br>
+        <h6>Port-au-Prince <br> 2016-18 <br>CDI</h6>
+        <p>Direction artistique & refonte de la charte graphique, déclinaison sur tous supports, création quotidienne de contenus multimédia, réalisation de l’agenda & de la newsletter, mise à jour du site web, animation des réseaux sociaux, live tweet, communication évènementielle, conception d’outils de promotion.</p>
+      </td>
+    </tr>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Consultant communication & designer graphique</h3>
+        <h4>Hainet <span style="font-size: 10pt;">(Fournisseur d’accès Internet)</span></h4><br>
+        <h6>Port-au-Prince <br> 2015-17 <br>CDI</h6>
+        <p>Benchmarking, refonte de l’identité visuelle de la marque, définition & mise en œuvre du plan de communication, organisation de campagnes de sponsoring & suivi des partenariats, animation d’un réseau d’ambassadeurs.</p>
+      </td>
+    </tr>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549983910/Ambafranceht/ambafrance.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Consultant designer graphique</h3>
+        <h4>Ambassade de France en Haïti</h4><br>
+        <h6>Port-au-Prince <br> 2015-18 <br>freelance</h6>
+        <p>Réalisation d’outils de promotion des activités de coopération de l’ambassade en lien avec le service de presse : communication numérique & événementielle, création d’une banque d’images, conception de goodies & d’une plaquette institutionnelle.</p>
+      </td>
+    </tr>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161010/codesign/starcom_c.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Consultant direction artistique</h3>
+        <h4>Starcom Médiavest Haïti</h4><br>
+        <h6>Port-au-Prince <br> 2016 <br>freelance</h6>
+        <p>Analyse des besoins clients & des publics cibles, présentations de briefs clients, déclinaisons & retouches, contrôle de la qualité des supports.</p>
+      </td>
+    </tr>
+    <tr class="border-bottom">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160990/codesign/ddb_c.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Direction Artistique Junior</h3>
+        <h4>Nouveau Monde DDB</h4><br>
+        <h6>Nantes<br>2016<br>stage</h6>
+        <p>Réalisation de publicités tous supports, conception de packaging, aide au design d’espace d’un réseau de boutiques, supervision de shootings photos, veille créative.</p>
+      </td>
+    </tr>
+    <tr class="">
+      <td valign="middle">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160973/codesign/enedis_c.svg" alt="" height="48pt" class="mr-2">
+      </td>
+      <td valign="baseline">
+        <h3>Graphiste</h3>
+        <h4>Enedis</h4><br>
+        <h6>Pays-de-la-Loire<br>2013-14<br>stage</h6>
+        <p>Création d’un projet pilote vidéo de valorisation des métiers de l’entreprise : écriture du scénario, storyboard, prises de vues, montage, intégration d’éléments graphiques en motion design.</p>
+      </td>
+    </tr>
+  </table>
+<h2>Ils m'ont fait confiance</h2>
+</table>
+  <div class="col text-center">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549983910/Ambafranceht/ambafrance.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161107/institut_francais/ifh.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985126/Catherine%20Flon/cath_flon_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160990/codesign/ddb_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161010/codesign/starcom_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160954/codesign/pantheon_sorbonne_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160466/hainet/hainet_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160679/Spark/spark_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1549985279/dipomatie_solidaire/diplomatie_solidaire_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160830/mpp/mpp_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160742/Sibylline/sibylline_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161049/codesign/ue_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161030/codesign/concern_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550160973/codesign/enedis_c.svg" alt="" width="144pt" height="144pt" class="rounded-circle shadow m-5">
+  </div>
 </main>

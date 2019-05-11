@@ -1,5 +1,5 @@
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 shadow">
 <% if @project && !@work %>
-<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
     <a href="/projects" class="text-left col">↤ retour</a>
   <div class="col justify-content-center align-items-center d-flex bg-transparent">
     <%= render 'shared/couronne'%>
@@ -14,25 +14,21 @@
       <br>
     <% end %>
   </div>
-</header>
 
 
 <% elsif @projects %>
 
-<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
     <a class="col text-left" href="/about"><h6>QLGordon - site en construction</h6></a>
     <div class="col justify-content-center align-items-center d-flex bg-white">
       <%= render 'shared/couronne'%>
     </div>
     <h4 class="col text-right my-4 mx-0">Graphisme & Web</h4>
-</header>
 
 <% else %>
-<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2">
-  <%= render 'shared/couronne'%>
     <a  class="col text-left" href="/projects"><h4>mes projets</h4></a>
+  <%= render 'shared/couronne'%>
     <h4 class="col text-right my-4 mx-0">Graphisme & Web</h4>
-</header>
 
 <% end %>
+</header>
 
