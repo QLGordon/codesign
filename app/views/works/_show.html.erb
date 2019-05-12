@@ -1,8 +1,8 @@
 <section id="work" class="pt-5 pb-5">
   <% @project.works.each do |work| %>
-<table width="100%" class="my-5">
+<table width="100%" class="mt-5">
   <tr class="border">
-    <td class="border px-5">
+    <td colspan="2" class="border px-5">
       <h3><%= work.title %></h3>
   </td>
     <td class="border px-5" width="144pt">
@@ -10,22 +10,26 @@
   </td>
   </tr>
   <tr class="border">
-    <td colspan="2" class="border p-5">
+    <td colspan="3" class="border p-5">
       <p><%= markdown work.description %></p>
     </td>
   </tr>
-  <tr>
-    <td colspan="2" class="">
+</table>
+<table width="100%" class="p-0">
       <% work.images.each do |image| %>
         <% if image.photo.url.split('.').last == "svg" %>
-          <img class="border border-top-0" src="<%= image.photo %>" alt="">
+
+          <td>
+            <img class="border border-top-0" src="<%= image.photo %>" alt="">
+          </td>
+
         <% elsif image.photo.url.split('.').last != "svg" %>
-        <img class="img-contain border border-top-0" src="<%= image.photo %>" alt="">
+          <td>
+            <img class="img-contain border border-top-0 " src="<%= image.photo %>" alt="">
+          </td>
         <% end %>
       <% end %>
-    </td>
-  </tr>
-</table>
   <% end %>
+  </table>
 
 </section>
