@@ -10,10 +10,10 @@
     <% project.works.each do |work| %>
     <div class="card-text">
       <h4><%= work.title %></h4>
-      <div>
+      <!-- <div>
         <% if project.colors.first %>
           <% project.colors.each do |color| %>
-          <div style=" display: inline-block; background: rgba(<%= color.red %>,<%= color.green %>,<%= color.blue %>,1); height: 12pt; width: 12pt;">
+          <div style=" display: inline-block; background: rgba(<%= color.red %>,<%= color.green %>,<%= color.blue %>,1); height: 3pt; width: 12pt;">
           </div>
           <% end %>
           <% else %>
@@ -21,7 +21,7 @@
           <%= color.red %><%= color.green %><%= color.blue %>
           <% end %>
         <% end %>
-      </div>
+      </div> -->
       <p><%= markdown(work.description) %></p>
 
     </div>
