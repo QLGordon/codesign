@@ -8,6 +8,7 @@
   <img src="<%= project.photo %>" class="card-img-top" alt="...">
   <div class="card-body bg-white p-5">
       <h3 class="card-text"><%= project.title %></h3>
+      <p class="card-text"><%= markdown(project.description) %></p>
     <% project.works.each do |work| %>
     <div class="card-text">
       <h4><%= work.title %></h4>
