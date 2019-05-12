@@ -2,7 +2,7 @@
   <div class="head" >
     <img class="banner position-relative" src="<%= @project.photo %>" alt="">
     <% if @project.client.svgs.first %>
-    <img id="badge" class="shadow a-b-right" src= "<%= @project.client.svgs.first.svg %>" alt="">
+    <img id="badge" class="shadow a-t-right head" src= "<%= @project.client.svgs.first.svg %>" alt="">
     <% else %>
     <div id="badge" class="shadow-lg a-b-right">
       <%= render 'shared/visage' %>
