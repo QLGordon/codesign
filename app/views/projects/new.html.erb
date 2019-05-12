@@ -1,32 +1,33 @@
-<main id="project">
-  <section class="container">
-    <section class="row">
-      <article class="col-sm-12 col-md-4" style="margin-top: 72pt;" >
-      <%= simple_form_for(@project) do |f| %>
-      <h3>
-      <%= f.text_field :title, placeholder: "Titre"%>
-      </h3>
-      </h3>
-      <p class="country"><%= f.text_field :country, placeholder: "Pays" %></p>
-      <hr>
-      <%= f.text_area :description, placeholder: "Description" %>  <!-- [...] -->
-        <%= f.input :photo %>
-        <%= f.input :photo_cache, as: :hidden %>
-        <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
-<% 5.times do %>
-        <div class="color-form">
-        <%= f.fields_for :colors, @color do |color_fields| %>
-          <%= color_fields.number_field :red %> <%= color_fields.number_field :green %> <%= color_fields.number_field :blue %>
-          <h4 style="color: rgba(
-          <%= @color.red %>, <%= @color.green %>, <%= @color.blue %>, 1);
-          ">███<%= color_fields.check_box :_destroy %></h4>
-        <% end %>
-        </div>
-<% end %>
-        <%= f.button :submit, "ok" %>
-        <!-- [...] -->
-      <% end %>
-    </article>
-    </section>
-  </section>
+<%= simple_form_for(@project) do |f| %>
+<section class="container head">
+  <div class="row head">
+    <div class="col"><%= f.text_field :title, placeholder: "Titre", class: ["form-control"]%></div>
+    <div class="col"><%= f.text_field :country, placeholder: "Pays", class: ["form-control"] %></div>
+  </div>
+    <div class="row">
+    <div class="col"><%= f.text_area :description, class: ["form-control"], rows: 10, value: markdown("description") %></div>
+  </div>
+    <div class="row">
+    <div class="col"><%= f.input :photo, class: "custom-file-input" %><%= f.input :photo_cache, as: :hidden, class: "custom-file-input" %></div>
+    <div class="col"></div>
+  </div>
+  <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
+  <% 5.times do %>
+  <%= f.fields_for :colors, @color do |color_fields| %>
+  <div class="row my-5 py-4">
+    <div class="col">
+      <%= color_fields.number_field :red, class: ["rgb form-control"], placeholder: "000" %>
+    </div>
+    <div class="col">
+      <%= color_fields.number_field :green, class: ["rgb form-control"], placeholder: "000" %>
+    </div>
+    <div class="col">
+      <%= color_fields.number_field :blue, class: ["rgb form-control"], placeholder: "000" %>
+    </div>
+    <%= color_fields.check_box :_destroy %>
+  <% end %>
+  </div>
+  <% end %>
+  <%= f.button :submit, "ok" %>
+  <% end %>
 </main>
