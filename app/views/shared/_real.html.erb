@@ -12,7 +12,6 @@
     <%= link_to "EDIT", edit_project_work_path(@project.id, work) %>
   <% end %>
       <strong><%= work.title %></strong>
-      <em><%= work.category.name %></em>
   </div>
     <% if work.date && work.city %>
     <div style="display: none"><h6> <%= work.date.year %> </h6> <h6> <%= work.city %> </h6></div>
