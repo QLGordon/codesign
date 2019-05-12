@@ -11,6 +11,9 @@
       <div class="col">
         <%= f.text_field :country, class: ["form-control"] %>
       </div>
+      <div class="col">
+        <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
+      </div>
     </div>
     <div class="row my-5">
       <div class="col">
