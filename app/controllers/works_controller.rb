@@ -26,6 +26,10 @@ class WorksController < ApplicationController
     @categories = Category.all
   end
 
+  def show
+
+  end
+
   def update
     if @work.update!(work_params)
       if params[:images]

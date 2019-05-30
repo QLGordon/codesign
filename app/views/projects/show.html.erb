@@ -21,7 +21,11 @@
           <p><%= markdown @project.description %></p>
         <% end %>
     </div>
-  <%= render 'works/show' %>
+    TODO
+    <% @project.works.each do |work| %>
+    <%= work.title %>
+    <% end %>
+
   </div>
   </div>
 </main>
