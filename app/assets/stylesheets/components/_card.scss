@@ -1,32 +1,61 @@
-.card {
+.project {
+  margin: 6pt;
+  width: calc(264pt);
+  height: 100%;
   position: relative;
-  overflow: hidden;
-  &:hover {
-    .card-body {
-      transition: all 350ms; opacity: 1; box-shadow: 0 .5rem 2rem rgba(0,0,0,1)!important;
-      .card-title { transition-delay: 250ms; transition: all 350ms; opacity: 1; transform: translatex(0pt); }
-      .card-text { transition-delay: 300ms; transition: all 500ms; opacity: 1; transform: translatex(0pt); }
-    }
-  }
-  .card-img-top {
-  }
-  .card-body {
+  .dash {
     position: absolute;
-    overflow-y: auto;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    opacity: 0;
-    color: grey;
-    .card-title{
-      opacity: 0;
-      transform: translatex(-9pt);
-    }
-    .card-text{
-      opacity: 0;
-      transform: translatex(-9pt);
-      text-align: justify;
+    top: -9pt;
+    right: 0pt;
+    .edit {
+      width: 16pt;
+      height: 16pt;
+      background: white;
+      display: inline-block;
+      text-align: center;
     }
   }
+}
+
+
+.align-right {
+  text-align: right;
+}
+
+.align-left {
+  text-align: left;
+}
+.size-24 {
+  font-size: 24pt;
+}
+.size-12 {
+  font-size: 12pt;
+}
+.sm-legend {
+  color: white;
+  height: 100%;
+  span {
+    font-size: 7pt;
+    font-weight: bolder;
+    padding: 1.75pt 3pt;
+  }
+  .red {
+    box-shadow: 0pt 0pt 0pt 12pt red inset;
+  }
+  .blue {
+    box-shadow: 0pt 0pt 0pt 12pt blue inset;
+  }
+  .green {
+    box-shadow: 0pt 0pt 0pt 12pt green inset;
+  }
+}
+.work-logo {
+  display: inline-block;
+  position: absolute;
+  top: -7pt;
+  left: 3pt;
+  background: white;
+  width: 19pt;
+  height: 12pt;
+  text-align: center;
 }

@@ -1,21 +1,103 @@
 
 <% @projects.each do |project| %>
-<div class="card shadow border-0">
-  <div class="row">
-    <h4 class=" col card-title"><%= project.title %></h4>
-  </div>
-<%= link_to project_path(project) do %>
-  <img src="<%= project.photo %>" class="card-img-top" alt="...">
-  <div class="card-body bg-white p-5">
-    <h3 class="card-text"><%= project.title %></h3>
-    <p class="card-text"><%= markdown(project.description) %></p>
-    <% project.works.each do |work| %>
-    <div class="card-text">
-      <h4><%= work.title %></h4>
-      <p><%= markdown(work.description) %></p>
+  <% project.works.each do |work| %>
+  <div class="project shadow-sm border d-inline-block mb-5">
+    <% if current_user %>
+    <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+    <div class="dash">
+      <%= link_to edit_project_work_path(project, work) do %>
+      <div class="edit rounded-circle"><i class="fas fa-edit"></i></div>
+      <% end %>
+      <%= link_to project_work_path(project, work), :method => :delete do %>
+      <div class="edit rounded-circle"><i class="fas fa-trash-alt"></i></div>
+      <% end %>
     </div>
-  <% end %>
+        <% end %>
+    <% end %>
+
+    <div class="px-4 pt-3 d-flex border-bottom border-dark justify-content-between">
+      <div class="d-flex">
+
+        <strong class="size-12">
+        <%= link_to project_work_path(project, work) do %>
+        <%= work.category.name %>
+        <% end %>
+        </strong>
+
+      </div>
+      <div class="d-flex">
+        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
+      </div>
+      <div class="d-flex align-right sm-legend align-self-center">
+        <p>
+          <span class="mr-1 blue"><%= work.date.year %></span>
+        </p>
+      </div>
+    </div>
+
+    <div class="px-4 pt-3 d-flex justify-content-between">
+      <div class="d-flex align-self-center">
+        <% if project.client.svgs.first %>
+        <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
+        <% end %>
+      </div>
+      <div class="align-left flex-grow-1">
+          <strong>
+            <%= link_to project_path(project) do  %>
+            <%= project.title %>
+            <% end %>
+          </strong>
+        <br>
+        <p class="sm-legend d-table">
+         <span class="mr-1 blue">TODO category client</span>
+      </div>
+    </div>
+    <div class="px-4 pt-3 d-flex text-secondary justify-content-between border-bottom">
+      <div>
+        <%= markdown(work.description[0..150]) %>
+      </div>
+    </div>
+    <div>
+      <% work.images.each do |image| %>
+      <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
+      <% end %>
+    </div>
+    <div class="px-4 pt-3 d-flex border-bottom border-dark justify-content-between">
+      <div class="d-flex align-self-center">
+        <strong class="size-12"><i class="fas fa-smile"></i> le client</strong>
+      </div>
+      <div class="d-flex align-right sm-legend align-self-center"><p>
+        <span class="mr-1 green"><%= work.city %></span>
+      </div>
+    </div>
+    <div class="px-4 pt-3 d-flex justify-content-between">
+      <div class="d-flex align-self-center">
+        <% if project.client.svgs.first %>
+        <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
+        <% end %>
+      </div>
+      <div class="align-left flex-grow-1">
+          <strong>
+            <%= project.client.name %>
+          </strong>
+        <br>
+        <p class="sm-legend d-table">
+          <span class="mr-1 red"><%= project.works.count %> missions</span>
+        </p>
+      </div>
+      <div class="d-flex">
+        <strong>
+          <i class="fab fa-facebook-square"></i>
+          <i class="fab fa-twitter-square"></i>
+          <i class="fab fa-instagram"></i>
+        </strong>
+      </div>
+    </div>
+    <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
+      <div>
+        <%= markdown(project.client.description[0..150]) %>
+      </div>
+    </div>
   </div>
-</div>
   <% end %>
 <% end %>
