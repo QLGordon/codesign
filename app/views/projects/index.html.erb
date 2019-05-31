@@ -10,13 +10,15 @@
             <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
             <% end %>
           </div>
-          <div class="align-left flex-grow-1">
+          <div class="align-left flex-grow-1 align-self-center m-3">
               <strong>
                 <%= link_to project_path(project), target: "_blank" do  %>
                 <%= project.title %>
                 <% end %>
               </strong>
-            <br>
+
+          </div>
+            <div class="d-flex align-self-center mr-1">
             <p class="sm-legend d-table">
              <span class="mr-1 blue"><%= project.country %></span>
             </p>
@@ -24,19 +26,17 @@
         </div>
         <img src="<%= project.photo %>" alt="" class="w-100 border-bottom">
         <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
+          <%= markdown(project.description) %>
+        </div>
+        <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
           <p class="sm-legend">
            <span class="mr-1 red"><%= project.works.count %> missions</span>
           </p>
         </div>
-        <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
-          <%= markdown(project.description) %>
-        </div>
         <div class="px-4 d-flex text-secondary justify-content-between">
-          <p class="sm-legend">
           <% project.works.each do |work| %>
-           <span class="mr-1 blue"><%= work.title %></span>
+          <%= link_to work.title, project_work_path(project, work)  %>
           <% end %>
-          </p>
           </div>
       </div>
       <% end %>
