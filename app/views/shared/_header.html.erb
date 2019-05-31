@@ -4,7 +4,7 @@
   <div class="col justify-content-center align-items-center d-flex bg-transparent">
     <%= render 'shared/couronne'%>
   </div>
-  <h2 class="col text-right my-4 mx-0" style="font-size: 16pt; color: <%= @color_d %>;"><%= @project.title %></h2>
+  <h4 class="col text-right my-4 mx-0" style="font-size: 9pt; color: <%= @color_d %>;"><%= @project.title %></h4>
   <div id="edit" class="row">
     <% if current_user && @project.id && current_user.email == "quentin.gourdon@gmail.com" %>
     <div class="btn-group btn-group-sm" role="group" aria-label="...">
@@ -22,7 +22,7 @@
     <div class="col justify-content-center align-items-center d-flex bg-white">
       <%= render 'shared/couronne'%>
     </div>
-    <h4 class="col text-right my-4 mx-0">Work in Progress</h4>
+    <h6 class="col text-right my-4 mx-0">Work in Progress</h6>
 
 <% else %>
     <a  class="col text-left" href="/projects"><h4>mes projets</h4></a>
