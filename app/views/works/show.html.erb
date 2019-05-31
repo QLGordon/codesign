@@ -4,7 +4,7 @@
       <div class="d-flex">
         <strong class="size-12">
         <%= link_to project_work_path(@project, @work) do %>
-        <%= @work.category.name %>
+        <%= @work.title %>
         <% end %>
         </strong>
 
@@ -15,6 +15,7 @@
       <div class="d-flex align-right sm-legend align-self-center">
         <p>
           <span class="mr-1 blue"><%= @work.date.year %></span>
+          <span class="mr-1 red"><%= @work.category.name %></span>
         </p>
       </div>
     </div>
