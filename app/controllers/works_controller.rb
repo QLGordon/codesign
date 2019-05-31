@@ -1,6 +1,11 @@
 class WorksController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_project
   before_action :set_work, only: [:show, :update, :destroy]
+
+  def index
+    @works = Works.all
+  end
 
   def new
     @work = @project.works.build
@@ -45,7 +50,7 @@ class WorksController < ApplicationController
 
   def destroy
     if @work.destroy
-      redirect_to project_path(@project)
+      redirect_to projects_path
     end
   end
 

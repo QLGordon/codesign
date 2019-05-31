@@ -1,31 +1,80 @@
-<main id="project">
-  <div class="head" >
-    <img class="banner position-relative" src="<%= @project.photo %>" alt="">
+<main id="project" class="container head pt-5">
+  <div class="px-4 pt-3 d-flex border-bottom border-dark justify-content-between">
+    <div class="d-flex align-self-center">
     <% if @project.client.svgs.first %>
-    <img id="badge" class="shadow a-t-right head" src= "<%= @project.client.svgs.first.svg %>" alt="">
-    <% else %>
-    <div id="badge" class="shadow-lg a-b-right">
-      <%= render 'shared/visage' %>
-    </div>
+      <img src="<%= @project.client.svgs.first.svg %>" alt="" height="48pt">
     <% end %>
-    <%= render 'shared/real' %>
+    </div>
+    <div class="d-flex">
+    <h1>Projet <%= @project.title %></h1>
+    </div>
+    <p class="sm-legend d-table">
+      <span class="mr-1 red"><%= @project.works.count %> missions</span><br>
+      <strong style="color: black;">
+        <i class="fab fa-facebook-square"></i>
+        <i class="fab fa-twitter-square"></i>
+        <i class="fab fa-instagram"></i>
+      </strong>
+    </p>
+  </div>
+  <div>
+    <img src="<%= @project.photo %>" alt="" class="w-100">
   </div>
 
-  <div class="container">
-    <%= render 'colors/show' %>
-    <div class="content p-4">
-        <h4>infos</h4>
-        <h2><%= @project.title %></h2>
-        <% if @project.country %>
-          <span><%= @project.country %></span></span>
-          <p><%= markdown @project.description %></p>
-        <% end %>
-    </div>
-    TODO
-    <% @project.works.each do |work| %>
-    <%= work.title %>
-    <% end %>
+  <div class="text-secondary px-4 pt-3 d-flex">
+  <p ><%= markdown(@project.description) %></p>
+  </div>
+<h2>
+  <% if @project.works.count == 1 %>
+    Ma mission <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
+  <% else %>
+    Mes <%= @project.works.count %> missions <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
+  <% end %>
+</h2>
+  <div class="row">
+  <% @project.works.each do |work| %>
+   <div class="project shadow-sm border d-inline-block mb-5">
+     <% if current_user %>
+     <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+     <div class="dash">
+       <%= link_to edit_project_work_path(@project, work) do %>
+       <div class="edit rounded-circle"><i class="fas fa-edit"></i></div>
+       <% end %>
+       <%= link_to project_work_path(@project, work), :method => :delete do %>
+       <div class="edit rounded-circle"><i class="fas fa-trash-alt"></i></div>
+       <% end %>
+     </div>
+         <% end %>
+     <% end %>
 
+     <div class="px-4 pt-3 d-flex border-bottom border-dark justify-content-between">
+       <div class="d-flex">
+
+         <strong class="size-12">
+         <%= link_to project_work_path(@project, work), target: "_blank" do %>
+         <%= work.category.name %>
+         <% end %>
+         </strong>
+
+       </div>
+       <div class="d-flex">
+         <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
+       </div>
+       <div class="d-flex align-right sm-legend align-self-center">
+         <p>
+           <span class="mr-1 blue"><%= work.date.year %></span>
+         </p>
+       </div>
+     </div>
+     <div>
+      <% if work.images.first %>
+       <img src="<%= work.images.first.photo %>" alt="" class="w-100 border-bottom">
+      <% end %>
+     </div>
+   </div>
+   <% end %>
   </div>
-  </div>
+
 </main>
+
+
