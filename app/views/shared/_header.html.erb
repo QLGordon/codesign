@@ -1,30 +1,36 @@
-<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 px-5 shadow-sm" style="height: 24pt;">
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 px-3 shadow-sm" style="height: 24pt;">
 <div>
   <%= link_to about_path do %>
-    <i class="fas fa-info-circle m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fas fa-info-circle m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   <% end %>
 
   <%= link_to root_path do %>
-    <i class="fas fa-home m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fas fa-home m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   <% end %>
   <% if @projects %>
   <%= link_to project_path(@projects.sample) do %>
-    <i class="fas fa-random m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fas fa-random m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   <% end %>
   <% end %>
 </div>
 <div>
+  <h6 class="text-center" style="letter-spacing: 2pt; font-weight: 400;">
+    <% work = ["designer", "graphiste", "dev", "homme", "consultant", "codeur"].sample %>
+    <% phrases1 = ["Besoin d'un #{work}...", "Envie d'un #{work}..."] %>
+    <% phrases2 = ["...qui sait coder ?", "...qui a de l'humour ?", "...qui sait dessiner", "...qui aime apprendre", "... qui aime les fruits", "... qui fait du parapente" ] %>
+    <%= phrases1.sample %> <br> <%= phrases2.sample %>
+  </h6>
 
 </div>
 <div>
   <a href="https://www.instagram.com/qlgordon/" target="_blank">
-    <i class="fab fa-instagram m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fab fa-instagram m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   </a>
   <a href="https://twitter.com/qlgordon" target="_blank">
-    <i class="fab fa-twitter-square m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fab fa-twitter-square m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   </a>
   <a href="https://www.linkedin.com/in/qlgordon/" target="_blank">
-    <i class="fab fa-linkedin m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+    <i class="fab fa-linkedin m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   </a>
 </div>
 </header>

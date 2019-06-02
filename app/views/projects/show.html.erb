@@ -1,7 +1,4 @@
 <main id="project" class="container pt-5">
-  <div class="w-100">
-    <h2 class="text-center">Projet <%= @project.title %></h2>
-  </div>
   <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
   <div class="d-flex">
         <%= link_to edit_project_path(@project) do %>
@@ -21,6 +18,9 @@
     <% if @project.client.svgs.first %>
       <img src="<%= @project.client.svgs.first.svg %>" alt="" height="72pt">
     <% end %>
+    </div>
+    <div class="w-100">
+      <h2 class="text-center">Projet <%= @project.title %></h2>
     </div>
     <p class="sm-legend d-table">
       <span class="mr-1 red"><%= @project.works.count %> missions</span><br>
