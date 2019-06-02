@@ -32,6 +32,7 @@ class WorksController < ApplicationController
   end
 
   def show
+    @projects = Project.all
 
   end
 

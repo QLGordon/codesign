@@ -67,8 +67,10 @@
         </div>
       </div>
         <div>
-        <% if work.images.first %>
-          <img src="<%= work.images.first.photo %>" alt="" class="w-100 border-bottom">
+        <% if work.images %>
+        <% work.images.each do |image| %>
+          <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
+        <% end %>
         <% end %>
         </div>
       </div>

@@ -1,34 +1,29 @@
-<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 shadow">
-<% if @project && !@work %>
-    <a href="/projects" class="text-left col">↤ retour</a>
-  <div class="col justify-content-center align-items-center d-flex bg-transparent">
-    <%= render 'shared/couronne'%>
-  </div>
-  <h4 class="col text-right my-4 mx-0" style="font-size: 9pt; color: <%= @color_d %>;"><%= @project.title %></h4>
-  <div id="edit" class="row">
-    <% if current_user && @project.id && current_user.email == "quentin.gourdon@gmail.com" %>
-    <div class="btn-group btn-group-sm" role="group" aria-label="...">
-      <%= link_to "EDIT", edit_project_path(@project, @work), class: [:btn, "btn-warning"] %>
-      <%= link_to 'DELETE', @project, :method => :delete, class: [:btn, "btn-danger"] %>
-    </div>
-      <br>
-    <% end %>
-  </div>
+<header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 px-5 shadow-sm" style="height: 24pt;">
+<div>
+  <%= link_to about_path do %>
+    <i class="fas fa-info-circle m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  <% end %>
 
+  <%= link_to root_path do %>
+    <i class="fas fa-home m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  <% end %>
+  <%= link_to project_path(@projects.sample) do %>
+    <i class="fas fa-random m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  <% end %>
+</div>
+<div>
 
-<% elsif @projects %>
-
-    <a class="col text-left" href="/about"><h6>à propos</h6></a>
-    <div class="col justify-content-center align-items-center d-flex bg-white">
-      <%= render 'shared/couronne'%>
-    </div>
-    <h6 class="col text-right my-4 mx-0">Work in Progress</h6>
-
-<% else %>
-    <a  class="col text-left" href="/projects"><h4>mes projets</h4></a>
-  <%= render 'shared/couronne'%>
-    <h4 class="col text-right my-4 mx-0">Work in Progress</h4>
-
-<% end %>
+</div>
+<div>
+  <a href="https://www.instagram.com/qlgordon/" target="_blank">
+    <i class="fab fa-instagram m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  </a>
+  <a href="https://twitter.com/qlgordon" target="_blank">
+    <i class="fab fa-twitter-square m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  </a>
+  <a href="https://www.linkedin.com/in/qlgordon/" target="_blank">
+    <i class="fab fa-linkedin m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  </a>
+</div>
 </header>
 

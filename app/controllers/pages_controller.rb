@@ -7,5 +7,6 @@ class PagesController < ApplicationController
     @formations = Project.find_by title: 'Formations'
     @clients = Client.all
     @colors = Color.all
+    @projects = Project.all
   end
 end
