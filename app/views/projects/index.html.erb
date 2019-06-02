@@ -33,11 +33,7 @@
            <span class="mr-1 red"><%= project.works.count %> missions</span>
           </p>
         </div>
-        <div class="px-4 d-flex text-secondary justify-content-between">
-          <% project.works.each do |work| %>
-          <%= link_to work.title, project_work_path(project, work)  %>
-          <% end %>
-          </div>
+
       </div>
       <% end %>
     </div>

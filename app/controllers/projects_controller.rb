@@ -7,7 +7,7 @@ class ProjectsController < ApplicationController
   end
 
   def show
-    @projects = Project.all
+    @projects = Project.all - Project.where("title" => "Formations") - Project.where("title" => "Skills Design") - Project.where("title" => "Skills Web")
     @project = Project.find(params[:id])
     @clients = Client.all
     @categories = Category.all

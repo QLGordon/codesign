@@ -1,12 +1,26 @@
-<main id="project" class="container head pt-5">
+<main id="project" class="container pt-5">
+  <div class="w-100">
+    <h2 class="text-center">Projet <%= @project.title %></h2>
+  </div>
+  <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+  <div class="d-flex">
+        <%= link_to edit_project_path(@project) do %>
+        <div class="edit rounded-circle m-2">
+          <i class="fas fa-edit"></i>
+        </div>
+        <% end %>
+        <%= link_to project_path(@project), :method => :delete do %>
+        <div class="edit rounded-circle m-2">
+          <i class="fas fa-trash-alt"></i>
+        </div>
+        <% end %>
+  </div>
+  <% end %>
   <div class="px-4 pt-3 d-flex border-bottom border-dark justify-content-between shadow-lg">
     <div class="d-flex align-self-center">
     <% if @project.client.svgs.first %>
       <img src="<%= @project.client.svgs.first.svg %>" alt="" height="72pt">
     <% end %>
-    </div>
-    <div class="d-flex">
-    <h4>Projet <%= @project.title %></h4>
     </div>
     <p class="sm-legend d-table">
       <span class="mr-1 red"><%= @project.works.count %> missions</span><br>
@@ -77,6 +91,23 @@
     <% end %>
     </div>
 
+    <div class="container mb-5">
+      <h2>Want to see more ?</h2>
+      <div class="row">
+      <% 3.times do %>
+      <div class="col">
+      <% next_project = @projects.sample %>
+      <%= link_to project_path(next_project) do %>
+      <div class="border">
+      <h4 class="m-3"><%= next_project.title %></h4>
+      <img src=" <%= next_project.photo %> " alt="" width="100%"class="border-top">
+      </div>
+      <% end %>
+      </div>
+      <% end %>
+      </div>
+
+    </div>
 </main>
 
 
