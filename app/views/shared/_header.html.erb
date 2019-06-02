@@ -7,8 +7,10 @@
   <%= link_to root_path do %>
     <i class="fas fa-home m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
   <% end %>
+  <% if @projects %>
   <%= link_to project_path(@projects.sample) do %>
     <i class="fas fa-random m-3" style= "font-size: 12pt; transform: translateY(3pt);"></i>
+  <% end %>
   <% end %>
 </div>
 <div>
