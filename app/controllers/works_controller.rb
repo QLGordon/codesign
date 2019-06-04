@@ -26,6 +26,7 @@ class WorksController < ApplicationController
   end
 
   def edit
+    @svgs = Svg.all
     @work = @project.works.find(params[:id])
     @images = @work.images
     @categories = Category.all

@@ -30,10 +30,17 @@
         </div>
         <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
           <p class="sm-legend">
-           <span class="mr-1 red"><%= project.works.count %> missions</span>
+            <% if project.works.count == 1 %>
+            <span class="mr-1 red">en 1 point</span><br>
+            <% elsif project.works.count > 1 %>
+            <strong class="mr-1 red">en <%= project.works.count %> points</strong><br>
+            <% project.works.each do |work| %>
+          <strong class ="red mx-1 px-1" style="font-size: 6pt; white-space: nowrap;">― <%= work.title %></strong>
+          <% end %>
+            <% else %>
+            <% end %>
           </p>
         </div>
-
       </div>
       <% end %>
     </div>
