@@ -3,7 +3,7 @@
     <h2>Mes <%= @projects.count %> projets</h2>
     <div class="card-columns mt-5">
       <% @projects.each do |project| %>
-      <div class="card border d-inline-block mb-5 shadow-sm">
+      <div class="card border d-inline-block mb-5 shadow-sm w-100">
         <div class="px-4 pt-3 d-flex justify-content-between border-bottom">
           <div class="d-flex align-self-center mr-1">
             <% if project.client.svgs.first %>
