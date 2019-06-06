@@ -1,9 +1,24 @@
+<% i = 1 %>
 <main id="index" class="head container">
   <section id="projects">
-    <h2>Mes <%= @projects.count %> projets</h2>
+    <h2>Mes <%= @projects.count %> projets en <%= @projects.each {|work|work}.count %> points</h2>
     <div class="card-columns mt-5">
-      <% @projects.each do |project| %>
-      <div class="card border d-inline-block mb-5 shadow-sm w-100">
+      <% @projects.shuffle.each do |project| %>
+      <style>
+        @keyframes translatex<%= i %> {
+        from {
+          transform: translatey(-12pt);
+          opacity: 0;
+        }
+        to {
+          transform: translatey(0pt);
+          opacity: 1;
+        }
+      }
+      </style>
+      <div class="card border d-inline-block mb-5 shadow-sm w-100"
+      style="animation: <%= 4 + (i*3) %>0ms translatex<%= i %> ease-out; transform-origin: top center;">
+      <% i = i + 1 %>
         <div class="px-4 pt-3 d-flex justify-content-between border-bottom">
           <div class="d-flex align-self-center mr-1">
             <% if project.client.svgs.first %>
@@ -16,7 +31,6 @@
                 <%= project.title %>
                 <% end %>
               </strong>
-
           </div>
             <div class="d-flex align-self-center mr-1">
             <p class="sm-legend d-table">

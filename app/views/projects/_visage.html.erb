@@ -1,28 +1,29 @@
-<div class="d-flex w-100" style="align-items: baseline; justify-content: space-evenly; position: fixed;">
-<% i = 0 %>
-<% 22.times do %>
+<div class="d-flex w-100" style="align-items: baseline; justify-content: space-evenly; position: fixed; z-index: 10;">
+<% i = (25..50).to_a.sample %>
+<% 20.times do %>
 <style>
 
 @keyframes slidein<%= i %> {
   from {
-    transform: rotate(<%= 0 %>deg) translatey(-24pt);
-    background: <%= ["darkblue", "blue"].sample %>;
+    transform: rotate(<%= i %>deg) translatey(-24pt);
+    background: <%= ["darkblue", "blue", "navy"].sample %>;
   }
   to {
-    transform: rotate(<%= (-3..3).to_a.sample %>deg) translatey(-24pt);
-    background: <%= ["darkblue", "blue"].sample %>;
+    transform: rotate(<%= i + (1..10).to_a.sample %>deg) translatey(-24pt);
+    background: <%= ["darkblue", "blue","navy"].sample %>;
   }
 }
 </style>
 <div class="graph" style="
-  width: calc(12pt + 6pt);
-  height: <%= 60 %>pt;
-  border-radius: 50pt;
-  transform-origin: bottom center;
+  width: 100pt;
+  height: 54pt;
+  border-radius: 288pt;
+  margin: 12pt;
+  transform-origin: -24pt center;
   transform:
     rotate(<%= i %>deg)
-    translatey(-48pt);
-    animation: <%= (250..1000).to_a.sample %>ms slidein<%= i %> infinite alternate ease-in-out;
+    translatey(-72pt);
+    animation: <%= (3..3).to_a.sample %>50ms slidein<%= i %> infinite alternate ease-in-out;
 "></div>
 <% i = i + 1 %>
 <% end %>
