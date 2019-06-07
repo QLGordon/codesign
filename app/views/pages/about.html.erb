@@ -1,50 +1,18 @@
-<main id="about" class="container head">
-  <style>
-    .intro {
-      border: 9pt solid darkblue;
+<% i = 1 %>
+<style>
+  @keyframes translatey<%= i %> {
+    0% {
+      transform: translate(0, -12pt);
     }
-    .intro h1 {
-      font-weight: bolder;
-      box-shadow: 0pt -5pt 0pt 0pt inset darksalmon;
-      color: rgba(0,0,0,.6);
-      margin-bottom: 72pt;
+    100% {
+      transform: translate(0, 0pt);
+    }
+  }
+</style>
 
-    }
-    .intro a {
-      color: darksalmon;
-      font-weight: bolder;
-      box-shadow: 0pt -6pt 0pt -5pt inset darksalmon, 0pt -15pt 0pt 0pt inset antiquewhite;
-    }
-    .intro a:hover {
-      transition: box-shadow 350ms;
-      text-decoration: none;
-      color: rgba(0,0,0,.5);
-      box-shadow: 0pt -10pt 0pt 0pt inset darksalmon, 0pt -15pt 0pt 0pt inset antiquewhite;
-    }
-    .intro mark {
-      color: rgba(0,0,0,.6);
-      background: none;
-      font-weight: bolder;
-      box-shadow: 0pt -15pt 0pt 0pt inset antiquewhite;
-    }
-    .intro abbr {
-      box-shadow: 0pt -6pt 0pt -5pt inset antiquewhite, 0pt -15pt 0pt 0pt inset antiquewhite;
-      text-decoration: none;
-      font-weight: bolder;
-    }
-    .intro abbr:hover {
-      transition: box-shadow 350ms;
-      box-shadow: 0pt -10pt 0pt 0pt inset darksalmon;
-    }
-    .intro p {
-      color: rgba(0,0,0,.6);
-      line-height: 24pt;
-      margin-bottom: 48pt;
-      padding: 0pt 48pt;
-    }
-  </style>
+<main id="about" class="container">
   <div class="intro head text-center">
-    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1559139281/Quentin.png" class="rounded-circle shadow" alt="" style= "width: 144pt; height: 144pt; border: solid 9pt darkblue; transform: translateY(-24pt);"><br>
+    <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1559139281/Quentin.png" class="rounded-circle shadow me" alt="" style= "width: 144pt; height: 144pt; border: solid 9pt darkblue;"><br>
     <h1 class="d-inline-block">Hello,</h1>
     <p class="text-justify">
       Je suis Quentin, titulaire d’un Bachelor Designer graphique de <a href="http://www.lisaa.com/" target="_blank">LISAA Rennes</a> et également formé au <a href="https://www.lewagon.com" target="_blank">Wagon</a> lors d’un bootcamp ou j'ai appris le developpement Web, je suis fort d’une expérience de plus de cinq ans pour plusieurs sociétés dont un <a href="https://www.institutfrancaishaiti.org/institut" target="_blank">institut culturel</a>, un <a href="http://hainetgroup.com/home/" target="_blank">fournisseur d’accès à Internet</a> et deux agences publicitaires : <a href="http://www.ddb.fr/" target="_blank">Nouveau Monde DDB</a> et <a href="https://www.starcomww.com/" target="_blank">Starcom MédiaVest</a>. j’ai également travaillé en free-lance pour des clients aussi variés que des <abbr title="Sybilline-escapade, Spark, La Belle Vie, Mobile.club, Iziwork, Hello Prêt">start-up</abbr>, <a href="https://ht.ambafrance.org/" target="_blank">une Ambassade</a> ou encore des <abbr title="Mouvement paysan Papaye, Concern Worldwide, Avocat sans frontières, Fokal">ONG</abbr>.
