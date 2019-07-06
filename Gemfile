@@ -24,7 +24,6 @@ gem 'cloudinary'
 gem 'carrierwave', '~> 1.2'
 gem 'google-api-client', '~> 0.11'
 
-
 # pas mes gems
 
 group :development do
@@ -32,7 +31,6 @@ group :development do
 end
 
 group :development, :test do
-  gem 'pry-byebug'
   gem 'pry-rails'
   gem 'listen', '~> 3.0.5'
   gem 'spring'
