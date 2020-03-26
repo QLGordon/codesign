@@ -1,4 +1,5 @@
 #design{
+  width: 100vw;
   #legend{
     display: flex;
     align-items: center;
@@ -16,18 +17,29 @@
       }
     }
   }
-  #app {
-    height: 25em;
+  .intro-1{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -48pt;
+    h1 {
+      box-shadow:
+        1em 0em 2em -2em inset,
+        -1em 0em 2em -2em inset;
+      border-top: 1pt solid;
+      border-bottom: 1pt solid;
+      padding: 1em 1em;
+    }
   }
-  height: 100vh;
-  width: 100vw;
   .intro {
     position: relative;
     z-index: 10;
-    margin-top: -10em;
+    margin-top: 5em;
   }
   h1{
-    margin: 7em 7em 0em 7em;
+    margin: 0em 7em 0em 7em;
     color: rgba(0,0,0,.75);
     strong{
       font-size: 1em;
@@ -47,4 +59,102 @@
       font-size: .5em;
     }
   }
+  #app {
+    height: 25em;
+    margin-bottom: 30em;
+  }
+  #lettre-a {
+    height: 100vh;
+    padding-top: 10em;
+    padding-bottom: 40em;
+    overflow: hidden;
+    #historic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3em;
+      &a {
+        position: absolute;
+        display: block;
+        right: 15em;
+        margin-top: .25em;
+        border-top: .125em solid;
+        font-size: .5em;
+      }
+    }
+  }
+  #logo{
+    height: 100vh;
+    #historic {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 3em;
+      svg{
+        height: 8em;
+        position: absolute;
+        z-index: -11;
+        fill: red;
+        transform: translate(9em, 2.5em) scale(.125);
+      }
+      &a {
+        position: absolute;
+        display: block;
+        right: 15em;
+        margin-top: .25em;
+        border-top: .125em solid;
+        font-size: .5em;
+      }
+    }
+    #exemples{
+
+    }
+  }
+}
+
+#paper{
+  font-size: 2px;
+  width: 210em; height: 297em;
+  color: rgba(0,0,0,.15);
+  margin: 12em;
+  box-shadow:
+    0em 0em 6em,
+    3em 3em 3em;
+  h1{
+    color: rgba(0,0,0,.25);
+    padding: 2em;
+    padding-bottom: 3em;
+    margin: 0;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.insta-feed {
+  position: relative;
+  z-index: -10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10em;
+  max-width: 100vw;
+
+  #instagram-embed-0 { transform: scale(.5) translate(-20em, 30em) rotate(11deg); }
+  #instagram-embed-1 { transform: scale(.33) translate(20em, -20em) rotate(20deg); }
+  #instagram-embed-2 { transform: scale(.25) translate(30em, 60em) rotate(60deg); }
+}
+.feed {
+  height: 10em;
+  position: absolute;
+  z-index: -10;
+  border-radius: 1em;
+  box-shadow:
+    0em 0em 0em .5em rgba(255,255,255,1),
+    1em 1em 1em rgba(0,0,0,.15),
+    .25em .25em .5em rgba(0,0,0,.25);
+  &.feed-1{transform: scale(.5) translate(-10em, 10em) rotate(11deg);}
+  &.feed-2{transform: scale(.5) translate(30em, -15em) rotate(11deg);}
+  &.feed-3{transform: scale(0.5) translate(25em, 11em) rotate(-13deg);}
 }
