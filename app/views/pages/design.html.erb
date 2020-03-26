@@ -1,21 +1,16 @@
 <style>
 </style>
 <main id="design">
+
   <div class="intro-1"">
     <h1 >
       Le <strong>Design</strong> selon moi ... <br> mais pas que
     </h1>
   </div>
   <div class="intro">
-    <h1>Le but premier du design est d’<strong>inventer</strong>, d’<strong>améliorer</strong> ou de <strong>faciliter</strong> l’usage ou le processus d’<strong class="tonic-1">un élément</strong> ayant à interagir avec <strong class="tonic-2">un produit</strong> ou un service matériel ou virtuel. <br><a href="https://fr.wikipedia.org/wiki/Design" target="_blank">source</a></h1>
+    <h1 class="white-bg" style="color: rgba(0,0,0,.25);">Le but premier du design est d’<strong style="color: black;">inventer</strong>, d’<strong style="color: black;">améliorer</strong> ou de <strong style="color: black;">faciliter</strong> l’usage ou le processus d’<strong class="tonic-1" style="color: rgba(251,101,51);">un élément</strong> ayant à interagir avec <strong class="tonic-2" style="color: rgba(251,101,51);"">un produit</strong> ou un service matériel ou virtuel. <br>
+      <a href="https://fr.wikipedia.org/wiki/Design" class="white-bg" target="_blank">définition wikipédia</a></h1>
   </div>
-  <div id="legend">
-    <%= render "shared/this_is_app" %>
-    <%= render "shared/it_works_with" %>
-  </div>
-  <section id="app">
-    <%= render "shared/app" %>
-  </section>
   <section id="lettre-a">
     <h1 class="white-bg">Qu'est-ce qu'un <strong>"a"</strong></h1>
     <div class="insta-feed">
@@ -30,7 +25,7 @@
         <%= render "shared/lettre_a/phoenician" %>
         <%= render "shared/lettre_a/etruscan" %> <br>
         Utilisé dans le Sinaï <strong>il y a plus de 3 500 ans</strong>, <strong>dérivé des hiéroglyphes égyptiens</strong> ; le son, [ʔ] (coup de glotte), était alors représenté par une <strong>tête de bœuf stylisée</strong>.
-        <br><a href="https://fr.wikipedia.org/wiki/A_(lettre)" target="_blank" >source</a>
+        <br><a href="https://fr.wikipedia.org/wiki/A_(lettre)" target="_blank" style="" >source</a>
       </h1>
     </div>
     <img src="https://upload.wikimedia.org/wikipedia/commons/3/33/Gutenberg.jpg" id="child" style="transform: translateX(20em);" alt="">
@@ -61,5 +56,12 @@
         <%= render "shared/support/paper" %>
       </h1>
     </div>
+  </section>
+  <div id="legend">
+    <%= render "shared/this_is_app" %>
+    <%= render "shared/it_works_with" %>
+  </div>
+  <section id="app">
+    <%= render "shared/app" %>
   </section>
 </main>

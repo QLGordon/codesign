@@ -5,6 +5,8 @@
   z-index: 0;
   position: relative;
   top: 15em;
+  font-size: 1.5rem;
+  padding-bottom: 50em;
 @keyframes fly {
 0% {
   transform: scale(1.05);
@@ -102,7 +104,7 @@ border-radius: 2em;
 background:
   center center
   / cover no-repeat
-  url(https://images.unsplash.com/photo-1558244661-d248897f7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)
+  url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80)
   rgba(100,150,200,1);
 
 width: 8em;
@@ -110,10 +112,21 @@ height: 8em;
 
 animation: fly 1s alternate;
 font-size: 3em;
-
+ i {
+   font-size: 5em;
+   transition: all 250ms;
+   color: rgba(255,255,255,1);
+   border-radius: .5em;
+   padding: .125em .25em;
+   height: 2em;
+    width: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+ }
 }
 #ipad:active, #ipad:focus{
-  transition: all 450ms;
+  transition: all 250ms;
   font-size: 4em;
 
   box-shadow:
@@ -125,12 +138,31 @@ font-size: 3em;
   background:
     center center
     / cover no-repeat
-    url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=3334&q=80)
-    rgba(100,150,200,1);
+    url(https://images.unsplash.com/photo-1557683316-973673baf926?ixlib=rb-1.2.1&auto=format&fit=crop&w=3415&q=80)
+    rgba(25,25,25,1);
   border-radius: .5em;
 
   width: 12.9em;
   height: 11em;
+
+  i {
+    font-size: 1em;
+    color: url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80);
+    background:
+      center center
+      / cover no-repeat
+      url(https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3300&q=80)
+      rgba(100,150,200,1);
+    color: white;
+    transition: all 500ms;
+    box-shadow:
+      0em 0em 0em 0em rgba(20,20,20,1),
+      0em 0em 0em .05em rgba(255,255,255,1),
+      .5em .5em 1em rgba(0,0,0,.15),
+      .125em .125em .125em rgba(0,0,0,.25),
+      0em 0em .125em rgba(0,0,0,.25);
+
+  }
 
 }
 
@@ -159,14 +191,11 @@ padding-top: 1em;
 }
 
 
-#ipad:active i, #ipad:active p, #ipad:focus i, #ipad:focus p {
+#ipad:active p, #ipad:focus p {
 color: white;
 padding: 1em .75em;
 transform: skew(-0deg, 0deg) rotate(-0deg) scale(.25);
 border-radius: 1em;
-}
-#ipad i {
-color: rgba(255,255,255,1);
 }
 
 #ipad:active .miniature, #ipad:focus .miniature{

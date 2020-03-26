@@ -14,16 +14,17 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 25em;
     svg{
-      height: 10em;
+      height: 5em;
       position: absolute;
       transform: translate(-20em, 20em);
       &:first-child{
-        fill: rgba(250, 150, 100, 1);
+        // fill: rgba(250, 150, 100, 1);
       }
       &:last-child{
         transform: translate(20em, 30em);
-        fill: rgba(50, 200, 100, 1);
+        // fill: rgba(50, 200, 100, 1);
       }
     }
   }
@@ -52,7 +53,11 @@
   .intro {
     position: relative;
     z-index: 10;
-    margin-top: 5em;
+    height: 150vh;
+    background:  center / cover no-repeat url(https://www.remy-cointreau.com/app/uploads/2019/10/Cointreau-Bottle-Beautyshot-Vincent-Darr%C3%A9-2.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   h1{
     margin: 0em 7em 0em 7em;
@@ -71,8 +76,9 @@
       display: block;
       right: 15em;
       margin-top: .25em;
-      border-top: .125em solid;
+      // border: .125em solid;
       font-size: .5em;
+      background: rgba(255,255,255,.95); padding: .125em .25em;
     }
   }
   #app {
@@ -103,7 +109,8 @@
 
   #logo{
     // background: center / cover no-repeat url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/4107ad92753065.5e53b2bccd7f0.jpg);
-    height: 100vh;
+    height: 150vh;
+    padding-top: 10em;
     em{
       font-size: .5em;
       color: rgba(0,0,0,.25);
@@ -128,12 +135,13 @@
       align-items: center;
       justify-content: center;
       margin: 3em;
+      padding-top: 1em;
       svg{
         height: 8em;
         position: absolute;
         z-index: -11;
-        fill: red;
-        transform: translate(9em, 2.5em) scale(.125);
+        fill: black;
+        transform: translate(7em, 4em) scale(.125);
       }
       &a {
         position: absolute;
