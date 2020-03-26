@@ -1,0 +1,232 @@
+#app {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 0;
+  position: relative;
+  top: 15em;
+@keyframes fly {
+0% {
+  transform: scale(1.05);
+  opacity: 0;
+}
+50%{
+  transform: scale(1.05);
+  opacity: 0;
+}
+}
+@keyframes move {
+0% {
+  transform: rotate(360deg);
+}
+}
+button{
+  border: none;
+  outline: none;
+}
+.background{
+  height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: -10;
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  #circle {
+    font-size: 1em;
+    height: 5em;
+    width: 5em;
+    border-radius: 2em;
+    position: fixed;
+    animation-name: move;
+    animation-iteration-count:  infinite;
+    animation-timing-function: ease-in-out;
+    mix-blend-mode: soft-light;
+    box-shadow:
+      0em 0em 0em .0125em,
+      0em 0em 0em .02em white;
+    &.teal{
+      animation-duration: 4800ms;
+      animation-delay: 500ms;
+      color: rgba(100, 150, 250, 1);
+      background: transparent;
+      /* background: rgba(255,234,86,1); */
+    }
+    &.green{
+      animation-duration: 4800ms;
+      animation-delay: 750ms;
+      color: rgba(250, 150, 100, 1);
+      background: transparent;
+      /* background: rgba(255,112,0,1); */
+    }
+  }
+
+}
+html {
+height: 100vh;
+width: 100vw;
+font-size: 2vmin;
+display: flex;
+justify-content: center;
+align-items: center;
+font-family: sans-serif;
+text-align: center;
+background: white;
+
+}
+body{
+display: flex;
+align-items: center;
+}
+
+
+#ipad {
+display: flex;
+align-items: center;
+justify-content: center;
+flex-direction: column;
+
+transition: all 750ms;
+
+box-shadow:
+  0em 0em 0em 0em rgba(20,20,20,1),
+  0em 0em 0em .5em rgba(255,255,255,1),
+  1em 1em 2em rgba(0,0,0,.15),
+  .25em .25em .25em rgba(0,0,0,1),
+  0em 0em .125em rgba(0,0,0,.5);
+border-radius: 2em;
+
+background:
+  center center
+  / cover no-repeat
+  url(https://images.unsplash.com/photo-1558244661-d248897f7bc4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=975&q=80)
+  rgba(100,150,200,1);
+
+width: 8em;
+height: 8em;
+
+animation: fly 1s alternate;
+font-size: 3em;
+
+}
+#ipad:active, #ipad:focus{
+  transition: all 450ms;
+  font-size: 4em;
+
+  box-shadow:
+    0em 0em 0em .5em rgba(20,20,20,1),
+    0em 0em 0em .55em rgba(205,205,205,1),
+    1em 1em 2em rgba(0,0,0,.5),
+    .5em .5em .5em rgba(0,0,0,.25),
+    .25em .25em .25em rgba(0,0,0,.25);
+  background:
+    center center
+    / cover no-repeat
+    url(https://images.unsplash.com/photo-1515595967223-f9fa59af5a3b?ixlib=rb-1.2.1&auto=format&fit=crop&w=3334&q=80)
+    rgba(100,150,200,1);
+  border-radius: .5em;
+
+  width: 12.9em;
+  height: 11em;
+
+}
+
+#ipad * {
+color: rgba(0,0,0,.4);
+user-select: none;
+}
+#ipad h6 {
+font-weight: lighter;
+border-top: solid 1em;
+padding-top: 1em;
+}
+#ipad p {
+  color: white;
+  font-weight: 700;
+  font-size: 2em;
+  transform: skew(-3deg, 0deg) rotate(-3deg) scale(1.5);
+  border: 0em solid;
+  border-radius: .25em;
+  background: rgba(100,150,200,1);
+  padding: .25em .5em;
+  border: .125em white solid;
+  box-shadow:
+    .25em .25em .25em rgba(0,0,0,.15),
+    0em 0em .5em rgba(0,0,0,.15);
+}
+
+
+#ipad:active i, #ipad:active p, #ipad:focus i, #ipad:focus p {
+color: white;
+padding: 1em .75em;
+transform: skew(-0deg, 0deg) rotate(-0deg) scale(.25);
+border-radius: 1em;
+}
+#ipad i {
+color: rgba(255,255,255,1);
+}
+
+#ipad:active .miniature, #ipad:focus .miniature{
+  transition: 450ms;
+  height: 3em;
+  width: 3em;
+background: rgba(255,255,255,1);
+border-radius: .25em;
+  margin: .25em !important;
+  box-shadow:
+    .5em .5em 1em rgba(0,0,0,.15),
+    .25em .25em .25em rgba(0,0,0,.125),
+    .125em .125em .125em rgba(0,0,0,.125);
+}
+#ipad:active img, #ipad:focus img {
+  height: 100%;
+  width: 100%;
+}
+#ipad:active span, #ipad:focus span {
+  opacity: 1;
+  transition: 250ms 450ms;
+}
+
+
+.miniatures{
+position: absolute;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.miniatures .miniature {
+  height: 3em;
+  width: 3em;
+  /* overflow: hidden; */
+  background: rgba(255,255,255,0);
+  margin: 0em !important;
+  overflow: hidden;
+  box-shadow:
+    0em 0em 0em rgba(0,0,0,0),
+    0em 0em 0em rgba(0,0,0,0),
+    0em 0em 0em rgba(0,0,0,0);
+}
+.miniatures .miniature img {
+  transition: all 250ms;
+  height: 0%;
+  width: 0%;
+}
+span {
+  box-shadow:
+    .5em .5em 1em rgba(0,0,0,.15),
+    .25em .25em .25em rgba(0,0,0,.125),
+    .125em .125em .125em rgba(0,0,0,.125);
+  /* transition: 150ms; */
+  padding: 1em 0em;
+  position: absolute;
+  bottom: -20em;
+  z-index: 0;
+  background: white;
+  text-align: center;
+  font-size: 12px;
+  width: inherit;
+}
+}

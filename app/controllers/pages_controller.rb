@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:about]
+  skip_before_action :authenticate_user!, only: [:about, :design]
 
   def about
     @skills_design = Project.find_by title: 'Skills Design'
@@ -8,5 +8,9 @@ class PagesController < ApplicationController
     @clients = Client.all
     @colors = Color.all
     @projects = Project.all
+  end
+
+  def design
+    #code
   end
 end

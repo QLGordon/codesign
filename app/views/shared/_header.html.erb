@@ -1,5 +1,5 @@
 <header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 px-3 shadow-sm" style="height: 48pt;">
-<div style="z-index: 2;">
+<div class="navigation">
   <%= link_to about_path do %>
     <i class="fas fa-info-circle m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   <% end %>
@@ -13,7 +13,7 @@
   <% end %>
   <% end %>
 </div>
-<div>
+<div class="punch-line">
   <h6 class="text-center" style="letter-spacing: 2pt; font-weight: 400;">
     <% work = ["designer", "graphiste", "dev", "homme", "consultant", "codeur"].sample %>
     <% phrases1 = ["Besoin d'un #{work}...", "Envie d'un #{work}..."] %>
@@ -22,7 +22,7 @@
   </h6>
 
 </div>
-<div>
+<div class="social-media">
   <a href="https://www.instagram.com/qlgordon/" target="_blank">
     <i class="fab fa-instagram m-3" style= "font-size: 12pt; transform: translateY(0pt);"></i>
   </a>
