@@ -1,33 +1,20 @@
 <%= simple_form_for(@project) do |f| %>
-<section class="container head">
-  <div class="row head">
-    <div class="col"><%= f.text_field :title, placeholder: "Titre", class: ["form-control"]%></div>
-    <div class="col"><%= f.text_field :country, placeholder: "Pays", class: ["form-control"] %></div>
-  </div>
-    <div class="row">
-    <div class="col"><%= f.text_area :description, class: ["form-control"], rows: 10, value: markdown("description") %></div>
-  </div>
-    <div class="row">
-    <div class="col"><%= f.input :photo, class: "custom-file-input" %><%= f.input :photo_cache, as: :hidden, class: "custom-file-input" %></div>
-    <div class="col"></div>
-  </div>
+
+  <%= f.text_field :title, placeholder: "Titre", class: ["form-control"]%>
+  <%= f.text_field :country, placeholder: "Pays", class: ["form-control"] %>
+  <%= f.text_area :description, class: ["form-control"], rows: 10, value: markdown("description") %>
+  <%= f.input :photo, class: "custom-file-input" %><%= f.input :photo_cache, as: :hidden, class: "custom-file-input" %>
   <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
+
   <% 5.times do %>
-  <%= f.fields_for :colors, @color do |color_fields| %>
-  <div class="row my-5 py-4">
-    <div class="col">
+    <%= f.fields_for :colors, @color do |color_fields| %>
       <%= color_fields.number_field :red, class: ["rgb form-control"], placeholder: "000" %>
-    </div>
-    <div class="col">
       <%= color_fields.number_field :green, class: ["rgb form-control"], placeholder: "000" %>
-    </div>
-    <div class="col">
       <%= color_fields.number_field :blue, class: ["rgb form-control"], placeholder: "000" %>
-    </div>
-    <%= color_fields.check_box :_destroy %>
+      <%= color_fields.check_box :_destroy %>
+    <% end %>
   <% end %>
-  </div>
-  <% end %>
+
   <%= f.button :submit, "ok" %>
-  <% end %>
-</main>
+
+<% end %>

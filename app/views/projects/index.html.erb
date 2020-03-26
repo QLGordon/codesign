@@ -1,62 +1,36 @@
-<% i = @projects.count %>
-<main id="index" class="head container">
-  <section id="projects">
-    <h2>Quelques projets</h2>
-    <div class="card-columns mt-5">
-      <% @projects.shuffle.each do |project| %>
-      <style>
-        @keyframes translatey<%= i %> {
-        0% {
-          transform: translate(0, -12pt);
-          box-shadow: 0pt -12pt 24pt rgba(0,0,0,.05);
-        }
-        100% {
-          transform: translate(0, 0pt);
-          box-shadow: 0pt 3pt 3pt rgba(0,0,0,.15);
-        }
-      }
-      </style>
-      <div class="card border shadow-boxes d-inline-block mb-4 w-100"
-      style="animation: <%= 4 + (i*4) %>0ms translatey<%= i %> ease-out; transform-origin: top center;">
-      <% i = i + 1 %>
-        <div class="px-4 pt-3 d-flex justify-content-between border-bottom">
-          <div class="d-flex align-self-center mr-1">
-            <% if project.client.svgs.first %>
-            <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt" width="48pt" class="border rounded-circle mb-3">
-            <% end %>
-          </div>
-          <div class="align-left flex-grow-1 align-self-center my-3 mx-4" >
-              <strong>
-                <%= link_to project_path(project) do  %>
-                <%= project.title %>
-                <% end %>
-              </strong>
-          </div>
-            <div class="d-flex align-self-center mr-1">
-            <p class="sm-legend d-table">
-             <span class="mx-1 blue"><%= project.country %></span>
-            </p>
-          </div>
-        </div>
-        <img src="<%= project.photo %>" alt="" class="w-100 border-bottom">
-        <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
-          <%= markdown(project.description) %>
-        </div>
-        <div class="px-4 pt-3 d-flex text-secondary justify-content-between">
-          <p class="sm-legend">
-            <% if project.works.count == 1 %>
-            <span class="mr-1 red">en 1 point</span><br>
-            <% elsif project.works.count > 1 %>
-            <strong class="mr-1 red">en <%= project.works.count %> points</strong><br>
-            <% project.works.each do |work| %>
-          <strong class ="red mx-1 px-1" style="font-size: 6pt; white-space: nowrap;">― <%= work.title %></strong>
-          <% end %>
-            <% else %>
-            <% end %>
-          </p>
-        </div>
-      </div>
+<main class="controller_project action_index">
+  <h2>Quelques projets</h2>
+  <section class="projects">
+
+  <% @projects.shuffle.each do |project| %>
+  <%= link_to project_path(project), style: "margin-bottom: 2em;" do  %>
+    <article class="project">
+      <h2>
+      <% if project.client.svgs.first %>
+      <img src="<%= project.client.svgs.first.svg %>" alt="" class="client-logo">
       <% end %>
-    </div>
+        <span class="title"><%= project.title %></span>
+        <span class="location"><%= project.country %></span>
+      </h2>
+      <img src="<%= project.photo %>" alt="" class="attachement">
+
+      <%= markdown(project.description) %>
+
+      <p>
+        <% if project.works.count == 1 %>
+        <span>en 1 point</span><br>
+        <% elsif project.works.count > 1 %>
+        <strong>en <%= project.works.count %> points</strong><br>
+        <% project.works.each do |work| %>
+        <strong>― <%= work.title %></strong>
+        <% end %>
+        <% else %>
+        <% end %>
+      </p>
+
+    </article>
+    <% end %>
+  <% end %>
+
   </section>
 </main>
