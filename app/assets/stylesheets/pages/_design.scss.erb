@@ -1,4 +1,14 @@
+.white-bg{
+  background: rgba(255,255,255,.95);
+  padding: 1em .8em;
+  display: inline;
+}
+
 #design{
+  h1{
+    font-size: 2em;
+  }
+  font-size: 2vmin;
   width: 100vw;
   #legend{
     display: flex;
@@ -24,13 +34,19 @@
     align-items: center;
     justify-content: center;
     margin-top: -48pt;
+    background:  center / cover no-repeat url(https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&auto=format&fit=crop&w=3302&q=80);
     h1 {
       box-shadow:
+        0em 0em 0em .125em,
+        0em 0em 0em .25em white,
+        0em .25em .5em 0em,
+        0em .125em .25em 0em,
         1em 0em 2em -2em inset,
         -1em 0em 2em -2em inset;
-      border-top: 1pt solid;
-      border-bottom: 1pt solid;
-      padding: 1em 1em;
+      border-radius: .5em;
+      padding: 1em;
+      margin-bottom: 10em;
+      background: rgba(255,255,255,.75);
     }
   }
   .intro {
@@ -64,7 +80,8 @@
     margin-bottom: 30em;
   }
   #lettre-a {
-    height: 100vh;
+    background: center / cover no-repeat url(https://mir-s3-cdn-cf.behance.net/project_modules/2800_opt_1/2221ea68994511.5b71495132c3b.jpg);
+    height: 150vh;
     padding-top: 10em;
     padding-bottom: 40em;
     overflow: hidden;
@@ -83,8 +100,29 @@
       }
     }
   }
+
   #logo{
+    // background: center / cover no-repeat url(https://mir-s3-cdn-cf.behance.net/project_modules/fs/4107ad92753065.5e53b2bccd7f0.jpg);
     height: 100vh;
+    em{
+      font-size: .5em;
+      color: rgba(0,0,0,.25);
+    }
+    h6 {
+      color: rgba(0,0,0,.4);
+      padding-right: 2em;
+      width: 100em;
+      text-align: justify;
+      align-self: flex-end;
+      transform: translateY(2.5em);
+      strong {
+        text-decoration: underline;
+        text-transform: uppercase;
+        color: rgba(0,0,0,.6);
+        display: block;
+        text-align: left;
+      }
+    }
     #historic {
       display: flex;
       align-items: center;
@@ -111,30 +149,37 @@
     }
   }
 }
-
-#paper{
-  font-size: 2px;
-  width: 210em; height: 297em;
-  color: rgba(0,0,0,.15);
-  margin: 12em;
-  box-shadow:
-    0em 0em 6em,
-    3em 3em 3em;
-  h1{
-    color: rgba(0,0,0,.25);
-    padding: 2em;
-    padding-bottom: 3em;
-    margin: 0;
-    height: 100%;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#support {
+  overflow: hidden;
+  height: 200vh;
+  #paper{
+    position: relative;
+    font-size: 1.5pt;
+    width: 210em; height: 297em;
+    color: rgba(0,0,0,.15);
+    margin: 12em;
+    background: white;
+    box-shadow:
+    0em 0em 24em,
+    2em 2em 2em;
+    h1{
+      color: rgba(0,0,0,.25);
+      font-size: 24em;
+      padding: 1em;
+      padding-bottom: 2em;
+      margin: 0;
+      height: 100%;
+      text-align: right;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
+
 }
 .insta-feed {
   position: relative;
-  z-index: -10;
+  z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -148,13 +193,31 @@
 .feed {
   height: 10em;
   position: absolute;
-  z-index: -10;
+  z-index: 1;
   border-radius: 1em;
+  background: white;
   box-shadow:
     0em 0em 0em .5em rgba(255,255,255,1),
     1em 1em 1em rgba(0,0,0,.15),
     .25em .25em .5em rgba(0,0,0,.25);
-  &.feed-1{transform: scale(.5) translate(-10em, 10em) rotate(11deg);}
+  &.feed-1{transform: scale(.5) translate(-10em, 15em) rotate(11deg);}
   &.feed-2{transform: scale(.5) translate(30em, -15em) rotate(11deg);}
   &.feed-3{transform: scale(0.5) translate(25em, 11em) rotate(-13deg);}
+  &.feed-4{transform: scale(.75) translate(27em, 10em) rotate(7deg); z-index: -6;}
+  &.feed-5{transform: scale(1) translate(-12em, 5em) rotate(13deg); }
+  &.feed-6{transform: scale(1.25) translate(8em, 1em) rotate(-13deg); z-index: -5;}
+}
+#conseil {
+}
+#child {
+  width: 12em;
+  height: 12em;
+  object-fit: cover;
+  border-radius: 10em;
+  border: white 1em;
+  transform: translate(0em, -1em);
+  box-shadow:
+  0em 0em 0em .5em rgba(255,255,255,1),
+  1em 1em 1em rgba(0,0,0,.15),
+  .25em .25em .5em rgba(0,0,0,.25);
 }
