@@ -1,3 +1,24 @@
+<script type="text/javascript">
+  function refresh(){
+      var t = 1000; // rafraîchissement en millisecondes
+      setTimeout('showDate()',t)
+  }
+
+  function showDate() {
+      var date = new Date()
+      var h = date.getHours();
+      var m = date.getMinutes();
+      var s = date.getSeconds();
+      if( h < 10 ){ h = '0' + h; }
+      if( m < 10 ){ m = '0' + m; }
+      if( s < 10 ){ s = '0' + s; }
+      var time = h + '|' + m + '|' + s
+      document.getElementById('horloge').innerHTML = time;
+      refresh();
+   }
+</script>
+
+
 <header class="d-flex align-items-center justify-content-between fixed-top bg-white mb-2 px-3 shadow-sm" style="height: 48pt;">
 <div class="navigation">
   <%= link_to about_path do %>
@@ -20,6 +41,9 @@
     <% phrases2 = ["...qui sait coder ?", "...qui a de l'humour ?", "...qui sait dessiner", "...qui aime apprendre", "... qui aime les fruits", "... qui fait du parapente" ] %>
     <%= phrases1.sample %> <br> <%= phrases2.sample %>
   </h6>
+  <body onload=showDate();>
+     <span id='horloge' style="background-color: transparent;color:rgba(0,0,0,.7); padding: .125em .25em; display: inline; position: fixed; bottom: 1em; right: 1em; letter-spacing: 1em; font-size: .8em;"></span>
+  </body>
 
 </div>
 <div class="social-media">
