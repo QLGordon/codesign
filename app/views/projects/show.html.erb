@@ -1,65 +1,65 @@
-
-<% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+<main class="controller_project action_show">
+  <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
 
   <%= link_to edit_project_path(@project) do %>
-    <i class="fas fa-edit"></i>
+  <i class="fas fa-edit"></i>
   <% end %>
 
   <%= link_to project_path(@project), :method => :delete do %>
-    <i class="fas fa-trash-alt"></i>
+  <i class="fas fa-trash-alt"></i>
   <% end %>
 
-<% end %>
+  <% end %>
 
-<% if @project.client.svgs.first %>
+  <% if @project.client.svgs.first %>
   <img src="<%= @project.client.svgs.first.svg %>" alt="" height="72pt">
-<% end %>
-
-<h4 class="text-center">Projet <%= @project.title %></h4>
-<p class="sm-legend d-table">
-
-<% if @project.works.count == 1 %>
-  <span class="mr-1 red">en 1 point</span><br>
-<% elsif @project.works.count > 1 %>
-  <span class="mr-1 red">en <%= @project.works.count %> points</span><br>
-<% else %>
-<% end %>
-
-<span class="mr-1 blue"><%= @project.country %></span><br>
-<strong style="color: black;">
-<i class="fab fa-facebook-square"></i>
-<i class="fab fa-twitter-square"></i>
-<i class="fab fa-instagram"></i>
-</strong>
-</p>
-<img src="<%= @project.photo %>" alt="" class="w-100">
-<p ><%= markdown(@project.description) %></p>
-
-<h2>
-  <% if @project.works.count == 1 %>
-    Ma mission <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
-  <% else %>
-    Mes <%= @project.works.count %> missions <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
   <% end %>
-</h2>
 
-<% @project.works.each do |work| %>
-  <% if current_user %>
-    <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+  <h4 class="text-center">Projet <%= @project.title %></h4>
+  <p class="sm-legend d-table">
 
-      <%= link_to edit_project_work_path(@project, work) do %>
-      <% end %>
-
-      <%= link_to project_work_path(@project, work), :method => :delete do %>
-      <% end %>
-
+    <% if @project.works.count == 1 %>
+    <span class="mr-1 red">en 1 point</span><br>
+    <% elsif @project.works.count > 1 %>
+    <span class="mr-1 red">en <%= @project.works.count %> points</span><br>
+    <% else %>
     <% end %>
+
+    <span class="mr-1 blue"><%= @project.country %></span><br>
+    <strong style="color: black;">
+      <i class="fab fa-facebook-square"></i>
+      <i class="fab fa-twitter-square"></i>
+      <i class="fab fa-instagram"></i>
+    </strong>
+  </p>
+  <img src="<%= @project.photo %>" alt="" class="w-100">
+  <p><%= markdown(@project.description) %></p>
+
+  <h2>
+    <% if @project.works.count == 1 %>
+    Ma mission <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
+    <% else %>
+    Mes <%= @project.works.count %> missions <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
+    <% end %>
+  </h2>
+
+  <% @project.works.each do |work| %>
+  <% if current_user %>
+  <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+
+  <%= link_to edit_project_work_path(@project, work) do %>
+  <% end %>
+
+  <%= link_to project_work_path(@project, work), :method => :delete do %>
+  <% end %>
+
+  <% end %>
   <% end %>
 
   <strong class="size-12">
-  <%= link_to project_work_path(@project, work) do %>
+    <%= link_to project_work_path(@project, work) do %>
     <%= work.title %>
-  <% end %>
+    <% end %>
   </strong>
 
   <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
@@ -67,20 +67,21 @@
 
   <% if work.images %>
 
-    <% work.images.each do |image| %>
-      <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
-    <% end %>
+  <% work.images.each do |image| %>
+  <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
+  <% end %>
 
   <% end %>
-<% end %>
+  <% end %>
 
-<h2>Want to see more ?</h2>
+  <h2>Want to see more ?</h2>
 
-<% 3.times do %>
+  <% 3.times do %>
   <% next_project = @projects.sample %>
 
   <%= link_to project_path(next_project) do %>
-    <h4 class="m-3"><%= next_project.title %></h4>
-    <img src=" <%= next_project.photo %> " alt="" width="100%"class="border-top">
+  <h4 class="m-3"><%= next_project.title %></h4>
+  <img src=" <%= next_project.photo %> " alt="" width="100%" class="border-top">
   <% end %>
-<% end %>
+  <% end %>
+</main>

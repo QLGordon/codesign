@@ -1,36 +1,29 @@
 <main class="controller_project action_index">
-  <h2>Quelques projets</h2>
   <section class="projects">
-
-  <% @projects.shuffle.each do |project| %>
-  <%= link_to project_path(project), style: "margin-bottom: 2em;" do  %>
+    <% @projects.shuffle.first(7).each do |project| %> <%= link_to project_path(project),
+    style: "margin-bottom: 2em;" do %>
     <article class="project">
       <h2>
-      <% if project.client.svgs.first %>
-      <img src="<%= project.client.svgs.first.svg %>" alt="" class="client-logo">
-      <% end %>
+        <% if project.client.svgs.first %>
+        <img src="<%= project.client.svgs.first.svg %>" alt="" class="client-logo" />
+        <% end %>
         <span class="title"><%= project.title %></span>
         <span class="location"><%= project.country %></span>
       </h2>
-      <img src="<%= project.photo %>" alt="" class="attachement">
+      <img src="<%= project.photo %>" alt="" class="attachement" />
 
       <%= markdown(project.description) %>
 
       <p>
         <% if project.works.count == 1 %>
-        <span>en 1 point</span><br>
+        <span>en 1 point</span><br />
         <% elsif project.works.count > 1 %>
-        <strong>en <%= project.works.count %> points</strong><br>
+        <strong>en <%= project.works.count %> points</strong><br />
         <% project.works.each do |work| %>
         <strong>― <%= work.title %></strong>
-        <% end %>
-        <% else %>
-        <% end %>
+        <% end %> <% else %> <% end %>
       </p>
-
     </article>
-    <% end %>
-  <% end %>
-
+    <% end %> <% end %>
   </section>
 </main>

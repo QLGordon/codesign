@@ -1,37 +1,62 @@
-.controller_project{
-  font-size: calc(9px + .5vmax);
-  &.action_index{
-    .projects{
-      display: flex;
-      align-items: stretch;
-      justify-content: space-evenly;
-      flex-wrap: wrap;
-      .project{
+.controller_project {
+  font-size: calc(9px + 0.5vmax);
 
-        min-width: 30em;
-        max-width: 50em;
-        border: black solid 1px;
-        .attachement{
+  &.action_index {
+    .projects {
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(auto-fill, 30em);
+      grid-gap: 0.5em;
+      .project {
+        height: fit-content;
+        width: 100%;
+        box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
+          inset 0em 0em 0em 0.25em white,
+          inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
+        border-radius: 1em;
+        padding: 0.25em;
+        .attachement {
           width: 100%;
-          border-top: black solid 1px;
-          border-bottom: black solid 1px;
-            background: white;
-        }
-        .client-logo{
-          height: 4em;
-          width: 4em;
-          margin-right: 1em;
+          max-height: 20em;
+          transform: translateY(0.25em);
+          object-fit: cover;
           background: white;
-          border-right: black solid 1px;
+          box-shadow: 0em 0em 0em 0.25em white, 0em 0em 1em rgba(0, 0, 0, 0.25);
         }
-        h2{
-          min-height: 4em;
+        h2 {
+          margin: 0;
+          height: 4.5em;
           font-size: 1em;
-          margin: 0em;
           display: flex;
           align-items: center;
+          position: relative;
+          .client-logo {
+            height: 4em;
+            width: 4em;
+            border-radius: 0.5em 0em 0em 0em;
+            box-shadow: 0em 0em 0em 0.25em white,
+              0em 0em 1em rgba(0, 0, 0, 0.25);
+            background: white;
+          }
+          span.title {
+            padding-left: 1em;
+          }
+          span.location {
+            padding-left: 1em;
+            position: absolute;
+            font-size: 0.8em;
+            top: 0em;
+            right: 0em;
+            padding: 0.5em 1em;
+            border-radius: 0em 1em 0rem 1em;
+
+            box-shadow: 0em 0em 0em 0em white,
+              -0.5em 0.5em 1em rgba(0, 0, 0, 0.1);
+          }
         }
-        p{
+        p {
+          padding: 1em;
+          padding-top: 2em;
         }
       }
     }
