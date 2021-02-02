@@ -7,6 +7,7 @@
   top: 15em;
   font-size: 1.5rem;
   padding-bottom: 50em;
+
   @keyframes fly {
     0% {
       transform: scale(1.05);
@@ -265,35 +266,65 @@
     margin: auto;
     margin-top: 5em;
     width: 100%;
-    display: grid;
     justify-content: center;
     align-items: center;
     padding-bottom: 12em;
-
-    grid-template-columns: repeat(auto-fill, 30em);
-    > img {
-      margin: auto;
-      transform: translateY(13em) rotate(0deg);
-      animation: appears 3s;
-      opacity: 1;
+    h1 {
+      font-size: 30pt;
+      text-align: left;
+      padding-left: 18rem;
     }
+    &::before,
+    &::after {
+      content: "";
+      height: 144em;
+      width: 144em;
+      position: fixed;
+      z-index: -1;
+      border-radius: 72em 70em 70em 70em;
+    }
+    @keyframes appears {
+      from {
+        transform: rotate(1turn);
+      }
+    }
+    &::before {
+      animation: appears 30s linear infinite;
+      top: 48em;
+      left: 48em;
+      background: linear-gradient(#e0e2cb, #f3df70);
+    }
+    &::after {
+      animation: appears 30s linear infinite;
+      bottom: 48em;
+      right: 48em;
+      background: linear-gradient(#f5cccc, #9ba1eb);
+    }
+
     .text-justify {
-      max-width: 30em;
+      max-width: 60em;
       margin: auto;
       background: white;
       padding: 1em;
+      column-count: 2;
+      column-gap: 5em;
     }
   }
+  position: relative;
   .rounded-circle.shadow.me {
-    border-radius: 3em;
-    height: 12em;
-    width: 12em;
+    border-radius: 11em;
+    height: 10em;
+    width: 10em;
+    top: 6em;
+    left: 2em;
     border: 0.5em white solid;
+    position: absolute;
     box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
       inset 0em 0em 0em 0.25em white,
       inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
   }
   table {
+    background: white;
     margin-top: 3em;
     border-radius: 3em;
     box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
@@ -310,6 +341,30 @@
       padding-right: 2em;
       padding-left: 3em;
       vertical-align: baseline;
+    }
+  }
+  .grid_clients {
+    padding-top: 10em;
+    padding-bottom: 10em;
+    h2 {
+      position: absolute;
+      transform: translateY(-2em);
+    }
+
+    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 10em);
+    grid-gap: 2em;
+    div {
+      display: flex;
+      justify-content: center;
+      img {
+        object-fit: cover;
+        border-radius: 1em;
+        background: white;
+        box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
+          0em -0.125em 0.5em rgba(0, 0, 0, 0.05), 0em 0em 0em 0.25em white;
+      }
     }
   }
 }
