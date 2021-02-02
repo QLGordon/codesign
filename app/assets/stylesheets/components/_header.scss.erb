@@ -71,8 +71,55 @@ header {
     }
   }
   .navigation {
+    &::after,
+    &::before {
+      content: "";
+      height: 1em;
+      width: 1em;
+      border-radius: 1em 1em 1em 1em;
+      background-color: navy;
+      display: inline;
+      position: absolute;
+      top: 50%;
+      right: -3.5em;
+      margin-right: 2em;
+      transform: translateY(-50%);
+      transition: right 150ms, opacity 150ms, border-radius 150ms;
+      z-index: 0;
+      box-shadow: 0em 0em 0em 0.25em white, 0em 0.75em 1em rgba(0, 0, 0, 0.125),
+        0em -0.125em 0.5em rgba(0, 0, 0, 0.05);
+    }
+    &::before {
+      height: 10em;
+      width: 48px;
+      right: -5.5em;
+      background: transparent;
+      box-shadow: none;
+    }
     &:hover {
       left: 0em;
+      a {
+        transform: translateX(0em);
+        transition: transform 250ms;
+      }
+      &::after {
+        right: -2.5em;
+        opacity: 0;
+        border-radius: 0em 1em 1em 0em;
+      }
+    }
+    a {
+      transform: translateX(-5em);
+      &:first-of-type {
+        transition: transform 250ms 50ms;
+      }
+
+      &:nth-of-type(2) {
+        transition: transform 250ms 100ms;
+      }
+      &:last-of-type {
+        transition: transform 250ms 150ms;
+      }
     }
     transition: left 250ms;
     position: fixed;
@@ -89,6 +136,7 @@ header {
       display: flex;
       align-items: center;
       justify-content: center;
+      transition: transform 250ms;
       i {
         font-size: 28px;
       }
