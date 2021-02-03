@@ -1,8 +1,7 @@
 .project {
-  margin: 6pt;
   width: calc(264pt);
   height: 100%;
-  position: relative;
+
   .dash {
     position: absolute;
     top: -9pt;
@@ -16,7 +15,6 @@
     }
   }
 }
-
 
 .align-right {
   text-align: right;

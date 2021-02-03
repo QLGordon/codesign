@@ -2,11 +2,82 @@
   font-size: calc(9px + 0.5vmax);
 
   &.action_index {
+    a.shuffle {
+      position: fixed;
+      top: 2em;
+      right: 2em;
+      height: 5em;
+      width: 5em;
+      background: white;
+      box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
+        inset 0em 0em 0em 0.25em white,
+        inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
+      border-radius: 2.5em;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::after {
+        content: "";
+        height: 4em;
+        width: 4em;
+        border-radius: 50%;
+        position: absolute;
+        background: white;
+        z-index: -1;
+        transition: all 250ms;
+      }
+      &::before {
+        content: "";
+        height: 4em;
+        width: 4em;
+        border-radius: 50%;
+        position: absolute;
+        background: black;
+        z-index: -2;
+        transition: all 250ms;
+        box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
+          inset 0em 0em 0em 0.25em white,
+          inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
+      }
+
+      &:hover {
+        &::before {
+          transition: all 250ms;
+          background: black;
+          height: 5.5em;
+          width: 5.5em;
+        }
+        &::after {
+          transition: all 250ms;
+          background: white;
+          height: 1.5em;
+          width: 1.5em;
+        }
+        svg {
+          transition: all 250ms;
+          fill: white;
+          animation-play-state: paused;
+        }
+      }
+      svg {
+        @keyframes infinite_rotate {
+          to {
+            transform: rotate(1turn);
+          }
+        }
+        transition: all 250ms;
+        transform: rotate(0turn);
+        animation: infinite_rotate 30s infinite linear;
+      }
+    }
     .projects {
       display: grid;
       justify-content: center;
-      grid-template-columns: repeat(auto-fill, 30em);
-      grid-gap: 0.5em;
+      grid-template-columns: repeat(auto-fill, minmax(5em, 50em));
+      grid-gap: 3em;
+      margin: 1em;
+
       .project {
         height: fit-content;
         width: 100%;
@@ -18,7 +89,6 @@
         .attachement {
           width: 100%;
           max-height: 20em;
-          transform: translateY(0.25em);
           object-fit: cover;
           background: white;
           box-shadow: 0em 0em 0em 0.25em white, 0em 0em 1em rgba(0, 0, 0, 0.25);
