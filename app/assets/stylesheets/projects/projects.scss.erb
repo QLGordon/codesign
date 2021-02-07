@@ -92,15 +92,43 @@
         padding: 2em 4em 7em;
         position: relative;
         height: 100%;
+        overflow: hidden;
         .attachement {
           width: 100%;
           object-fit: contain;
-          background: white;
-          // box-shadow: 0em 0em 0em 0.25em white, 0em 0em 1em rgba(0, 0, 0, 0.25);
+
+          transition: transform 250ms;
         }
-        .description,
         .details {
           display: none;
+        }
+        transition: transform 450ms;
+
+        filter: blur(0px);
+        &:hover {
+          transform: scale(1.1);
+          .description {
+            transform: translateY(0%);
+            transition: transform 250ms 150ms;
+          }
+          .attachement {
+            transform: scale(4);
+          }
+        }
+        .description {
+          margin: 5em;
+          transition: transform 1s;
+          padding: 1em 2em 3em;
+          background: rgba(255, 255, 255, 0.95);
+
+          box-shadow: inset 0em 0em 3em 3em white;
+
+          width: calc(100% - 10em);
+          height: calc(100% - 10em);
+
+          font-size: 9pt;
+          position: absolute;
+          transform: translateY(calc(100% + 10em));
         }
         h2 {
           margin: 0;
