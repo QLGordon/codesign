@@ -1,29 +1,30 @@
 <main class="controller_project action_show">
   <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+  <div style="position: fixed; top: 1em; left: 4em">
 
-  <%= link_to edit_project_path(@project) do %>
-  <i class="fas fa-edit"></i>
-  <% end %>
 
-  <%= link_to project_path(@project), :method => :delete do %>
-  <i class="fas fa-trash-alt"></i>
-  <% end %>
+    <%= link_to edit_project_path(@project) do %>
+    <i class="fas fa-edit"></i>
+    <% end %>
 
+    <%= link_to project_path(@project), :method => :delete do %>
+    <i class="fas fa-trash-alt"></i>
+    <% end %>
+  </div>
   <% end %>
 
   <% if @project.client.svgs.first %>
-  <img src="<%= @project.client.svgs.first.svg %>" alt="" height="72pt">
+  <img src="<%= @project.client.svgs.first.svg %>" alt="" class="logo" height="72pt">
   <% end %>
 
   <h4 class="text-center">Projet <%= @project.title %></h4>
   <p class="sm-legend d-table">
 
-    <% if @project.works.count == 1 %>
-    <span class="mr-1 red">en 1 point</span><br>
-    <% elsif @project.works.count > 1 %>
-    <span class="mr-1 red">en <%= @project.works.count %> points</span><br>
-    <% else %>
-    <% end %>
+
+
+
+    <span class="mr-1 red"><%= @project.works.count %></span><br>
+
 
     <span class="mr-1 blue"><%= @project.country %></span><br>
     <strong style="color: black;">
@@ -32,56 +33,68 @@
       <i class="fab fa-instagram"></i>
     </strong>
   </p>
-  <img src="<%= @project.photo %>" alt="" class="w-100">
-  <p><%= markdown(@project.description) %></p>
+  <img src="<%= @project.photo %>" alt="" class="w-100" style="margin-top: 6em;">
+  <p><%= markdown(@project.description) || "" %></p>
 
   <h2>
-    <% if @project.works.count == 1 %>
-    Ma mission <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
-    <% else %>
-    Mes <%= @project.works.count %> missions <%= link_to "+", new_project_work_path(@project), class: "btn btn-primary" %>
-    <% end %>
+
+
+    <%= link_to "ajouter", new_project_work_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
+
   </h2>
 
   <% @project.works.each do |work| %>
-  <% if current_user %>
-  <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+  <div>
+    <section class="work">
 
-  <%= link_to edit_project_work_path(@project, work) do %>
-  <% end %>
+      <% if  current_user.try(:email) == "quentin.gourdon@gmail.com"  %>
 
-  <%= link_to project_work_path(@project, work), :method => :delete do %>
-  <% end %>
+      <div style="position: relative; top: 1em; left: 14em; width: 10em;">
+        <%= link_to edit_project_work_path(@project, work) do %>
+        edit
+        <% end %>
 
-  <% end %>
-  <% end %>
+        <%= link_to project_work_path(@project, work), :method => :delete do %>
+        delete
 
-  <strong class="size-12">
-    <%= link_to project_work_path(@project, work) do %>
-    <%= work.title %>
-    <% end %>
-  </strong>
+        <% end %>
 
-  <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
-  <p><span class="mr-1 blue"><%= work.date.year %></span></p>
 
-  <% if work.images %>
+        <% end %>
+      </div>
 
-  <% work.images.each do |image| %>
-  <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
-  <% end %>
 
-  <% end %>
-  <% end %>
+      <strong class="size-12">
 
-  <h2>Want to see more ?</h2>
+        <%= work.title %>
 
-  <% 3.times do %>
-  <% next_project = @projects.sample %>
+      </strong>
 
-  <%= link_to project_path(next_project) do %>
-  <h4 class="m-3"><%= next_project.title %></h4>
-  <img src=" <%= next_project.photo %> " alt="" width="100%" class="border-top">
-  <% end %>
-  <% end %>
+      <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
+      <p><span class="mr-1 blue"><%= work.date.year %></span></p>
+
+      <% if work.images %>
+
+      <% work.images.each do |image| %>
+      <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
+      <% end %>
+
+      <% end %>
+      <div>
+        <% end %>
+    </section>
+
+
+    <h2>Want to see more ?</h2>
+
+    <div class="more_projects">
+      <% 3.times do %>
+      <% next_project = @projects.sample %>
+      <%= link_to project_path(next_project) do %>
+      <h4 class="m-3"><%= next_project.title %></h4>
+      <img src=" <%= next_project.photo %> " alt="" width="100%" class="border-top">
+      <% end %>
+      <% end %>
+    </div>
+
 </main>
