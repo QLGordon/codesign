@@ -33,16 +33,15 @@
     }
   }
   &.action_index {
-    a.shuffle {
+    .shuffle {
       position: fixed;
       top: 2em;
       right: 2em;
       height: 5em;
       width: 5em;
+      z-index: -1;
       background: white;
-      box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
-        inset 0em 0em 0em 0.25em white,
-        inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
+
       border-radius: 2.5em;
       display: flex;
       justify-content: center;
@@ -67,57 +66,34 @@
         background: black;
         z-index: -2;
         transition: all 250ms;
-        box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125),
-          inset 0em 0em 0em 0.25em white,
-          inset 0em 0em 1em 0.5em rgba(0, 0, 0, 0.125);
       }
 
-      &:hover {
-        &::before {
-          transition: all 250ms;
-          background: black;
-          height: 5.5em;
-          width: 5.5em;
-        }
-        &::after {
-          transition: all 250ms;
-          background: white;
-          height: 1.5em;
-          width: 1.5em;
-        }
-        svg {
-          transition: all 250ms;
-          fill: white;
-          animation-play-state: paused;
+      @keyframes infinite_rotate {
+        to {
+          transform: rotate(1turn);
         }
       }
-      svg {
-        @keyframes infinite_rotate {
-          to {
-            transform: rotate(1turn);
-          }
-        }
-        transition: all 250ms;
-        transform: rotate(0turn);
-        animation: infinite_rotate 30s infinite linear;
-      }
+      transition: all 250ms;
+      transform: rotate(0turn);
+      animation: infinite_rotate 30s infinite linear;
     }
     .projects {
       display: grid;
       justify-content: center;
       grid-template-columns: repeat(auto-fill, minmax(5em, 25em));
-      grid-gap: 3em;
-      margin: 1em;
+      grid-gap: 6em;
+      margin: 2em;
       margin-top: 4em;
 
       .project {
+        display: grid;
         width: 100%;
         box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125);
-        // border-radius: 1em;
-        padding: 0.25em;
+        padding: 2em 4em 7em;
+        position: relative;
+        height: 100%;
         .attachement {
           width: 100%;
-
           object-fit: contain;
           background: white;
           // box-shadow: 0em 0em 0em 0.25em white, 0em 0em 1em rgba(0, 0, 0, 0.25);
@@ -129,10 +105,9 @@
         h2 {
           margin: 0;
           height: 4.5em;
-          font-size: 1em;
+          font-size: 9pt;
           display: flex;
           align-items: center;
-          position: relative;
           .client-logo {
             height: 4em;
             width: 4em;
@@ -148,10 +123,13 @@
             padding-left: 1em;
             position: absolute;
             font-size: 0.8em;
-            top: 0em;
-            right: 0em;
+            bottom: 10em;
+            right: 7em;
             padding: 0.5em 1em;
             border-radius: 0em 1em 0rem 1em;
+            font-weight: lighter;
+            opacity: 0.4;
+            letter-spacing: 0.125em;
 
             // box-shadow: 0em 0em 0em 0em white,
             //   -0.5em 0.5em 1em rgba(0, 0, 0, 0.1);

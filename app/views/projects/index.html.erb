@@ -1,6 +1,6 @@
 <main class="controller_project action_index">
-  <%= link_to projects_path, class: "shuffle" do %>
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500">
+
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="shuffle">
     <defs>
       <path d="M243.2, 382.4c-74.8,   
     0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
@@ -17,12 +17,12 @@
     </defs>
     <text dx="50">
       <textPath xlink:href="#textcircle">
-        • Click me • for more
+        • Amour • Partout • ♥︎
       </textPath>
     </text>
     </text>
   </svg>
-  <% end %>
+
 
   <section class="projects">
     <div>
@@ -32,7 +32,7 @@
       <br>
       <% end %>
     </div>
-    <% @projects.shuffle.first(10).each do |project| %> <%= link_to project_path(project) do %>
+    <% @projects.each do |project| %> <%= link_to project_path(project) do %>
     <article class="project">
       <h2>
         <% if project.client.svgs.first %>
