@@ -78,7 +78,6 @@
         .attachement {
           width: 100%;
           object-fit: contain;
-
           transition: transform 250ms;
         }
         .details {
@@ -90,6 +89,7 @@
         &:hover {
           transform: scale(1.1);
           .description {
+            display: none;
             transform: translateY(0%);
             transition: transform 250ms 150ms;
           }
