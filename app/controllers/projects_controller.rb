@@ -4,6 +4,8 @@ class ProjectsController < ApplicationController
 
   def index
     @projects = Project.all - Project.where("title" => "Formations") - Project.where("title" => "Skills Design") - Project.where("title" => "Skills Web")
+    svg_skills = ["Ps", "Ai", "Ae", "Id", "Pr", "JS", "XD", "CSS", "HTML", "Ruby", "Rails", "JS"]
+    @skills = Svg.where(name: svg_skills)
   end
 
   def show

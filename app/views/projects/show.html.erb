@@ -3,6 +3,7 @@
   <div style="position: fixed; top: 1em; left: 4em">
 
 
+
     <%= link_to edit_project_path(@project) do %>
     <i class="fas fa-edit"></i>
     <% end %>
@@ -14,33 +15,36 @@
   <% end %>
 
   <% if @project.client.svgs.first %>
-  <img src="<%= @project.client.svgs.first.svg %>" alt="" class="logo" height="72pt">
+  <img src="<%= @project.client.svgs.first.svg %>" alt="" class="logo" height="72pt" style=" position: fixed; top 1em; left: 1em">
   <% end %>
 
-  <h4 class="text-center">Projet <%= @project.title %></h4>
-  <p class="sm-legend d-table">
-
-
-
-
-    <span class="mr-1 red"><%= @project.works.count %></span><br>
-
-
-    <span class="mr-1 blue"><%= @project.country %></span><br>
-    <strong style="color: black;">
-      <i class="fab fa-facebook-square"></i>
-      <i class="fab fa-twitter-square"></i>
-      <i class="fab fa-instagram"></i>
-    </strong>
-  </p>
-  <img src="<%= @project.photo %>" alt="" class="w-100" style="margin-top: 6em;">
-  <p><%= markdown(@project.description) || "" %></p>
+  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="shuffle">
+    <defs>
+      <path d="M243.2, 382.4c-74.8,   
+    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
+    135.5 S318, 382.4, 243.2, 382.4z" id="textcircle" />
+      <style>
+        text {
+          font-size: 40px;
+          font-family: Franklin Gothic, sans-serif;
+          font-weight: 900;
+          text-transform: uppercase;
+          letter-spacing: 16px;
+        }
+      </style>
+    </defs>
+    <text dx="50">
+      <textPath xlink:href="#textcircle">
+        • <%= @project.title %> •
+      </textPath>
+    </text>
+    </text>
+  </svg>
 
   <h2>
-
-
+    <% if  current_user.try(:email) == "quentin.gourdon@gmail.com"  %>
     <%= link_to "ajouter", new_project_work_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
-
+    <% end %>
   </h2>
 
   <% @project.works.each do |work| %>
@@ -64,37 +68,16 @@
       </div>
 
 
-      <strong class="size-12">
-
-        <%= work.title %>
-
-      </strong>
-
-      <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
-      <p><span class="mr-1 blue"><%= work.date.year %></span></p>
-
       <% if work.images %>
-
-      <% work.images.each do |image| %>
-      <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
-      <% end %>
-
-      <% end %>
-      <div>
+      <div class="work_images">
+        <% work.images.each do |image| %>
+        <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
         <% end %>
-    </section>
 
-
-    <h2>Want to see more ?</h2>
-
-    <div class="more_projects">
-      <% 3.times do %>
-      <% next_project = @projects.sample %>
-      <%= link_to project_path(next_project) do %>
-      <h4 class="m-3"><%= next_project.title %></h4>
-      <img src=" <%= next_project.photo %> " alt="" width="100%" class="border-top">
+        <% end %>
+      </div>
       <% end %>
-      <% end %>
-    </div>
+  </div>
+  </section>
 
 </main>

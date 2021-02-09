@@ -26,6 +26,9 @@
 
   <section class="projects">
     <div>
+      <% @skills.each do |skill| %>
+      <%= image_tag skill.svg, class: "skill" %>
+      <% end %>
       <h1>Projets</h1>
       <% Category.all.each do |category| %>
       <%= category.name %>
