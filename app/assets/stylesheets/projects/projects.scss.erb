@@ -83,7 +83,8 @@
         position: relative;
         background: white;
         height: 100%;
-        overflow: hidden;
+        will-change: transform, box-shadow;
+
         .attachement {
           width: 100%;
           object-fit: contain;
@@ -110,11 +111,23 @@
           transition: transform 450ms, opacity 350ms;
           z-index: 10;
         }
-        transition: transform 450ms;
+        .date {
+          transition: transform 450ms, opacity 350ms;
+          position: absolute;
+          bottom: -2em;
+          right: 1em;
+          font-size: 9px;
+          letter-spacing: 4px;
+          transform-origin: top right;
+          font-weight: lighter;
+          color: rgba(0, 0, 0, 0.25);
+        }
+        transition: transform 450ms, box-shadow 450ms;
 
         filter: blur(0px);
         &:hover {
           transform: scale(1.1);
+          box-shadow: 0em 0em 0em rgba(0, 0, 0, 0);
           .description {
             display: none;
             transform: translateY(0%);
@@ -129,6 +142,10 @@
             transform: translateX(5em);
             opacity: 0;
           }
+          .date {
+            transform: translate(2em, 1em);
+            opacity: 0;
+          }
           .attachement {
             transform: scale(1.5);
           }
@@ -138,7 +155,7 @@
           transition: transform 1s;
           padding: 1em 2em 3em;
           background: rgba(255, 255, 255, 0.95);
-
+          opacity: 0;
           box-shadow: inset 0em 0em 3em 3em white;
 
           width: calc(100% - 10em);
