@@ -2,14 +2,8 @@
   <div class="navigation">
     <%= link_to about_path do %>
     <i class="fas fa-info-circle m-3"></i>
-    <% end %>
-    <%= link_to projects_path do %>
+    <% end %> <%= link_to projects_path do %>
     <i class="fas fa-home m-3"></i>
-    <% end %>
-    <% if @projects %>
-    <%= link_to project_path(@projects.sample) do %>
-    <i class="fas fa-random m-3"></i>
-    <% end %>
     <% end %>
   </div>
   <div class="social-media">
