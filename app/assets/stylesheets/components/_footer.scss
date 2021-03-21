@@ -2,9 +2,13 @@ footer {
   position: relative;
   width: 100%;
   bottom: 0em;
+  margin-bottom: 12em;
   i {
     padding: 3pt;
     font-size: 16pt;
-    &:hover { transition: 350ms; color: blue; }
+    &:hover {
+      transition: 350ms;
+      color: blue;
+    }
   }
 }
