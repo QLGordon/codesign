@@ -23,44 +23,56 @@
     </text>
   </svg>
 
-
   <section class="projects">
-    <div>
-      <% @skills.each do |skill| %>
-      <%= image_tag skill.svg, class: "skill" %>
-      <% end %>
-      <h1>Projets</h1>
-      <% Category.all.each do |category| %>
-      <%= category.name %>
-      <br>
-      <% end %>
-    </div>
-    <% @projects.each do |project| %> <%= link_to project_path(project) do %>
-    <article class="project">
-      <h2>
-        <% if project.client.svgs.first %>
-        <img src="<%= project.client.svgs.first.svg %>" alt="" class="client-logo" />
-        <% end %>
-        <span class="title"><%= project.title %></span>
-        <span class="location"><%= project.country %></span>
-      </h2>
-      <img src="<%= project.photo %>" alt="" class="attachement" />
+    <%= link_to "ajouter", new_project_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
 
-      <div class="description">
-        <%= markdown(project.description) %>
-      </div>
-      <div class="details">
-        <p>
-          <% if project.works.count == 1 %>
-          <span>en 1 point</span><br />
-          <% elsif project.works.count > 1 %>
-          <strong>en <%= project.works.count %> points</strong><br />
-          <% project.works.each do |work| %>
-          <strong>― <%= work.title %></strong>
-          <% end %> <% else %> <% end %>
-        </p>
-      </div>
-    </article>
-    <% end %> <% end %>
+    <% @projects.each do |project| %>
+    <div>
+
+      <article class="project">
+
+
+        <h2>
+          <div style='position: absolute; font-size: 1.5em; z-index: 11; transform: translateY(-1em); width: 100%; left: 0; top: 1em; display: flex; justify-content: space-between;'>
+            <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
+            <%= link_to edit_project_path(project) do %>
+            <i class="fas fa-edit" style="padding: 1em; background: blue; color: white;"></i>
+            <% end %>
+            <%= link_to project_path(project), :method => :delete do %>
+            <i class="fas fa-trash-alt" style="padding: 1em; background: red; color: white;"></i>
+            <% end %>
+            <% end %>
+          </div>
+          <% if project.client.svgs.first %>
+          <img src="<%= project.client.svgs.first.svg %>" alt="" class="client-logo" />
+          <% end %>
+          <span class="title"><%= project.title %></span>
+          <span class="location"><%= project.country %> <%= project.date %></span>
+        </h2>
+
+        <%= link_to project_path(project) do %>
+        <img src="<%= project.photo %>" alt="" class="attachement" />
+        <% end %>
+
+        <div class="description">
+          <%= markdown(project.description) %>
+        </div>
+        <div class="details">
+          <p>
+            <% if project.works.count == 1 %>
+            <span>en 1 point</span><br />
+            <% elsif project.works.count > 1 %>
+            <strong>en <%= project.works.count %> points</strong><br />
+            <% project.works.each do |work| %>
+            <strong>― <%= work.title %></strong>
+            <% end %> <% else %> <% end %>
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+    <% end %>
+
   </section>
 </main>

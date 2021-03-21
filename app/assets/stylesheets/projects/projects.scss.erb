@@ -1,3 +1,12 @@
+.edit_project {
+  margin: 10em;
+  img {
+    height: 200px;
+  }
+}
+.new_project {
+  margin: 10em;
+}
 .shuffle {
   position: fixed;
   right: -4em;
@@ -78,10 +87,25 @@
         .attachement {
           width: 100%;
           object-fit: contain;
-          transition: transform 250ms;
+          transition: transform 450ms 150ms;
+          transform: scale(0.75);
         }
         .details {
           display: none;
+        }
+        .title,
+        .client-logo {
+          transition: transform 450ms, opacity 350ms;
+          transform: translateX(0em);
+          opacity: 1;
+          z-index: 10;
+        }
+        .location {
+          transform: translateX(0em);
+          opacity: 0;
+          position: relative;
+          transition: transform 450ms, opacity 350ms;
+          z-index: 10;
         }
         transition: transform 450ms;
 
@@ -93,8 +117,17 @@
             transform: translateY(0%);
             transition: transform 250ms 150ms;
           }
+          .title,
+          .client-logo {
+            transform: translateX(-5em);
+            opacity: 0;
+          }
+          .location {
+            transform: translateX(5em);
+            opacity: 0;
+          }
           .attachement {
-            transform: scale(4);
+            transform: scale(1.5);
           }
         }
         .description {
@@ -156,10 +189,12 @@
 
 .work_images {
   display: flex;
-  width: 100vw;
+  width: auto;
+  max-width: calc(100vw - 30em);
   flex-wrap: wrap;
   justify-content: center;
   padding: 1.5em;
+  margin-right: 30em;
   img {
     object-fit: contain;
     max-height: 30em;
@@ -169,4 +204,13 @@
     background: white;
     margin: 3em;
   }
+}
+
+#zoom {
+  height: 100vh;
+  width: 30em;
+  position: fixed;
+  top: 0;
+  right: 0;
+  border: 1px solid red;
 }

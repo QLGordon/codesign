@@ -1,46 +1,47 @@
 <%= form_for(@project) do |f| %>
 
- <!-- Section Project content -->
-    <% if @project.client.svgs.first %>
-    <img width="144pt"src= "<%= @project.client.svgs.first.svg %>"  alt="">
-    <% end %>
+<!-- Section Project content -->
+<% if @project.client.svgs.first %>
+<img width="144pt" src="<%= @project.client.svgs.first.svg %>" alt="">
+<% end %>
 
-        <%= f.text_field :title, class: ["form-control"] %>
-        <%= f.text_field :country, class: ["form-control"] %>
-        <%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
-
-
-
-        <%= f.text_area :description, class: ["form-control"], rows: 10, value: markdown(@project.description)  %>
+<%= f.text_field :title, class: ["form-control"] %>
+<%= f.text_field :country, class: ["form-control"] %>
+<%= f.date_field :date, class: ["form-control"] %>
+<%= collection_select(:project, :client_id, Client.all, :id, :name, prompt: 'choisir le client') %>
 
 
 
-
-          <img src="<%= @project.photo %>" class="col" alt="">
-
-
-          <%= f.label :photo, class: "custom-file-label" %>
-          <%= f.file_field :photo, class: "custom-file-input" %>
-
-
-
-    <% @project.colors.each do |color| %>
-      <%= f.fields_for :colors, color do |color_fields| %>
-          <%= color_fields.text_field :red, class: ["rgb form-control"], placeholder: "000" %>
-        <%= color_fields.text_field :green, class: ["rgb form-control"], placeholder: "000" %>
-        <%= color_fields.text_field :blue, class: ["rgb form-control"], placeholder: "000" %>
-
-        <h4 style="color: rgba(<%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);">███</h4>
-        <% end %>
-        <% if color.present? %>
-        <% end %>
-      <% end %>
-    <%= render 'colors/show' %>
+<%= f.text_area :description, class: ["form-control"], rows: 10, value: markdown(@project.description)  %>
 
 
 
 
-      <%= f.submit value: "OK", class: ["btn btn-primary"] %>
+<img src="<%= @project.photo %>" class="col" alt="">
 
 
- <% end %>
+<%= f.label :photo, class: "custom-file-label" %>
+<%= f.file_field :photo, class: "custom-file-input" %>
+
+
+
+<% @project.colors.each do |color| %>
+<%= f.fields_for :colors, color do |color_fields| %>
+<%= color_fields.text_field :red, class: ["rgb form-control"], placeholder: "000" %>
+<%= color_fields.text_field :green, class: ["rgb form-control"], placeholder: "000" %>
+<%= color_fields.text_field :blue, class: ["rgb form-control"], placeholder: "000" %>
+
+<h4 style="color: rgba(<%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);">███</h4>
+<% end %>
+<% if color.present? %>
+<% end %>
+<% end %>
+<%= render 'colors/show' %>
+
+
+
+
+<%= f.submit value: "OK", class: ["btn btn-primary"] %>
+
+
+<% end %>
