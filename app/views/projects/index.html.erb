@@ -51,9 +51,9 @@
           <span class="location"><%= project.country %> <%= project.date %></span>
         </h2>
 
-        <%= link_to project_path(project) do %>
+        <%#= link_to project_path(project) do %>
         <img src="<%= project.photo %>" alt="" class="attachement" />
-        <% end %>
+        <%# end %>
 
         <div class="description">
           <%= markdown(project.description) %>
