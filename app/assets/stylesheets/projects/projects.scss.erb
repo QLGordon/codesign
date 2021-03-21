@@ -89,6 +89,7 @@
           object-fit: contain;
           transition: transform 450ms 150ms;
           transform: scale(0.75);
+          will-change: transform, opacity;
         }
         .details {
           display: none;
@@ -97,11 +98,13 @@
         .client-logo {
           transition: transform 450ms, opacity 350ms;
           transform: translateX(0em);
+          will-change: transform, opacity;
           opacity: 1;
           z-index: 10;
         }
         .location {
           transform: translateX(0em);
+          will-change: transform, opacity;
           opacity: 0;
           position: relative;
           transition: transform 450ms, opacity 350ms;

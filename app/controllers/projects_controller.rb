@@ -29,7 +29,7 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     @project.save!
     @project.category_id = params[:project][:category_id]
-    redirect_to project_path(@project)
+    redirect_to projects_path
 
     # raise
   end
