@@ -24,8 +24,9 @@
   </svg>
 
   <section class="projects">
+    <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
     <%= link_to "ajouter", new_project_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
-
+    <% end %>
     <% @projects.each do |project| %>
     <div>
 
