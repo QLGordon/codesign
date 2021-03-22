@@ -27,9 +27,11 @@
 
 <% @project.colors.each do |color| %>
 <%= f.fields_for :colors, color do |color_fields| %>
-<%= color_fields.text_field :red, class: ["rgb form-control"], placeholder: "000" %>
-<%= color_fields.text_field :green, class: ["rgb form-control"], placeholder: "000" %>
-<%= color_fields.text_field :blue, class: ["rgb form-control"], placeholder: "000" %>
+<div style='display: flex'>
+  <span>estampes<%= color_fields.text_field :red, class: ["rgb form-control"], placeholder: "000" %></span>
+  <span>illustrations<%= color_fields.text_field :green, class: ["rgb form-control"], placeholder: "000" %></span>
+  <span>insta<%= color_fields.text_field :name, class: ["rgb form-control"], placeholder: "000" %></span>
+</div>
 
 <h4 style="color: rgba(<%= color.red %>, <%= color.green %>, <%= color.blue %>, 1);">███</h4>
 <% end %>

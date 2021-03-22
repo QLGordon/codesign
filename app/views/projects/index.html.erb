@@ -1,28 +1,5 @@
 <main class="controller_project action_index">
 
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="shuffle">
-    <defs>
-      <path d="M243.2, 382.4c-74.8,   
-    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
-    135.5 S318, 382.4, 243.2, 382.4z" id="textcircle" />
-      <style>
-        text {
-          font-size: 40px;
-          font-family: Franklin Gothic, sans-serif;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 16px;
-        }
-      </style>
-    </defs>
-    <text dx="50">
-      <textPath xlink:href="#textcircle">
-        • Amour • Partout • ♥︎
-      </textPath>
-    </text>
-    </text>
-  </svg>
-
   <section class="projects">
     <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
     <%= link_to "ajouter", new_project_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
@@ -50,7 +27,17 @@
           <span class="title"><%= project.title %></span>
           <span class="location"><%= project.country %></span>
           <span class="date"><%= project.date %></span>
+
         </h2>
+        <% if project.colors.first %>
+        <div class="more">
+          <span class="instagram"><a target='_blank' href='https://www.instagram.com/<%= project.colors[0].name %>/'><i class="fab fa-instagram"></i></a></span>
+          <span class="estampes illustrations">
+            estampes <strong><%= project.colors[0].red %></strong><br>
+            illustrations <strong><%= project.colors[0].green %></strong></span>
+        </div>
+
+        <% end %>
 
         <%#= link_to project_path(project) do %>
         <img src="<%= project.photo %>" alt="" class="attachement" />
