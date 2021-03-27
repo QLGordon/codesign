@@ -2,7 +2,7 @@
 
   <section class="projects">
     <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-    <%= link_to "ajouter", new_project_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
+    <%= link_to "ajouter", new_project_path(@project), class: "add" %>
     <% end %>
     <% @projects.each do |project| %>
     <div>
@@ -13,12 +13,8 @@
         <h2>
           <div style='position: absolute; font-size: 1.5em; z-index: 11; transform: translateY(-1em); width: 100%; left: 0; top: 1em; display: flex; justify-content: space-between;'>
             <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-            <%= link_to edit_project_path(project) do %>
-            <i class="fas fa-edit" style="padding: 1em; background: blue; color: white;"></i>
-            <% end %>
-            <%= link_to project_path(project), :method => :delete do %>
-            <i class="fas fa-trash-alt" style="padding: 1em; background: red; color: white;"></i>
-            <% end %>
+            <%= link_to 'edit', edit_project_path(project), class: 'edit' %>
+            <%= link_to 'delete', project_path(project), class: 'delete', :method => :delete %>
             <% end %>
           </div>
           <% if project.client.svgs.first %>
@@ -32,31 +28,17 @@
         <% if project.colors.first %>
         <div class="more">
           <span class="instagram"><a target='_blank' href='https://www.instagram.com/<%= project.colors[0].name %>/'><i class="fab fa-instagram"></i></a></span>
+          <%= link_to project_path(project) do %>
           <span class="estampes illustrations">
             estampes <strong><%= project.colors[0].red || '—' %></strong><br>
-            illustrations <strong><%= project.colors[0].green %></strong></span>
+            dessins <strong><%= project.colors[0].green %></strong></span>
+          <% end %>
         </div>
 
         <% end %>
 
-        <%#= link_to project_path(project) do %>
-        <img src="<%= project.photo %>" alt="" class="attachement" />
-        <%# end %>
 
-        <div class="description">
-          <%= markdown(project.description) %>
-        </div>
-        <div class="details">
-          <p>
-            <% if project.works.count == 1 %>
-            <span>en 1 point</span><br />
-            <% elsif project.works.count > 1 %>
-            <strong>en <%= project.works.count %> points</strong><br />
-            <% project.works.each do |work| %>
-            <strong>― <%= work.title %></strong>
-            <% end %> <% else %> <% end %>
-          </p>
-        </div>
+        <img src="<%= project.photo %>" alt="" class="attachement" />
 
       </article>
 

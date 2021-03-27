@@ -1,0 +1,41 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  viewBox="0 0 500 500"
+  class="shuffle"
+>
+  <defs>
+    <path
+      d="M243.2, 382.4c-74.8,   
+    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
+    135.5 S318, 382.4, 243.2, 382.4z"
+      id="textcircle"
+    />
+    <style>
+      text:first-of-type {
+        font-size: 40px;
+        font-family: Franklin Gothic, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 16px;
+        transform: scale(1);
+      }
+
+      text {
+        font-size: 12px;
+        font-family: Franklin Gothic, sans-serif;
+        font-weight: 900;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+      }
+    </style>
+  </defs>
+  <text dx="0">
+    <textPath xlink:href="#textcircle">• <%= @project.title %> •</textPath>
+  </text>
+  <text dx="500">
+    <textPath xlink:href="#textcircle">
+      • <%= @project.date %> • <%= @project.country %> •
+    </textPath>
+  </text>
+</svg>

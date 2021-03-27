@@ -1,100 +1,31 @@
-<h1>EN COURS
-</h1>
-<main class="controller_project action_show" style='display: none'>
-  <% if current_user && current_user.email == "quentin.gourdon@gmail.com" %>
-  <div style="position: fixed; top: 1em; left: 10em">
-
-
-
-    <%= link_to edit_project_path(@project) do %>
-    <i class="fas fa-edit"></i>
-    <% end %>
-
-    <%= link_to project_path(@project), :method => :delete do %>
-    <i class="fas fa-trash-alt"></i>
-    <% end %>
-  </div>
+<main class="controller_project action_show">
+  <%= render 'circle' %>
+  <% if  current_user.try(:email) == "quentin.gourdon@gmail.com"  %>
+  <nav class='tools'>
+    <%= link_to "add", new_project_work_path(@project), class: 'add' %>
+  </nav>
   <% end %>
 
-  <% if @project.client.svgs.first %>
-  <img src="<%= @project.client.svgs.first.svg %>" alt="" class="logo" height="72pt" style=" position: fixed; top 1em; left: 1em">
-  <% end %>
 
-  <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" class="shuffle">
-    <defs>
-      <path d="M243.2, 382.4c-74.8,   
-    0-135.5-60.7-135.5-135.5s60.7-135.5,135.5-135.5s135.5, 60.7, 135.5,
-    135.5 S318, 382.4, 243.2, 382.4z" id="textcircle" />
-      <style>
-        text:first-of-type {
-          font-size: 40px;
-          font-family: Franklin Gothic, sans-serif;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 16px;
-          transform: scale(1);
-        }
-
-        text {
-          font-size: 12px;
-          font-family: Franklin Gothic, sans-serif;
-          font-weight: 900;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-      </style>
-    </defs>
-    <text dx="0">
-      <textPath xlink:href="#textcircle">
-        • <%= @project.title %> •
-      </textPath>
-    </text>
-    <text dx="500">
-      <textPath xlink:href="#textcircle">
-        • <%= @project.date %> • <%= @project.country %> •
-      </textPath>
-    </text>
-  </svg>
-
-  <h2>
-    <% if  current_user.try(:email) == "quentin.gourdon@gmail.com"  %>
-    <%= link_to "ajouter", new_project_work_path(@project), class: "btn btn-primary", style: "margin-left: 5em; " %>
-    <% end %>
-  </h2>
-
-  <% @project.works.each do |work| %>
   <div>
+    <% @project.works.each do |work| %>
     <section class="work">
-
       <% if  current_user.try(:email) == "quentin.gourdon@gmail.com"  %>
+      <nav class='tools'>
+        <%= link_to 'edit', edit_project_work_path(@project, work), class: 'edit' %>
+        <%= link_to 'delete', project_work_path(@project, work), class: 'delete', :method => :delete %>
 
-      <div style="position: relative; top: 1em; left: 14em; width: 10em;">
-        <%= link_to edit_project_work_path(@project, work) do %>
-        edit
-        <% end %>
+      </nav>
+      <% end %>
 
-        <%= link_to project_work_path(@project, work), :method => :delete do %>
-        delete
-
-        <% end %>
-
-
-        <% end %>
-      </div>
-
-      <section id="zoom">
-        test
-      </section>
       <% if work.images %>
       <div class="work_images">
         <% work.images.each do |image| %>
-        <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
-        <% end %>
-
+        <img src="<%= image.photo %>">
         <% end %>
       </div>
       <% end %>
+    </section>
+    <% end %>
   </div>
-  </section>
-
 </main>

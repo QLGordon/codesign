@@ -1,93 +1,92 @@
-
 <% @projects.each do |project| %>
-  <% project.works.each do |work| %>
-    <% if current_user %>
-    <% if  current_user.email == "quentin.gourdon@gmail.com"  %>
-      <%= link_to edit_project_work_path(project, work) do %>
-    <i class="fas fa-edit"></i>
-      <% end %>
-      <%= link_to project_work_path(project, work), :method => :delete do %>
-    <i class="fas fa-trash-alt"></i>
-      <% end %>
-        <% end %>
-    <% end %>
+<% project.works.each do |work| %>
+<% if current_user %>
+<% if  current_user.email == "quentin.gourdon@gmail.com"  %>
+<%= link_to edit_project_work_path(project, work) do %>
+<i class="fas fa-edit"></i>
+<% end %>
+<%= link_to project_work_path(project, work), :method => :delete do %>
+<i class="fas fa-trash-alt"></i>
+<% end %>
+<% end %>
+<% end %>
 
 
-        <strong class="size-12">
-        <%= link_to project_work_path(project, work) do %>
-        <%= work.category.name %>
-        <% end %>
-        </strong>
-
-
-        <img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
-
-
-        <p>
-          <span class="mr-1 blue"><%= work.date.year %></span>
-        </p>
-
-
-
-
-        <% if project.client.svgs.first %>
-        <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
-        <% end %>
-
-
-          <strong>
-            <%= link_to project_path(project) do  %>
-            <%= project.title %>
-            <% end %>
-          </strong>
-        <br>
-        <p class="sm-legend d-table">
-         <span class="mr-1 blue">TODO category client</span>
-
-
-
-
-        <%= markdown(work.description[0..150]) %>
-
-
-
-      <% work.images.each do |image| %>
-      <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
-      <% end %>
-
-
-
-        <strong class="size-12"><i class="fas fa-smile"></i> le client</strong>
-
-        <span class="mr-1 green"><%= work.city %></span>
-
-
-
-        <% if project.client.svgs.first %>
-        <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
-        <% end %>
-
-
-          <strong>
-            <%= project.client.name %>
-          </strong>
-        <br>
-        <p class="sm-legend d-table">
-          <span class="mr-1 red"><%= project.works.count %> missions</span>
-        </p>
-
-
-        <strong>
-          <i class="fab fa-facebook-square"></i>
-          <i class="fab fa-twitter-square"></i>
-          <i class="fab fa-instagram"></i>
-        </strong>
-
-
-
-
-        <%= markdown(project.client.description[0..150]) %>
-
-
+<strong class="size-12">
+  <%= link_to project_work_path(project, work) do %>
+  <%= work.category.name %>
   <% end %>
+</strong>
+
+
+<img src="https://res.cloudinary.com/dhp5qp6ol/image/upload/v1550161588/Skills/Ai.svg" alt="" height="24pt">
+
+
+<p>
+  <span class="mr-1 blue"><%= work.date.year %></span>
+</p>
+
+
+
+
+<% if project.client.svgs.first %>
+<img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
+<% end %>
+
+
+<strong>
+  <%= link_to project_path(project) do  %>
+  <%= project.title %>
+  <% end %>
+</strong>
+<br>
+<p class="sm-legend d-table">
+  <span class="mr-1 blue">TODO category client</span>
+
+
+
+
+  <%= markdown(work.description[0..150]) %>
+
+
+
+  <% work.images.each do |image| %>
+  <img src="<%= image.photo %>" alt="" class="w-100 border-bottom">
+  <% end %>
+
+
+
+  <strong class="size-12"><i class="fas fa-smile"></i> le client</strong>
+
+  <span class="mr-1 green"><%= work.city %></span>
+
+
+
+  <% if project.client.svgs.first %>
+  <img src="<%= project.client.svgs.first.svg %>" alt="" height="48pt">
+  <% end %>
+
+
+  <strong>
+    <%= project.client.name %>
+  </strong>
+  <br>
+<p class="sm-legend d-table">
+  <span class="mr-1 red"><%= project.works.count %> missions</span>
+</p>
+
+
+<strong>
+  <i class="fab fa-facebook-square"></i>
+  <i class="fab fa-twitter-square"></i>
+  <i class="fab fa-instagram"></i>
+</strong>
+
+
+
+
+<%= markdown(project.client.description[0..150]) %>
+
+
+<% end %>
 <% end %>

@@ -17,18 +17,22 @@
 @import "components/index";
 @import "pages/index";
 @import "pages/design";
+
 @keyframes cursor {
   0% {
     transform: scale(0);
   }
+
   100% {
     transform: scale(0.9);
   }
 }
+
 @keyframes pump {
   0% {
     transform: scale(0.9);
   }
+
   100% {
     transform: scale(1.05);
   }
@@ -52,21 +56,22 @@ html {
 /* width */
 ::-webkit-scrollbar {
   width: 0pt;
+  height: 0pt;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: transparent;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: transparent;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555;
+  background: transparent;
 }
 
 a {
@@ -77,6 +82,7 @@ a {
     &.cursor {
       background: red;
     }
+
     // text-decoration: none;
     // color: darksalmon;
   }

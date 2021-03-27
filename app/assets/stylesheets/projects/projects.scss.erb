@@ -1,12 +1,18 @@
-.edit_project {
+@keyframes infinite_rotate {
+  to {
+    transform: rotate(1turn);
+  }
+}
+
+.edit_project,
+.new_project {
   margin: 10em;
+
   img {
     height: 200px;
   }
 }
-.new_project {
-  margin: 10em;
-}
+
 .shuffle {
   position: fixed;
   right: -4em;
@@ -19,257 +25,32 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  @keyframes infinite_rotate {
-    to {
-      transform: rotate(1turn);
-    }
-  }
-  transition: all 250ms;
   transform: rotate(0turn);
   animation: infinite_rotate 60s infinite linear;
 }
+
 .controller_project {
   font-size: calc(9px + 0.5vmax);
-  &.action_show {
-    img {
-      // max-width: 100vw;
-    }
-    .more_projects {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 1em;
-      padding: 1em;
-    }
-    .sm-legend {
-      position: absolute;
-      top: 1em;
-      right: 1em;
-    }
-    .logo {
-      position: absolute;
-      top: 1em;
-      left: 1em;
-    }
-    h4.text-center {
-      position: fixed;
-      background: white;
-      width: 100vw;
-      margin: 0;
-      height: 6em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: -1;
-    }
-  }
-  &.action_index {
-    .skill {
-      height: 1em;
-    }
-    .projects {
-      display: grid;
-      justify-content: center;
-      grid-template-columns: repeat(auto-fill, minmax(5em, 20em));
-      grid-gap: 20em;
-      margin: 2em;
-      margin-top: 4em;
-
-      .project {
-        display: grid;
-        width: 100%;
-        box-shadow: 0em 0em 0em 1em white,
-          0em 2.125em 12em -1em rgba(0, 0, 0, 0.5),
-          inset 0em 0em 0em 1em rgba(255, 255, 255, 0),
-          inset 0em 0.5em 4em -3em rgba(0, 0, 0, 1);
-        padding: 2em 4em 7em;
-        position: relative;
-        background: white;
-        height: auto;
-        will-change: transform, box-shadow;
-
-        .attachement {
-          width: 100%;
-          object-fit: contain;
-          transition: transform 450ms 150ms, box-shadow 450ms 150ms;
-          transform: scale(0.75) translateY(0em);
-          box-shadow: 0em 0em 0em 1px white, 0em 1em 0em 5em white,
-            0em 3em 3em 5em rgba(0, 0, 0, 0.1);
-          will-change: transform, box-shadow;
-        }
-        .details {
-          display: none;
-        }
-        .title,
-        .client-logo {
-          transition: transform 450ms, opacity 350ms;
-          transform: translateX(0em);
-          will-change: transform, opacity;
-          opacity: 1;
-          z-index: 10;
-        }
-        .location {
-          transform: translateX(0em);
-          will-change: transform, opacity;
-          opacity: 0;
-          position: absolute;
-          transition: transform 450ms, opacity 350ms;
-          z-index: 10;
-
-          position: absolute;
-          font-size: 0.8em;
-          bottom: 1em;
-          right: 1em;
-          padding: 1em;
-
-          font-weight: lighter;
-          opacity: 0.4;
-          letter-spacing: 0.125em;
-        }
-        .date {
-          transition: transform 450ms, opacity 350ms;
-          position: absolute;
-          bottom: -4em;
-          right: 1em;
-          font-size: 9px;
-          letter-spacing: 4px;
-          transform-origin: top right;
-          font-weight: lighter;
-          color: rgba(0, 0, 0, 0.25);
-        }
-        transition: transform 450ms 450s, box-shadow 250ms 750ms;
-        .more {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          z-index: 20;
-          position: absolute;
-          width: 100%;
-          padding: 1em;
-          bottom: 0em;
-          color: rgba(0, 0, 0, 0.25);
-          opacity: 0;
-          transition: transform 150ms, opacity 150ms;
-          transform: translateY(1em);
-          will-change: transform, opacity;
-          .estampes,
-          .illustrations {
-            font-size: 9px;
-            text-align: right;
-            strong {
-              display: inline-block;
-              width: 3em;
-            }
-          }
-        }
-        &:hover {
-          transform: scale(1.1);
-          box-shadow: 0em 0em 0em 0em white, 0em 0em 0em 0em rgba(0, 0, 0, 0),
-            inset 0em 0em 0em rgba(255, 255, 255, 0),
-            inset 0em 0em 0em rgba(0, 0, 0, 0);
-          transition: transform 450ms, box-shadow 450ms;
-          .more {
-            transform: translateY(0em);
-            opacity: 1;
-            transition: transform 450ms 250ms, opacity 450ms 250ms;
-            .estampes {
-            }
-            .illustrations {
-            }
-            .instagram {
-            }
-          }
-          .description {
-            display: none;
-            transform: translateY(0%);
-            transition: transform 250ms 150ms;
-          }
-          .title,
-          .client-logo {
-            transform: translateX(-5em);
-            opacity: 0;
-          }
-          .location {
-            transform: translateX(5em);
-            opacity: 0;
-          }
-          .date {
-            transform: translate(2em, 1em);
-            opacity: 0;
-          }
-          .attachement {
-            transform: scale(1.25) translateY(-1em);
-            box-shadow: 0em 0em 0em 1px rgba(225, 225, 225, 1),
-              0em 0em 0em 8px rgba(255, 255, 255, 1),
-              0em 0.75em 3em 9px rgba(0, 0, 0, 0.05);
-          }
-        }
-        .description {
-          margin: 5em;
-          transition: transform 1s;
-          padding: 1em 2em 3em;
-          background: rgba(255, 255, 255, 0.95);
-          opacity: 0;
-          box-shadow: inset 0em 0em 3em 3em white;
-
-          width: calc(100% - 10em);
-          height: calc(100% - 10em);
-
-          font-size: 9pt;
-          position: absolute;
-          transform: translateY(calc(100% + 10em));
-        }
-        h2 {
-          margin: 0;
-          height: 4.5em;
-          font-size: 9pt;
-          display: flex;
-          align-items: center;
-          .client-logo {
-            height: 4em;
-            width: 4em;
-            border-radius: 0.5em 0em 0em 0em;
-            // box-shadow: 0em 0em 0em 0.25em white,
-            //   0em 0em 1em rgba(0, 0, 0, 0.25);
-            background: white;
-          }
-          span.title {
-            padding-left: 1em;
-          }
-        }
-        p {
-          padding: 1em;
-          padding-top: 2em;
-        }
-      }
-    }
-  }
-}
-
-.work_images {
-  display: flex;
-  width: auto;
-  max-width: calc(100vw - 30em);
-  flex-wrap: wrap;
-  justify-content: center;
-  padding: 1.5em;
-  margin-right: 30em;
-  img {
-    object-fit: contain;
-    max-height: 30em;
-    box-shadow: 0em 0.75em 1em rgba(0, 0, 0, 0.125);
-    padding: 2em 4em 7em;
-    position: relative;
-    background: white;
-    margin: 3em;
-  }
-}
-
-#zoom {
   height: 100vh;
-  width: 30em;
-  position: fixed;
-  top: 0;
-  right: 0;
-  border: 1px solid red;
+  width: 100vw;
+
+  &.action_show {
+    @import "work";
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+  }
+
+  &.action_index {
+    @import "project";
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    position: absolute;
+
+  }
 }
